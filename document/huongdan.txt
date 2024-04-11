@@ -1,0 +1,37 @@
+Build a Complete React Admin Dashboard App | React, Material UI, Bootstrap 4, Light & Dark Mode
+https://www.youtube.com/watch?v=yaWtIus3UAM&list=PLhFBHuT4t3aApRKcTgTi3Sfu6zudkg7bW&index=2
+
+Video 1
+npx create-react-app pingpong
+cd pingpong
+npm start
+
+Xóa index.css, App.test.js, logo.svg
+
+Tạo src -> components
+Tạo src -> pages
+Tạo src -> assets -> images
+
+App.css
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+npm start để kiểm tra. Font chữ thay đổi là đúng.
+
+npm install react-router-dom
+
+Cài material ui
+Default installation: npm install @mui/material @emotion/react @emotion/styled
+With styled-components: npm install @mui/material @mui/styled-engine-sc styled-components
+Icons: npm install @mui/icons-material
+
+==============================================================
+Video 2
+
+5:37
+Thêm đường dẫn đến <Dashboard />
+
+6:40
+T
