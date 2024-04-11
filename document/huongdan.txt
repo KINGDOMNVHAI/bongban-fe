@@ -67,7 +67,20 @@ Header thêm
 import Button from '@mui/material/Button';
 import { MdMenuOpen, MdOutlineMenu } from "react-icons/md";
 
-
-
 22:20
 Làm nút search
+
+28:00
+Tạo các nút khác
+<div className="col-sm-7 d-flex align-items-center justify-content-end part3 pl-4">
+    <Button className="rounded-circle"><MdOutlineLightMode/></Button>
+    <Button className="rounded-circle"><IoCartOutline/></Button>
+    <Button className="rounded-circle"><MdOutlineMailOutline/></Button>
+    <Button className="rounded-circle"><FaRegBell/></Button>
+</div>
+
+38:20
+Tạo userInfo (chữ kế bên avatar)
+
+40:00
+Chỉnh sửa kích thước chữ
