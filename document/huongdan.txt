@@ -122,3 +122,6 @@ const handleCloseNotificationsDrop = () => {
 
 58:10
 Cho cả nút Notification và menu vào 1 <div>
+
+1:07:30
+Xóa .myAcc trong CSS

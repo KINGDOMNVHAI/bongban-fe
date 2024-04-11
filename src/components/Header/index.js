@@ -78,23 +78,23 @@ const Header = () => {
                                     anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
                                 >
 
+                                    <div className="head pl-3 pb-0">
+                                        <h4>Order (12)</h4>
+                                    </div>
+                                    <Divider className="mb-3" />
                                     <MenuItem onClick={handleCloseNotificationsDrop}>
-                                        <ListItemIcon>
-                                            <PersonAdd fontSize="small" />
-                                        </ListItemIcon>
-                                        My Notification
-                                    </MenuItem>
-                                    <MenuItem onClick={handleCloseNotificationsDrop}>
-                                        <ListItemIcon>
-                                            <IoShieldHalfSharp />
-                                        </ListItemIcon>
-                                        Reset Password
-                                    </MenuItem>
-                                    <MenuItem onClick={handleCloseNotificationsDrop}>
-                                        <ListItemIcon>
-                                            <Logout fontSize="small" />
-                                        </ListItemIcon>
-                                        Logout
+                                        <div className="d-flex align-items-center">
+                                            <div className="userImg">
+                                                <span className="rounded-circle">
+                                                    <img src="https://mironcoder-hotash.netlify.app/images/avatar/01.webp" />
+                                                </span>
+                                            </div>
+
+                                            <div className="info">
+                                                <h4><span><b>Mahmudul</b> added to his favorite list
+                                                    <b>Leather belt steve madden</b></span></h4>
+                                            </div>
+                                        </div>
                                     </MenuItem>
                                 </Menu>
                             </div>
