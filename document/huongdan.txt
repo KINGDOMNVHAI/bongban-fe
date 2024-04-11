@@ -125,3 +125,8 @@ Cho cả nút Notification và menu vào 1 <div>
 
 1:07:30
 Xóa .myAcc trong CSS
+
+1:18:50
+Copy thêm nhiều MenuItem
+
+1:20:55
