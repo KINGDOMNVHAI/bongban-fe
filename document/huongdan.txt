@@ -33,5 +33,41 @@ Video 2
 5:37
 Thêm đường dẫn đến <Dashboard />
 
-6:40
-T
+6:10
+Tạo components -> Header -> index.js
+const Header = () => {
+    return (
+        <>
+            <header></header>
+        </>
+    )
+}
+export default Header;
+
+7:00
+Thêm <Header/> vào App.js
+
+10:22
+Thêm CSS vào App.css
+
+
+11:00
+Tạo Logo, CSS
+App.css
+header {width: 100%; height: 70px; background: #FFF;}
+header .row {margin: 0px !important;}
+header .logo {text-decoration: none;}
+header .logo img{width: 45px;}
+header .logo span{color: #292929; font-weight: 800; font-size: 24px;}
+
+
+16:15
+Thêm Material UI.
+Header thêm
+import Button from '@mui/material/Button';
+import { MdMenuOpen, MdOutlineMenu } from "react-icons/md";
+
+
+
+22:20
+Làm nút search
