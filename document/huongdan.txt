@@ -73,10 +73,10 @@ Làm nút search
 28:00
 Tạo các nút khác
 <div className="col-sm-7 d-flex align-items-center justify-content-end part3 pl-4">
-    <Button className="rounded-circle"><MdOutlineLightMode/></Button>
-    <Button className="rounded-circle"><IoCartOutline/></Button>
-    <Button className="rounded-circle"><MdOutlineMailOutline/></Button>
-    <Button className="rounded-circle"><FaRegBell/></Button>
+    <Button className="rounded-circle mr-3"><MdOutlineLightMode/></Button>
+    <Button className="rounded-circle mr-3"><IoCartOutline/></Button>
+    <Button className="rounded-circle mr-3"><MdOutlineMailOutline/></Button>
+    <Button className="rounded-circle mr-3"><FaRegBell/></Button>
 </div>
 
 38:20
@@ -84,3 +84,41 @@ Tạo userInfo (chữ kế bên avatar)
 
 40:00
 Chỉnh sửa kích thước chữ
+
+44:00
+Lên material ui xem cách làm select, list, account menu...
+Vào phần account menu copy đoạn code bên dưới mang vào Header
+
+const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+      setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+      setAnchorEl(null);
+    };
+
+Copy phần import và tất cả phần trong thẻ <Menu></Menu>
+
+Sau đó xóa PaperProps, sửa menu cho giống mẫu.
+
+55:50
+Tương tự, làm menu cho nút Notification
+Copy menu của Account, đặt bên dưới nút <Button className="rounded-circle" onClick={handleOpenNotificationsDrop}><FaRegBell/></Button>
+Sửa anchorEl={isOpenNotificationDrop}
+open={openNotifications}
+
+
+Kéo lên trên, tạo
+const [isOpenNotificationDrop, setisOpenNotificationDrop] = useState(false);
+const openMyAcc = Boolean(anchorEl);
+const openNotifications = Boolean(isOpenNotificationDrop);
+const handleOpenNotificationsDrop = () => {
+    setisOpenNotificationDrop(true);
+};
+const handleCloseNotificationsDrop = () => {
+    setisOpenNotificationDrop(false);
+};
+
+58:10
+Cho cả nút Notification và menu vào 1 <div>

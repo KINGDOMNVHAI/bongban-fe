@@ -32,3 +32,8 @@ header button.rounded-circle:hover svg {color: #0858f7 !important; transition: a
 .myAcc .userInfo {padding-left: 10px;}
 .myAcc .userInfo h4 {font-size: 15px; font-weight: 600; margin-bottom: 0px; color: #292929;}
 .myAcc .userInfo p {margin-top: 0px; font-size: 12px; color: #000; opacity: 0.7;}
+
+#account-menu li {font-size: 14px !important; padding: 12px 15px !important;}
+#account-menu li svg {font-size: 20px !important;}
+
+#notifications .MuiPaper-elevation {right: 10% !important; left: auto !important; top: 12% !important; width: 300px !important;}
