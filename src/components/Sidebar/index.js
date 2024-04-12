@@ -47,7 +47,7 @@ const Sidebar = () => {
                     </li>
                     <li>
                         <Link to="/">
-                            <Button className={`w-100 ${activeTab === 2 ? 'active' : ''}`}>
+                            <Button className={`w-100 ${activeTab === 2 ? 'active' : ''}`} onClick={() => isOpenSubmenu(2)}>
                             <span className='icon'><FaCartArrowDown/></span>
                             Orders
                             <span className='arrow'><FaAngleRight/></span>
@@ -56,7 +56,7 @@ const Sidebar = () => {
                     </li>
                     <li>
                         <Link to="/">
-                            <Button className={`w-100 ${activeTab === 2 ? 'active' : ''}`}>
+                            <Button className={`w-100 ${activeTab === 3 ? 'active' : ''}`} onClick={() => isOpenSubmenu(3)}>
                             <span className='icon'><MdMessage/></span>
                             Messages
                             <span className='arrow'><FaAngleRight/></span>
@@ -64,42 +64,42 @@ const Sidebar = () => {
                         </Link>
                     </li>
                     <li>
-                        <Button className={`w-100 ${activeTab === 3 ? 'active' : ''}`}>
+                        <Button className={`w-100 ${activeTab === 4 ? 'active' : ''}`} onClick={() => isOpenSubmenu(4)}>
                         <span className='icon'><FaBell/></span>
                         Notifications
                         <span className='arrow'><FaAngleRight/></span>
                         </Button>
                     </li>
                     <li>
-                        <Button className={`w-100 ${activeTab === 4 ? 'active' : ''}`}>
+                        <Button className={`w-100 ${activeTab === 5 ? 'active' : ''}`} onClick={() => isOpenSubmenu(5)}>
                         <span className='icon'><IoIosSettings/></span>
                         Settings
                         <span className='arrow'><FaAngleRight/></span>
                         </Button>
                     </li>
                     <li>
-                        <Button className={`w-100 ${activeTab === 5 ? 'active' : ''}`}>
+                        <Button className={`w-100 ${activeTab === 6 ? 'active' : ''}`} onClick={() => isOpenSubmenu(6)}>
                         <span className='icon'><FaLock/></span>
                         Authentication
                         <span className='arrow'><FaAngleRight/></span>
                         </Button>
                     </li>
                     <li>
-                        <Button className={`w-100 ${activeTab === 6 ? 'active' : ''}`}>
+                        <Button className={`w-100 ${activeTab === 7 ? 'active' : ''}`} onClick={() => isOpenSubmenu(7)}>
                         <span className='icon'><FaUserCircle/></span>
                         User
                         <span className='arrow'><FaAngleRight/></span>
                         </Button>
                     </li>
                     <li>
-                        <Button className={`w-100 ${activeTab === 7 ? 'active' : ''}`}>
+                        <Button className={`w-100 ${activeTab === 8 ? 'active' : ''}`} onClick={() => isOpenSubmenu(8)}>
                         <span className='icon'><MdViewKanban/></span>
                         Kanban
                         <span className='arrow'><FaAngleRight/></span>
                         </Button>
                     </li>
                     <li>
-                        <Button className={`w-100 ${activeTab === 8 ? 'active' : ''}`}>
+                        <Button className={`w-100 ${activeTab === 9 ? 'active' : ''}`} onClick={() => isOpenSubmenu(9)}>
                         <span className='icon'><FaGripVertical /></span>
                         Table Tennis
                         <span className='arrow'><FaAngleRight/></span>
