@@ -8,10 +8,12 @@ import { useState } from "react";
 
 const Sidebar = () => {
 
-    const [activeTab, setActiveTab] = useState(null);
+    const [activeTab, setActiveTab] = useState(0);
+    const [isToggleSubmenu, setIsToggleSubmenu] = useState(false);
 
     const isOpenSubmenu = (index) => {
         setActiveTab(index);
+        setIsToggleSubmenu(!isToggleSubmenu);
     }
 
     return (
@@ -20,21 +22,21 @@ const Sidebar = () => {
                 <ul>
                     <li>
                         <Link to="/">
-                            <Button className={`w-100 ${activeTab === 0 ? 'active' : ''}`}>
+                            <Button className={`w-100 ${activeTab === 0 ? 'active' : ''}`} onClick={() => isOpenSubmenu(0)}>
                             <span className='icon'><MdDashboard/></span>
                             Dashboard
                             <span className='arrow'><FaAngleRight/></span>
                             </Button>
-                            </Link>
+                        </Link>
                     </li>
                     <li>
                         <Link to="/">
                             <Button className={`w-100 ${activeTab === 1 ? 'active' : ''}`} onClick={() => isOpenSubmenu(1)}>
-                            <span className='icon'><FaProductHunt/></span>
-                            Products
-                            <span className='arrow'><FaAngleRight/></span>
+                                <span className='icon'><FaProductHunt/></span>
+                                Products
+                                <span className='arrow'><FaAngleRight/></span>
                             </Button>
-                            <div className={`submenuWrapper ${activeTab === 1 ? 'colapse' : 'colapsed'}`}>
+                            <div className={`submenuWrapper ${activeTab === 1 && isToggleSubmenu === true ? 'collapse' : 'collapsed'}`}>
                                 <ul className="submenu">
                                     <li><Link to="#">Product List</Link></li>
                                     <li><Link to="#">Product View</Link></li>

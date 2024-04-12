@@ -220,6 +220,10 @@ const isOpenSubmenu = (index) => {
 }
 
 Bấm vào nút, giá trị sẽ được đưa vào activeTab thông qua setActiveTab()
+collapse sẽ làm submenu hiện ra hay ẩn đi.
+
+53:45
+Làm tương tự với các nút khác
 
 ==============================================================
 Video 4: Dashboard
