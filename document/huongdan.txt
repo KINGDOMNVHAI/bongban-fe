@@ -139,13 +139,57 @@ Tạo nút View All cho Notification
 
 
 ==============================================================
-Video 3: menu dọc
+Video 3: menu Sidebar
 
+Tạo src -> components -> Sidebar
 
+App.js
+function App() {
+  return (
+    <BrowserRouter>
+      <Header/>
+      <div className='main d-flex'>
+        <div className='sidebarWrapper'>
+          <Sidebar/>
+        </div>
 
+        <div className='content'>
+          <Routes>
+            <Route path="/" exact={true} element={<Dashboard />} />
+            <Route path="/dashboard" exact={true} element={<Dashboard />} />
+          </Routes>
+        </div>
+      </div>
+    </BrowserRouter>
+  );
+}
 
+9:20
+Tạo nút Dashboard
+Vào material ui, xem Button
 
+10:00
+Tạo icon cho menu
+<li>
+    <Button className='w-100'>
+    <span className='icon'><RxDashboard/></span>
+    Dashboard
+    <span className='arrow'><FaAngleRight/></span>
+    </Button>
+</li>
 
+12:45
+Thiết kế, sắp xếp nút và icon
+
+14:15
+Tách xa mũi tên qua bên phải
+.main .sidebarWrapper .sidebar ul li button .arrow {margin-left: auto;}
+
+16:40
+Copy paste thêm nhiều nút
+
+19:50
+button:hover
 
 ==============================================================
 Video 4: Dashboard
