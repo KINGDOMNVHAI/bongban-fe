@@ -69,7 +69,7 @@ const Header = () => {
 
                                 <Menu
                                     anchorEl={isOpenNotificationDrop}
-                                    className="notifications"
+                                    className="notifications dropdown_list"
                                     id="notifications"
                                     open={openNotifications}
                                     onClose={handleCloseNotificationsDrop}
@@ -82,194 +82,159 @@ const Header = () => {
                                         <h4>Order (12)</h4>
                                     </div>
                                     <Divider className="mb-1" />
-                                    <MenuItem onClick={handleCloseNotificationsDrop}>
-                                        <div className="d-flex align-items-center">
-                                            <div>
-                                                <div className="userImg">
-                                                    <span className="rounded-circle">
-                                                        <img src="https://mironcoder-hotash.netlify.app/images/avatar/01.webp" />
-                                                    </span>
+
+                                    <div className="scroll">
+                                        <MenuItem onClick={handleCloseNotificationsDrop}>
+                                            <div className="d-flex align-items-center">
+                                                <div>
+                                                    <div className="userImg">
+                                                        <span className="rounded-circle">
+                                                            <img src="https://mironcoder-hotash.netlify.app/images/avatar/01.webp" />
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <div className="dropdownInfo">
+                                                    <h4>
+                                                        <span>
+                                                            <b>Mahmudul</b> added to his favorite list <b>Leather belt steve madden</b>
+                                                        </span>
+                                                    </h4>
+                                                    <p className="text-sky mb-0">Few seconds ago</p>
                                                 </div>
                                             </div>
+                                        </MenuItem>
 
-                                            <div className="dropdownInfo">
-                                                <h4>
-                                                    <span>
-                                                        <b>Mahmudul</b> added to his favorite list <b>Leather belt steve madden</b>
-                                                    </span>
-                                                </h4>
-                                                <p className="text-sky mb-0">Few seconds ago</p>
-                                            </div>
-                                        </div>
-                                    </MenuItem>
+                                        <MenuItem onClick={handleCloseNotificationsDrop}>
+                                            <div className="d-flex align-items-center">
+                                                <div>
+                                                    <div className="userImg">
+                                                        <span className="rounded-circle">
+                                                            <img src="https://mironcoder-hotash.netlify.app/images/avatar/01.webp" />
+                                                        </span>
+                                                    </div>
+                                                </div>
 
-                                    <MenuItem onClick={handleCloseNotificationsDrop}>
-                                        <div className="d-flex align-items-center">
-                                            <div>
-                                                <div className="userImg">
-                                                    <span className="rounded-circle">
-                                                        <img src="https://mironcoder-hotash.netlify.app/images/avatar/01.webp" />
-                                                    </span>
+                                                <div className="dropdownInfo">
+                                                    <h4>
+                                                        <span>
+                                                            <b>Mahmudul</b> added to his favorite list <b>Leather belt steve madden</b>
+                                                        </span>
+                                                    </h4>
+                                                    <p className="text-sky mb-0">Few seconds ago</p>
                                                 </div>
                                             </div>
+                                        </MenuItem>
 
-                                            <div className="dropdownInfo">
-                                                <h4>
-                                                    <span>
-                                                        <b>Mahmudul</b> added to his favorite list <b>Leather belt steve madden</b>
-                                                    </span>
-                                                </h4>
-                                                <p className="text-sky mb-0">Few seconds ago</p>
-                                            </div>
-                                        </div>
-                                    </MenuItem>
+                                        <MenuItem onClick={handleCloseNotificationsDrop}>
+                                            <div className="d-flex align-items-center">
+                                                <div>
+                                                    <div className="userImg">
+                                                        <span className="rounded-circle">
+                                                            <img src="https://mironcoder-hotash.netlify.app/images/avatar/01.webp" />
+                                                        </span>
+                                                    </div>
+                                                </div>
 
-                                    <MenuItem onClick={handleCloseNotificationsDrop}>
-                                        <div className="d-flex align-items-center">
-                                            <div>
-                                                <div className="userImg">
-                                                    <span className="rounded-circle">
-                                                        <img src="https://mironcoder-hotash.netlify.app/images/avatar/01.webp" />
-                                                    </span>
+                                                <div className="dropdownInfo">
+                                                    <h4>
+                                                        <span>
+                                                            <b>Mahmudul</b> added to his favorite list <b>Leather belt steve madden</b>
+                                                        </span>
+                                                    </h4>
+                                                    <p className="text-sky mb-0">Few seconds ago</p>
                                                 </div>
                                             </div>
+                                        </MenuItem>
 
-                                            <div className="dropdownInfo">
-                                                <h4>
-                                                    <span>
-                                                        <b>Mahmudul</b> added to his favorite list <b>Leather belt steve madden</b>
-                                                    </span>
-                                                </h4>
-                                                <p className="text-sky mb-0">Few seconds ago</p>
-                                            </div>
-                                        </div>
-                                    </MenuItem>
+                                        <MenuItem onClick={handleCloseNotificationsDrop}>
+                                            <div className="d-flex align-items-center">
+                                                <div>
+                                                    <div className="userImg">
+                                                        <span className="rounded-circle">
+                                                            <img src="https://mironcoder-hotash.netlify.app/images/avatar/01.webp" />
+                                                        </span>
+                                                    </div>
+                                                </div>
 
-                                    <MenuItem onClick={handleCloseNotificationsDrop}>
-                                        <div className="d-flex align-items-center">
-                                            <div>
-                                                <div className="userImg">
-                                                    <span className="rounded-circle">
-                                                        <img src="https://mironcoder-hotash.netlify.app/images/avatar/01.webp" />
-                                                    </span>
+                                                <div className="dropdownInfo">
+                                                    <h4>
+                                                        <span>
+                                                            <b>Mahmudul</b> added to his favorite list <b>Leather belt steve madden</b>
+                                                        </span>
+                                                    </h4>
+                                                    <p className="text-sky mb-0">Few seconds ago</p>
                                                 </div>
                                             </div>
+                                        </MenuItem>
 
-                                            <div className="dropdownInfo">
-                                                <h4>
-                                                    <span>
-                                                        <b>Mahmudul</b> added to his favorite list <b>Leather belt steve madden</b>
-                                                    </span>
-                                                </h4>
-                                                <p className="text-sky mb-0">Few seconds ago</p>
-                                            </div>
-                                        </div>
-                                    </MenuItem>
+                                        <MenuItem onClick={handleCloseNotificationsDrop}>
+                                            <div className="d-flex align-items-center">
+                                                <div>
+                                                    <div className="userImg">
+                                                        <span className="rounded-circle">
+                                                            <img src="https://mironcoder-hotash.netlify.app/images/avatar/01.webp" />
+                                                        </span>
+                                                    </div>
+                                                </div>
 
-                                    <MenuItem onClick={handleCloseNotificationsDrop}>
-                                        <div className="d-flex align-items-center">
-                                            <div>
-                                                <div className="userImg">
-                                                    <span className="rounded-circle">
-                                                        <img src="https://mironcoder-hotash.netlify.app/images/avatar/01.webp" />
-                                                    </span>
+                                                <div className="dropdownInfo">
+                                                    <h4>
+                                                        <span>
+                                                            <b>Mahmudul</b> added to his favorite list <b>Leather belt steve madden</b>
+                                                        </span>
+                                                    </h4>
+                                                    <p className="text-sky mb-0">Few seconds ago</p>
                                                 </div>
                                             </div>
+                                        </MenuItem>
 
-                                            <div className="dropdownInfo">
-                                                <h4>
-                                                    <span>
-                                                        <b>Mahmudul</b> added to his favorite list <b>Leather belt steve madden</b>
-                                                    </span>
-                                                </h4>
-                                                <p className="text-sky mb-0">Few seconds ago</p>
-                                            </div>
-                                        </div>
-                                    </MenuItem>
+                                        <MenuItem onClick={handleCloseNotificationsDrop}>
+                                            <div className="d-flex align-items-center">
+                                                <div>
+                                                    <div className="userImg">
+                                                        <span className="rounded-circle">
+                                                            <img src="https://mironcoder-hotash.netlify.app/images/avatar/01.webp" />
+                                                        </span>
+                                                    </div>
+                                                </div>
 
-                                    <MenuItem onClick={handleCloseNotificationsDrop}>
-                                        <div className="d-flex align-items-center">
-                                            <div>
-                                                <div className="userImg">
-                                                    <span className="rounded-circle">
-                                                        <img src="https://mironcoder-hotash.netlify.app/images/avatar/01.webp" />
-                                                    </span>
+                                                <div className="dropdownInfo">
+                                                    <h4>
+                                                        <span>
+                                                            <b>Mahmudul</b> added to his favorite list <b>Leather belt steve madden</b>
+                                                        </span>
+                                                    </h4>
+                                                    <p className="text-sky mb-0">Few seconds ago</p>
                                                 </div>
                                             </div>
+                                        </MenuItem>
 
-                                            <div className="dropdownInfo">
-                                                <h4>
-                                                    <span>
-                                                        <b>Mahmudul</b> added to his favorite list <b>Leather belt steve madden</b>
-                                                    </span>
-                                                </h4>
-                                                <p className="text-sky mb-0">Few seconds ago</p>
-                                            </div>
-                                        </div>
-                                    </MenuItem>
+                                        <MenuItem onClick={handleCloseNotificationsDrop}>
+                                            <div className="d-flex align-items-center">
+                                                <div>
+                                                    <div className="userImg">
+                                                        <span className="rounded-circle">
+                                                            <img src="https://mironcoder-hotash.netlify.app/images/avatar/01.webp" />
+                                                        </span>
+                                                    </div>
+                                                </div>
 
-                                    <MenuItem onClick={handleCloseNotificationsDrop}>
-                                        <div className="d-flex align-items-center">
-                                            <div>
-                                                <div className="userImg">
-                                                    <span className="rounded-circle">
-                                                        <img src="https://mironcoder-hotash.netlify.app/images/avatar/01.webp" />
-                                                    </span>
+                                                <div className="dropdownInfo">
+                                                    <h4>
+                                                        <span>
+                                                            <b>Mahmudul</b> added to his favorite list <b>Leather belt steve madden</b>
+                                                        </span>
+                                                    </h4>
+                                                    <p className="text-sky mb-0">Few seconds ago</p>
                                                 </div>
                                             </div>
+                                        </MenuItem>
+                                    </div>
 
-                                            <div className="dropdownInfo">
-                                                <h4>
-                                                    <span>
-                                                        <b>Mahmudul</b> added to his favorite list <b>Leather belt steve madden</b>
-                                                    </span>
-                                                </h4>
-                                                <p className="text-sky mb-0">Few seconds ago</p>
-                                            </div>
-                                        </div>
-                                    </MenuItem>
-
-                                    <MenuItem onClick={handleCloseNotificationsDrop}>
-                                        <div className="d-flex align-items-center">
-                                            <div>
-                                                <div className="userImg">
-                                                    <span className="rounded-circle">
-                                                        <img src="https://mironcoder-hotash.netlify.app/images/avatar/01.webp" />
-                                                    </span>
-                                                </div>
-                                            </div>
-
-                                            <div className="dropdownInfo">
-                                                <h4>
-                                                    <span>
-                                                        <b>Mahmudul</b> added to his favorite list <b>Leather belt steve madden</b>
-                                                    </span>
-                                                </h4>
-                                                <p className="text-sky mb-0">Few seconds ago</p>
-                                            </div>
-                                        </div>
-                                    </MenuItem>
-
-                                    <MenuItem onClick={handleCloseNotificationsDrop}>
-                                        <div className="d-flex align-items-center">
-                                            <div>
-                                                <div className="userImg">
-                                                    <span className="rounded-circle">
-                                                        <img src="https://mironcoder-hotash.netlify.app/images/avatar/01.webp" />
-                                                    </span>
-                                                </div>
-                                            </div>
-
-                                            <div className="dropdownInfo">
-                                                <h4>
-                                                    <span>
-                                                        <b>Mahmudul</b> added to his favorite list <b>Leather belt steve madden</b>
-                                                    </span>
-                                                </h4>
-                                                <p className="text-sky mb-0">Few seconds ago</p>
-                                            </div>
-                                        </div>
-                                    </MenuItem>
+                                    <div className="pl-3 pr-3 pt-2 pb-1 w-100">
+                                        <Button className="btn-blue w-100">View all notifications</Button>
+                                    </div>
                                 </Menu>
                             </div>
 

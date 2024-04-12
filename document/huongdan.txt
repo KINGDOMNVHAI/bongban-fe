@@ -1,5 +1,5 @@
 Build a Complete React Admin Dashboard App | React, Material UI, Bootstrap 4, Light & Dark Mode
-https://www.youtube.com/watch?v=yaWtIus3UAM&list=PLhFBHuT4t3aApRKcTgTi3Sfu6zudkg7bW&index=2
+https://www.youtube.com/watch?v=zQ69VCn_4Xw&list=PLhFBHuT4t3aApRKcTgTi3Sfu6zudkg7bW&index=3
 
 Video 1
 npx create-react-app pingpong
@@ -28,7 +28,7 @@ With styled-components: npm install @mui/material @mui/styled-engine-sc styled-c
 Icons: npm install @mui/icons-material
 
 ==============================================================
-Video 2
+Video 2: navbar
 
 5:37
 Thêm đường dẫn đến <Dashboard />
@@ -130,3 +130,31 @@ Xóa .myAcc trong CSS
 Copy thêm nhiều MenuItem
 
 1:20:55
+Tạo scrollbar cho Notification
+<div className="scroll"> bao quanh các MenuItem
+
+1:25:06
+Tạo nút View All cho Notification
+
+
+
+==============================================================
+Video 3: menu dọc
+
+
+
+
+
+
+
+==============================================================
+Video 4: Dashboard
+
+
+
+
+
+
+
+==============================================================
+Video 5: danh sách
