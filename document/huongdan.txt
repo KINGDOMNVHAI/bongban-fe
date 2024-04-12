@@ -191,6 +191,15 @@ Copy paste thêm nhiều nút
 19:50
 button:hover
 
+25:00
+Tạo scroll cho sidebar
+
+27:30
+Khi hover vào sidebar, scrollbar xuất hiện. Bình thường thì không.
+.main .sidebarWrapper .sidebar::-webkit-scrollbar {width: 3px !important;}
+.main .sidebarWrapper .sidebar::-webkit-scrollbar-thumb {background: transparent !important;}
+.main .sidebarWrapper:hover .sidebar::-webkit-scrollbar {background: #0858f7 !important;}
+
 ==============================================================
 Video 4: Dashboard
 
