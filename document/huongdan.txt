@@ -200,6 +200,27 @@ Khi hover vào sidebar, scrollbar xuất hiện. Bình thường thì không.
 .main .sidebarWrapper .sidebar::-webkit-scrollbar-thumb {background: transparent !important;}
 .main .sidebarWrapper:hover .sidebar::-webkit-scrollbar {background: #0858f7 !important;}
 
+29:50
+Gắn Link cho menu
+
+36:15
+Tạo đường thẳng bên trái submenu
+.main .sidebarWrapper .sidebar ul .submenu li {width: 100%; list-style: none; border-left: 1px solid rgba(0, 0, 0, 0.1);} /* Create left line */
+
+41:30
+Tạo sự kiện isOpenSubmenu
+
+43:30
+Mỗi lần bấm nút, activeTab sẽ được gán 1 con số.
+<Button className={`w-100 ${activeTab === 0 ? 'active' : ''}`}>
+
+const [activeTab, setActiveTab] = useState(null);
+const isOpenSubmenu = (index) => {
+    setActiveTab(index)
+}
+
+Bấm vào nút, giá trị sẽ được đưa vào activeTab thông qua setActiveTab()
+
 ==============================================================
 Video 4: Dashboard
 
