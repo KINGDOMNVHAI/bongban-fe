@@ -272,5 +272,17 @@ Truyền icon vào từng box, thông qua props.
 33:30
 Truyền các icon khác
 
+37:00
+Tạo dòng Last Month
+<div className="d-flex align-items-center">
+    <h6 className="text-white mb-0 mt-0">Last Month</h6>
+    <span className="ml-auto toggleIcon"><HiDotsVertical/></span>
+</div>
+
+40:30
+Biến các dashboardBox thành các button
+
+41:30
+
 ==============================================================
 Video 5: danh sách
