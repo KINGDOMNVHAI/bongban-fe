@@ -100,10 +100,16 @@ const Sidebar = () => {
                     </li>
                     <li>
                         <Button className={`w-100 ${activeTab === 9 ? 'active' : ''}`} onClick={() => isOpenSubmenu(9)}>
-                        <span className='icon'><FaGripVertical/></span>
-                        Table Tennis
-                        <span className='arrow'><FaAngleRight/></span>
+                            <span className='icon'><FaGripVertical/></span>
+                            Table Tennis
+                            <span className='arrow'><FaAngleRight/></span>
                         </Button>
+                        <div className={`submenuWrapper ${activeTab === 9 && isToggleSubmenu === true ? 'collapsed' : 'collapse'}`}>
+                            <ul className="submenu">
+                                <li><Link to="/table-tennis">List</Link></li>
+                                <li><Link to="#">Product View</Link></li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
 

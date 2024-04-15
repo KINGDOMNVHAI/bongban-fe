@@ -1,9 +1,10 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import "./assets/css/bootstrap.min.css"
 import './App.css';
-import Dashboard from './pages/Dashboard';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
+import Dashboard from './pages/Dashboard';
+import TableTennis from './pages/TableTennis';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Routes>
             <Route path="/" exact={true} element={<Dashboard />} />
             <Route path="/dashboard" exact={true} element={<Dashboard />} />
+            <Route path="/table-tennis" exact={true} element={<TableTennis />} />
           </Routes>
         </div>
       </div>

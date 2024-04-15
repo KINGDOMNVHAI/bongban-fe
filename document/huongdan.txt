@@ -248,5 +248,29 @@ Vào file Dashboard -> index.js
 9:30
 Tạo 4 ô trong Dashboard
 
+13:20
+Tạo file pages -> Dashboard -> components -> dashboardBox.js
+
+16:00
+Tạo màu cho dashboardBox
+Nhập vào color={["#1da256","#48d483"]}
+color truyền vào dashboardBox.js dưới dạng props
+
+31:00
+Truyền icon vào từng box, thông qua props.
+<div className="ml-auto">
+    {
+        props.icon ?
+        <span className="icon">
+            {props.icon ? props.icon : ''}
+        </span>
+        :
+        ''
+    }
+</div>
+
+33:30
+Truyền các icon khác
+
 ==============================================================
 Video 5: danh sách
