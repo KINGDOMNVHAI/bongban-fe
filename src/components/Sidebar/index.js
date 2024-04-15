@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import { FaProductHunt, FaLock, FaUserCircle } from "react-icons/fa";
 import { FaAngleRight, FaCartArrowDown, FaBell, FaGripVertical } from "react-icons/fa6";
 import { MdDashboard, MdMessage, MdViewKanban } from "react-icons/md";
-import { IoIosSettings } from "react-icons/io";
+import { IoIosSettings, IoMdLogOut } from "react-icons/io";
 import { useState } from "react";
 
 const Sidebar = () => {
@@ -31,12 +31,12 @@ const Sidebar = () => {
                     </li>
                     <li>
                         <Link to="/">
-                            <Button className={`w-100 ${activeTab === 1 ? 'active' : ''}`} onClick={() => isOpenSubmenu(1)}>
+                            <Button className={`w-100 ${activeTab === 1 && isToggleSubmenu === true ? 'active' : ''}`} onClick={() => isOpenSubmenu(1)}>
                                 <span className='icon'><FaProductHunt/></span>
                                 Products
                                 <span className='arrow'><FaAngleRight/></span>
                             </Button>
-                            <div className={`submenuWrapper ${activeTab === 1 && isToggleSubmenu === true ? 'collapse' : 'collapsed'}`}>
+                            <div className={`submenuWrapper ${activeTab === 1 && isToggleSubmenu === true ? 'collapsed' : 'collapse'}`}>
                                 <ul className="submenu">
                                     <li><Link to="#">Product List</Link></li>
                                     <li><Link to="#">Product View</Link></li>
@@ -58,7 +58,7 @@ const Sidebar = () => {
                         <Link to="/">
                             <Button className={`w-100 ${activeTab === 3 ? 'active' : ''}`} onClick={() => isOpenSubmenu(3)}>
                             <span className='icon'><MdMessage/></span>
-                            Messages
+                            메시지
                             <span className='arrow'><FaAngleRight/></span>
                             </Button>
                         </Link>
@@ -100,12 +100,18 @@ const Sidebar = () => {
                     </li>
                     <li>
                         <Button className={`w-100 ${activeTab === 9 ? 'active' : ''}`} onClick={() => isOpenSubmenu(9)}>
-                        <span className='icon'><FaGripVertical /></span>
+                        <span className='icon'><FaGripVertical/></span>
                         Table Tennis
                         <span className='arrow'><FaAngleRight/></span>
                         </Button>
                     </li>
                 </ul>
+
+                <div className="logoutWrapper">
+                    <div className="logoutBox">
+                        <Button variant="contained"><IoMdLogOut/>Logout</Button>
+                    </div>
+                </div>
             </div>
         </>
     )

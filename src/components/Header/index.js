@@ -44,7 +44,7 @@ const Header = () => {
                         <div className="col-sm-2 part1">
                             <Link to={'/'} className="d-flex align-items-center logo" >
                                 <img src={logo} className="ml-2" />
-                                <span className="ml-2">PING PONG</span>
+                                <span className="ml-2">탁구</span>
                             </Link>
                         </div>
 
