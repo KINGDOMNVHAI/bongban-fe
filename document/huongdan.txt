@@ -240,11 +240,13 @@ Xoay nút mũi tên khi click vào menu
 ==============================================================
 Video 4: Dashboard
 
+2:20
 
+4:05
+Vào file Dashboard -> index.js
 
-
-
-
+9:30
+Tạo 4 ô trong Dashboard
 
 ==============================================================
 Video 5: danh sách
