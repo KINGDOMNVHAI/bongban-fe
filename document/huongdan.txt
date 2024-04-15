@@ -283,6 +283,9 @@ Tạo dòng Last Month
 Biến các dashboardBox thành các button
 
 41:30
+Tạo các hình ảnh TrendingUp và TrendingDown đằng sau background
+
+48:50
 
 ==============================================================
 Video 5: danh sách
