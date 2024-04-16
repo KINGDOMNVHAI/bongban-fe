@@ -286,6 +286,20 @@ Biến các dashboardBox thành các button
 Tạo các hình ảnh TrendingUp và TrendingDown đằng sau background
 
 48:50
+https://mui.com/material-ui/react-menu/
+Tìm các menu được mở từ nút 3 chấm.
+
+56:40
+Thiết kế box bên phải
+
+1:00:30
+Thiết kế nội dung box bên phải
+
+1:05:00
+Điền số liệu vào box bên phải
+
+1:05:50
+Chart in React
 
 ==============================================================
 Video 5: danh sách
@@ -321,3 +335,6 @@ Tạo nút action, edit, delete
     <Button className="success" color="success"><FaPencilAlt/></Button>
     <Button className="error" color="error"><MdDelete/></Button>
 </div>
+
+29:00
+Tạo class v-align

@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { IoMdCart } from "react-icons/io";
+import { IoMdCart, IoIosTimer } from "react-icons/io";
+import { HiDotsVertical } from "react-icons/hi";
 import { FaUserCircle, FaEye, FaPencilAlt } from "react-icons/fa"
 import { MdShoppingBag, MdDelete } from "react-icons/md";
 import { GiStarsStack } from "react-icons/gi";
 
-import { MenuItem, Select, FormControl, Button } from "@mui/material/";
-// import { FormHelperText } from "@mui/material/FormHelperText";
+import { Menu, MenuItem, Select, FormControl, Button } from "@mui/material/";
 
 import DashboardBox from "./components/dashboardBox";
 
@@ -41,8 +41,45 @@ const Dashboard = () => {
                 </div>
 
                 <div className="col-md-4 pl-0">
-                    <div className="box">
+                    <div className="box graphBox">
+                        <div className="d-flex align-items-center w-100 bottomEle">
+                            <h6 className="text-white mb-0 mt-0">Total Sales</h6>
+                            <div className="ml-auto">
+                                <Button className="ml-auto toggleIcon" onClick={handleClick}><HiDotsVertical/></Button>
+                            </div>
 
+                            <Menu
+                                className="dropdown_menu"
+                                MenuListProps={{
+                                    'aria-labelledby': 'long-button',
+                                }}
+                                anchorEl={anchorEl}
+                                open={open}
+                                onClose={handleClose}
+                                PaperProps={{
+                                    style: {
+                                        maxHeight: ITEM_HEIGHT * 4.5,
+                                        width: '20ch',
+                                    },
+                                }}
+                            >
+                                <MenuItem onClick={handleClose}>
+                                    <IoIosTimer/> Last Day
+                                </MenuItem>
+                                <MenuItem onClick={handleClose}>
+                                    <IoIosTimer/> Last Week
+                                </MenuItem>
+                                <MenuItem onClick={handleClose}>
+                                    <IoIosTimer/> Last Month
+                                </MenuItem>
+                                <MenuItem onClick={handleClose}>
+                                    <IoIosTimer/> Last Year
+                                </MenuItem>
+                            </Menu>
+                        </div>
+
+                        <h3 className="text-white font-weight-bold">$3,787,681.00</h3>
+                        <p>$3,578.90 in last month</p>
                     </div>
                 </div>
             </div>
@@ -91,7 +128,7 @@ const Dashboard = () => {
                 </div>
 
                 <div className="table-responsive mt-3">
-                    <table className="table table-bordered">
+                    <table className="table table-bordered v-align">
                         <thead className="thead-dark">
                             <tr>
                                 <th>UID</th>

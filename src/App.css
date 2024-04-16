@@ -104,8 +104,8 @@ header button.rounded-circle:hover svg {color: #0858f7 !important; transition: a
 
 .dashboardBoxWrapper {gap: 20px; width: 100%; flex-wrap: wrap;}
 .dashboardBoxWrapper .dashboardBox {width: 48%; height: 170px; border-radius: 10px; overflow: hidden; padding: 20px;
-  display: flex; flex-direction: column; justify-content: space-around; text-align: left !important; color: #FFF}
-.dashboardBoxWrapper .dashboardBox .col1 h4 {font-size: 16px; font-weight: 500;}
+  display: flex; flex-direction: column; justify-content: space-around; text-align: left !important; color: #FFF; text-transform: capitalize !important;}
+.dashboardBoxWrapper .dashboardBox .col1 h4 {font-size: 16px; font-weight: 600;}
 .dashboardBoxWrapper .dashboardBox .col1 span {font-size: 35px !important; font-weight: bold; line-height: 45px;}
 .dashboardBoxWrapper .dashboardBox .icon {display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 10px;
   background-image: linear-gradient(to bottom right, rgba(0,0,0,0.0), rgba(0,0,0,0.2));}
@@ -116,15 +116,30 @@ header button.rounded-circle:hover svg {color: #0858f7 !important; transition: a
 .dashboardBoxWrapper .dashboardBox .chart {opacity: 0.1; position: absolute; bottom: 20px; left: 20px;}
 .dashboardBoxWrapper .dashboardBox .chart svg {font-size: 110px; color: #000;}
 .dashboardBoxWrapper .dashboardBox .bottomEle {position: relative; top: 25px}
-.dashboardBoxWrapperRow .box {width: 100%; height: 100%; background: #CCC;}
+.dashboardBoxWrapperRow .box {width: 100%; height: 100%;}
+
+.dashboardBoxWrapper .dashboardBox .MuiButtonBase-root svg {color: #000 !important; font-size: 17px; margin-right: 10px !important;}
+
+.dropdown_menu .MuiButtonBase-root svg {margin-right: 10px !important;}
+
+.graphBox {background-image: linear-gradient(#1e5dd0,#2a6ff7); border-radius: 10px; padding: 25px;}
+
+.graphBox h4 {font-size: 16px; font-weight: 600;}
+.graphBox p {font-size: 13px; color: #FFF; opacity: 0.7;}
+
+.toggleIcon {font-size: 22px; color: rgba(0,0,0,0.5); cursor: pointer;
+  min-width: 40px !important; width: 40px !important; height: 40px !important; border-radius: 50% !important;}
+.toggleIcon svg {color: #FFF !important; font-size: 20px !important; opacity: 1 !important;}
 
 .cardFilters .col-md-3 h4 {font-size: 16px; font-weight: 600; text-transform: capitalize; color: #403e57;}
 
 h1, h2, h3, h4, h5, h6 {color: #403e57;}
 .table .thead-dark th {background-color: #1866ee !important; border-color: rgba(255, 255, 255, 0.1) !important; font-size: 13px !important;}
 .table tbody td {font-size: 13px !important; color: #403e57; font-weight: 500;}
-.table tbody .actions button {min-width: 32px !important; width: 32px !important; height: 32px !important;}
-.table tbody .actions button.secondary {background: rgba(203, 60, 231, 0.1) !important;}
-.table tbody .actions button.success {background: rgba(26, 159, 83, 0.1) !important;}
-.table tbody .actions button.error {background: rgba(241, 17, 51, 0.1) !important;}
+.table tbody .actions button {min-width: 32px !important; width: 32px !important; height: 32px !important; margin: 0px 3px !important;}
+.table tbody .actions button.secondary {background: rgba(203, 60, 231, 0.2) !important;}
+.table tbody .actions button.success {background: rgba(26, 159, 83, 0.2) !important;}
+.table tbody .actions button.error {background: rgba(241, 17, 51, 0.2) !important;}
 .table tbody .actions button svg {font-size: 32px !important;}
+
+.table .v-align td {vertical-align: middle !important;}
