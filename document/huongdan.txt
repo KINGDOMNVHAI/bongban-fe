@@ -1,5 +1,5 @@
 Build a Complete React Admin Dashboard App | React, Material UI, Bootstrap 4, Light & Dark Mode
-https://www.youtube.com/watch?v=rW6q7-Ea2VY&list=PLhFBHuT4t3aApRKcTgTi3Sfu6zudkg7bW&index=5
+https://www.youtube.com/live/DTuIYWvgv4k?si=XQkJWR8vnvXbwDWI&t=3206
 
 Video 1
 npx create-react-app pingpong
@@ -300,6 +300,46 @@ Thiết kế nội dung box bên phải
 
 1:05:50
 Chart in React
+npm install --save react-google-charts
+
+export const data = [
+    ["Year", "Sales", "Expenses"],
+    ["2013", 1000, 400],
+    ["2014", 1170, 460],
+    ["2015", 660, 1120],
+    ["2016", 1030, 540],
+];
+
+export const options = {
+    title: "Company Performance",
+    hAxis: { title: "Year", titleTextStyle: {color: "#333" }},
+    vAxis: { minValue: 0 },
+    chartArea: { width: "50%", height: "70%"},
+};
+
+<Chart
+    chartType="AreaChart"
+    width="100%"
+    height="200px"
+    data={data}
+    options={options}
+/>
+
+1:09:15
+Remove background Google Chart
+'backgroundColor': 'transparent'
+
+1:10:30
+set color in Google Chart text React
+legendTextStyle: {color: '#FFF'},
+titleTextStyle: {color: '#FFF'},
+hAxis: {color: "#FFF"},
+
+1:14:25
+Remove margin padding in Google Chart in ReactJS
+
+1:16:00
+Tạo tiêu đề danh sách
 
 ==============================================================
 Video 5: danh sách

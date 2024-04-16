@@ -1,13 +1,32 @@
 import { useState } from "react";
+import { Chart } from "react-google-charts";
+import { Menu, MenuItem, Select, FormControl, Button } from "@mui/material/";
+
 import { IoMdCart, IoIosTimer } from "react-icons/io";
 import { HiDotsVertical } from "react-icons/hi";
 import { FaUserCircle, FaEye, FaPencilAlt } from "react-icons/fa"
 import { MdShoppingBag, MdDelete } from "react-icons/md";
 import { GiStarsStack } from "react-icons/gi";
 
-import { Menu, MenuItem, Select, FormControl, Button } from "@mui/material/";
-
 import DashboardBox from "./components/dashboardBox";
+
+export const data = [
+    ["Year", "Sales", "Expenses"],
+    ["2013", 1000, 400],
+    ["2014", 1170, 460],
+    ["2015", 660, 1120],
+    ["2016", 1030, 540],
+];
+
+export const options = {
+    // title: "Company Performance",
+    // hAxis: { title: "Year", titleTextStyle: {color: "#333" }},
+    // vAxis: { minValue: 0 },
+
+
+    'backgroundColor': 'transparent',
+    'chartArea': { 'width': '100%', 'height': '100%'},
+};
 
 const Dashboard = () => {
 
@@ -80,11 +99,22 @@ const Dashboard = () => {
 
                         <h3 className="text-white font-weight-bold">$3,787,681.00</h3>
                         <p>$3,578.90 in last month</p>
+
+                        <Chart
+                            chartType="PieChart"
+                            width="100%"
+                            height="170px"
+                            data={data}
+                            options={options}
+                        />
+
                     </div>
                 </div>
             </div>
 
             <div className="card shadow border-0 p-3 mt-4">
+                <h3 className="hd">Best Selling Products</h3>
+
                 <h3 className="hd">SHOW BY</h3>
 
                 <div className="row cardFilters mt-3">

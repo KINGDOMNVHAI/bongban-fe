@@ -131,6 +131,11 @@ header button.rounded-circle:hover svg {color: #0858f7 !important; transition: a
   min-width: 40px !important; width: 40px !important; height: 40px !important; border-radius: 50% !important;}
 .toggleIcon svg {color: #FFF !important; font-size: 20px !important; opacity: 1 !important;}
 
+
+
+.card {margin: 20px 0px; border-radius: 10px;}
+.card .hd {font-size: 18px; font-weight: bold; color: #403e57;}
+
 .cardFilters .col-md-3 h4 {font-size: 16px; font-weight: 600; text-transform: capitalize; color: #403e57;}
 
 h1, h2, h3, h4, h5, h6 {color: #403e57;}
