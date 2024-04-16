@@ -119,3 +119,12 @@ header button.rounded-circle:hover svg {color: #0858f7 !important; transition: a
 .dashboardBoxWrapperRow .box {width: 100%; height: 100%; background: #CCC;}
 
 .cardFilters .col-md-3 h4 {font-size: 16px; font-weight: 600; text-transform: capitalize; color: #403e57;}
+
+h1, h2, h3, h4, h5, h6 {color: #403e57;}
+.table .thead-dark th {background-color: #1866ee !important; border-color: rgba(255, 255, 255, 0.1) !important; font-size: 13px !important;}
+.table tbody td {font-size: 13px !important; color: #403e57; font-weight: 500;}
+.table tbody .actions button {min-width: 32px !important; width: 32px !important; height: 32px !important;}
+.table tbody .actions button.secondary {background: rgba(203, 60, 231, 0.1) !important;}
+.table tbody .actions button.success {background: rgba(26, 159, 83, 0.1) !important;}
+.table tbody .actions button.error {background: rgba(241, 17, 51, 0.1) !important;}
+.table tbody .actions button svg {font-size: 32px !important;}

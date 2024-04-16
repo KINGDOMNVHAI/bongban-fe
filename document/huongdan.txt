@@ -305,3 +305,19 @@ Tạo nút Show By
 Copy Show By thành Category By
 
 8:00
+Copy labelId="demo-select-small-label" vào <Select> của Show By và Category By
+
+11:30
+Tạo bảng
+Tạo tiêu đề
+
+15:50
+Tạo các dòng nội dung
+
+18:45
+Tạo nút action, edit, delete
+<div className="actions d-flex align-items-center">
+    <Button className="secondary" color="secondary"><FaEye/></Button>
+    <Button className="success" color="success"><FaPencilAlt/></Button>
+    <Button className="error" color="error"><MdDelete/></Button>
+</div>
