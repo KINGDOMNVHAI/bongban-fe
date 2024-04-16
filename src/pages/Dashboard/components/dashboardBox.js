@@ -4,6 +4,7 @@ import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import TrendingDownIcon from '@mui/icons-material/TrendingDown';
 
 const DashboardBox = (props) => {
+
     return (
         <Button className="dashboardBox" style={{
             backgroundImage:`linear-gradient(to right, ${props.color?.[0]}, ${props.color?.[1]})`

@@ -1,5 +1,5 @@
 Build a Complete React Admin Dashboard App | React, Material UI, Bootstrap 4, Light & Dark Mode
-https://www.youtube.com/watch?v=FKj2xX2yhSo&list=PLhFBHuT4t3aApRKcTgTi3Sfu6zudkg7bW&index=4
+https://www.youtube.com/watch?v=rW6q7-Ea2VY&list=PLhFBHuT4t3aApRKcTgTi3Sfu6zudkg7bW&index=5
 
 Video 1
 npx create-react-app pingpong
@@ -289,3 +289,19 @@ Tạo các hình ảnh TrendingUp và TrendingDown đằng sau background
 
 ==============================================================
 Video 5: danh sách
+
+00:15
+Tạo tiêu đề danh sách
+
+2:50
+https://mui.com/material-ui/react-select/
+Tìm Basic select
+
+4:30
+Copy vào Dashboard -> index.js
+Tạo nút Show By
+
+6:50
+Copy Show By thành Category By
+
+8:00
