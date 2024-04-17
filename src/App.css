@@ -151,11 +151,12 @@ table.v-align td {vertical-align: middle !important;}
 
 .table td .old, .table td .new {display: block; width: 100%;}
 
+.table td .imgWrapper {width: 25%; flex: 0 0 25%;}
+/* .table td .imgWrapper .img {width: 25%; flex: 0 0 25%;} */
+.table td .info {width: 65%; flex: 0 0 65%;}
+
 table td .info h6 {overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px; font-weight: 600; margin-bottom: 5px;}
 
 .table td .info p {font-size: 13px; line-height: 18px; line-height: 18px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #5e5d72; margin-bottom: 0px;}
 
-.table.v-align td .productBox {width: 150px;}
-.table.v-align td .productBox .info {width: 100%;}
-
-.table td .imgWrapper {width: 50px;}
+.table.v-align td .productBox {width: 250px;}

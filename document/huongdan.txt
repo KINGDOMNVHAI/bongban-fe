@@ -384,3 +384,6 @@ Tạo discount
 
 38:00
 Hình ảnh kế bên giá
+
+45:30
+Tạo dòng mới

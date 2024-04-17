@@ -160,7 +160,7 @@ const Dashboard = () => {
                         <thead className="thead-dark">
                             <tr>
                                 <th>UID</th>
-                                <th>PRODUCT</th>
+                                <th style={{width:'300px'}}>PRODUCT</th>
                                 <th>CATEGORY</th>
                                 <th>BRAND</th>
                                 <th>PRICE</th>
@@ -176,13 +176,13 @@ const Dashboard = () => {
                             <tr>
                                 <td>#1</td>
                                 <td>
-                                    <div className="d-flex productBox">
+                                    <div className="d-flex align-items-center productBox">
                                         <div className="imgWrapper">
                                             <div className="img">
                                                 <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp" className="w-100" />
                                             </div>
                                         </div>
-                                        <div className="info">
+                                        <div className="info pl-0">
                                             <h6>Tops and skirt set for Female...</h6>
                                             <p>Women's exclusive summer Tops and skirt set for Female Top and skirt set...</p>
                                         </div>
@@ -191,8 +191,10 @@ const Dashboard = () => {
                                 <td>Womans</td>
                                 <td>richman</td>
                                 <td>
-                                    <del className="old">$21.00</del>
-                                    <span className="new text-danger">$19.00</span>
+                                    <div style={{width:'150px'}}>
+                                        <del className="old">$21.00</del>
+                                        <span className="new text-danger">$19.00</span>
+                                    </div>
                                 </td>
                                 <td>30</td>
                                 <td>4.9 (16)</td>
