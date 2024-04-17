@@ -1,5 +1,5 @@
 Build a Complete React Admin Dashboard App | React, Material UI, Bootstrap 4, Light & Dark Mode
-https://www.youtube.com/live/DTuIYWvgv4k?si=XQkJWR8vnvXbwDWI&t=3206
+https://www.youtube.com/watch?v=rW6q7-Ea2VY&list=PLhFBHuT4t3aApRKcTgTi3Sfu6zudkg7bW&index=5
 
 Video 1
 npx create-react-app pingpong
@@ -378,3 +378,9 @@ Tạo nút action, edit, delete
 
 29:00
 Tạo class v-align
+
+30:45
+Tạo discount
+
+38:00
+Hình ảnh kế bên giá

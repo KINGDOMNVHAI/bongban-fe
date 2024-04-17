@@ -138,13 +138,24 @@ header button.rounded-circle:hover svg {color: #0858f7 !important; transition: a
 
 .cardFilters .col-md-3 h4 {font-size: 16px; font-weight: 600; text-transform: capitalize; color: #403e57;}
 
-h1, h2, h3, h4, h5, h6 {color: #403e57;}
+h1, h2, h3, h4, h5, h6, p {color: #403e57;}
 .table .thead-dark th {background-color: #1866ee !important; border-color: rgba(255, 255, 255, 0.1) !important; font-size: 13px !important;}
-.table tbody td {font-size: 13px !important; color: #403e57; font-weight: 500;}
+.table tbody td {font-size: 14px !important; color: #2f2d3e; font-weight: 500;}
 .table tbody .actions button {min-width: 32px !important; width: 32px !important; height: 32px !important; margin: 0px 3px !important;}
 .table tbody .actions button.secondary {background: rgba(203, 60, 231, 0.2) !important;}
 .table tbody .actions button.success {background: rgba(26, 159, 83, 0.2) !important;}
 .table tbody .actions button.error {background: rgba(241, 17, 51, 0.2) !important;}
 .table tbody .actions button svg {font-size: 32px !important;}
 
-.table .v-align td {vertical-align: middle !important;}
+table.v-align td {vertical-align: middle !important;}
+
+.table td .old, .table td .new {display: block; width: 100%;}
+
+table td .info h6 {overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px; font-weight: 600; margin-bottom: 5px;}
+
+.table td .info p {font-size: 13px; line-height: 18px; line-height: 18px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #5e5d72; margin-bottom: 0px;}
+
+.table.v-align td .productBox {width: 150px;}
+.table.v-align td .productBox .info {width: 100%;}
+
+.table td .imgWrapper {width: 50px;}

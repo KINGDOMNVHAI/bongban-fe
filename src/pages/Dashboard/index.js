@@ -115,8 +115,6 @@ const Dashboard = () => {
             <div className="card shadow border-0 p-3 mt-4">
                 <h3 className="hd">Best Selling Products</h3>
 
-                <h3 className="hd">SHOW BY</h3>
-
                 <div className="row cardFilters mt-3">
                     <div className="col-md-3">
                         <h4>SHOW BY</h4>
@@ -177,10 +175,25 @@ const Dashboard = () => {
                         <tbody>
                             <tr>
                                 <td>#1</td>
-                                <td>Tops and skirt set for Female</td>
+                                <td>
+                                    <div className="d-flex productBox">
+                                        <div className="imgWrapper">
+                                            <div className="img">
+                                                <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp" className="w-100" />
+                                            </div>
+                                        </div>
+                                        <div className="info">
+                                            <h6>Tops and skirt set for Female...</h6>
+                                            <p>Women's exclusive summer Tops and skirt set for Female Top and skirt set...</p>
+                                        </div>
+                                    </div>
+                                </td>
                                 <td>Womans</td>
                                 <td>richman</td>
-                                <td>$21.00</td>
+                                <td>
+                                    <del className="old">$21.00</del>
+                                    <span className="new text-danger">$19.00</span>
+                                </td>
                                 <td>30</td>
                                 <td>4.9 (16)</td>
                                 <td>380</td>
