@@ -21,6 +21,8 @@ header .logo span{color: #292929; font-weight: 800; font-size: 24px;}
 header button.rounded-circle {min-width: 40px !important; width: 40px !important; height: 40px !important; background: #f0f5ff !important; color: #0858f7}
 header button.rounded-circle svg {color: #292929; font-size: 28px !important;}
 
+header .part2 {padding-left: 70px;}
+
 header button.rounded-circle:hover svg {color: #0858f7 !important; transition: all 0 2s ease-in-out;}
 
 .searchBox {width: 400px; height: 40px; background: #f0f5ff; border-radius: 6px; padding: 3px 15px;}
@@ -172,3 +174,17 @@ table td .info h6 {overflow: hidden; text-overflow: ellipsis; white-space: nowra
 .tableFooter p {font-size: 16px; font-weight: 500; margin-bottom: 0px;}
 
 .css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {background-color: #0858f7 !important;}
+
+
+
+
+
+
+/*
+.form .form-group {margin-bottom: 15px;}
+.form .form-group h6 {margin-bottom: 10px;}
+.form .form-group input {background: #fafafa; width: 100%; outline: none !important; border: 1px solid rgba(0,0,0,0.1) !important;
+  height: 40px; padding-left: 15px; border-radius: 5px; font-size: 14px;}
+.form .form-group textarea {height: 120px; padding-top: 15px;}
+
+*/

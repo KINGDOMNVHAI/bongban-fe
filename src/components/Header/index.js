@@ -24,6 +24,8 @@ const Header = () => {
     const openMyAcc = Boolean(anchorEl);
     const openNotifications = Boolean(isOpenNotificationDrop);
 
+    const [isLogin, setIsLogin] = useState(false);
+
     const context = useContext(MyContext);
 
     const handleOpenMyAccDrop = (event) => {
@@ -52,7 +54,7 @@ const Header = () => {
                             </Link>
                         </div>
 
-                        <div className="col-sm-3 d-flex align-items-center part2 pl-4">
+                        <div className="col-sm-3 d-flex align-items-center part2">
                             <Button
                                 className="rounded-circle mr-3"
                                 onClick={() => context.setIsToggleSidebar(!context.isToggleSidebar)}
@@ -243,50 +245,56 @@ const Header = () => {
                                 </Menu>
                             </div>
 
-                            <div className="myAccWrapper">
-                                <Button className="myAcc d-flex align-items-center" onClick={handleOpenMyAccDrop}>
-                                    <div className="userImg">
-                                        <span className="rounded-circle">
-                                            <img src="https://mironcoder-hotash.netlify.app/images/avatar/01.webp" />
-                                        </span>
-                                    </div>
+                            {
+                                isLogin !== true ? <Button className='btn-blue'>Sign In</Button>
+                                :
+                                <div className="myAccWrapper">
+                                    <Button className="myAcc d-flex align-items-center" onClick={handleOpenMyAccDrop}>
+                                        <div className="userImg">
+                                            <span className="rounded-circle">
+                                                <img src="https://mironcoder-hotash.netlify.app/images/avatar/01.webp" />
+                                            </span>
+                                        </div>
 
-                                    <div className="userInfo">
-                                        <h4>Hải</h4>
-                                        <p className="mb-0">@viethai</p>
-                                    </div>
-                                </Button>
+                                        <div className="userInfo">
+                                            <h4>Hải</h4>
+                                            <p className="mb-0">@viethai</p>
+                                        </div>
+                                    </Button>
 
-                                <Menu
-                                    anchorEl={anchorEl}
-                                    id="account-menu"
-                                    open={openMyAcc}
-                                    onClose={handleCloseMyAccDrop}
-                                    onClick={handleCloseMyAccDrop}
-                                    transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-                                    anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
-                                >
+                                    <Menu
+                                        anchorEl={anchorEl}
+                                        id="account-menu"
+                                        open={openMyAcc}
+                                        onClose={handleCloseMyAccDrop}
+                                        onClick={handleCloseMyAccDrop}
+                                        transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+                                        anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+                                    >
 
-                                    <MenuItem onClick={handleCloseMyAccDrop}>
-                                        <ListItemIcon>
-                                            <PersonAdd fontSize="small" />
-                                        </ListItemIcon>
-                                        My account
-                                    </MenuItem>
-                                    <MenuItem onClick={handleCloseMyAccDrop}>
-                                        <ListItemIcon>
-                                            <IoShieldHalfSharp />
-                                        </ListItemIcon>
-                                        Reset Password
-                                    </MenuItem>
-                                    <MenuItem onClick={handleCloseMyAccDrop}>
-                                        <ListItemIcon>
-                                            <Logout fontSize="small" />
-                                        </ListItemIcon>
-                                        Logout
-                                    </MenuItem>
-                                </Menu>
-                            </div>
+                                        <MenuItem onClick={handleCloseMyAccDrop}>
+                                            <ListItemIcon>
+                                                <PersonAdd fontSize="small" />
+                                            </ListItemIcon>
+                                            My account
+                                        </MenuItem>
+                                        <MenuItem onClick={handleCloseMyAccDrop}>
+                                            <ListItemIcon>
+                                                <IoShieldHalfSharp />
+                                            </ListItemIcon>
+                                            Reset Password
+                                        </MenuItem>
+                                        <MenuItem onClick={handleCloseMyAccDrop}>
+                                            <ListItemIcon>
+                                                <Logout fontSize="small" />
+                                            </ListItemIcon>
+                                            Logout
+                                        </MenuItem>
+                                    </Menu>
+                                </div>
+                            }
+
+
                         </div>
                     </div>
                 </div>

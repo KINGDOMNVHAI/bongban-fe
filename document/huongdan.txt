@@ -1,5 +1,6 @@
 Build a Complete React Admin Dashboard App | React, Material UI, Bootstrap 4, Light & Dark Mode
 https://www.youtube.com/watch?v=6FGnoMqSSLA&list=PLhFBHuT4t3aApRKcTgTi3Sfu6zudkg7bW&index=7
+Mẫu: https://dashboardreactapplication.netlify.app/
 
 Video 1
 npx create-react-app pingpong
@@ -439,14 +440,17 @@ Thêm class toggle mỗi khi click nút menu.
 11:36
 CSS cho toggle
 
-
-
-
-
-
 ==============================================================
 Video 7: đăng nhập
 
+3:25
+header .part3 {padding-left: 100px;}
+
+5:50
+Button Sign In
+Tạo const [isLogin, setIsLogin] = useState(false);
+isLogin !== true hiển thị nút Sign In
+Ngược lại, hiển thị avatar
 
 
 
