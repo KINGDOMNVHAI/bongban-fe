@@ -1,5 +1,5 @@
 Build a Complete React Admin Dashboard App | React, Material UI, Bootstrap 4, Light & Dark Mode
-https://www.youtube.com/watch?v=rW6q7-Ea2VY&list=PLhFBHuT4t3aApRKcTgTi3Sfu6zudkg7bW&index=5
+https://www.youtube.com/watch?v=CZdArmMnH14&list=PLhFBHuT4t3aApRKcTgTi3Sfu6zudkg7bW&index=6
 
 Video 1
 npx create-react-app pingpong
@@ -392,9 +392,46 @@ Tạo dòng mới
 Pagination
 
 ==============================================================
-Video 6: tiếp tục danh sách
+Video 6: nút menu ẩn/hiện
 
+2:30
+Showing 12 of 60 results
 
+3:50
+const MyContext = createContext();
+<MyContext.Provider>
+
+4:50
+Header index.js
+const context = useContext(MyContext);
+
+6:05 - 9:00
+const [isToggleSidebar, setIsToggleSidebar] = useState(false);
+
+const values = {
+  isToggleSidebar,
+  setIsToggleSidebar
+};
+
+useEffect(() => {
+  alert(isToggleSidebar)
+},[isToggleSidebar])
+
+Header index.js
+<div className="col-sm-3 d-flex align-items-center part2 pl-4">
+  <Button
+      className="rounded-circle mr-3"
+      onClick={() => context.setIsToggleSidebar(!context.isToggleSidebar)}
+  >
+  {
+      context.isToggleSidebar === false ? <MdMenuOpen/> : <MdOutlineMenu/>
+  }
+  </Button>
+  <SearchBox />
+</div>
+
+Bấm nút menu, alert ra kết quả true/false là đúng.
+Icon thay đổi <MdMenuOpen/> và <MdOutlineMenu/>
 
 
 ==============================================================

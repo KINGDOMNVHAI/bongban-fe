@@ -7,13 +7,14 @@ import { IoCartOutline, IoShieldHalfSharp } from "react-icons/io5";
 import { FaRegBell } from "react-icons/fa6";
 import SearchBox from "../SearchBox";
 
-import { React, useState } from 'react';
+import { React, useContext, useState } from 'react';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import Divider from '@mui/material/Divider';
 import PersonAdd from '@mui/icons-material/PersonAdd';
 import Logout from '@mui/icons-material/Logout';
+import { MyContext } from "../../App";
 
 
 const Header = () => {
@@ -22,6 +23,9 @@ const Header = () => {
     const [isOpenNotificationDrop, setisOpenNotificationDrop] = useState(false);
     const openMyAcc = Boolean(anchorEl);
     const openNotifications = Boolean(isOpenNotificationDrop);
+
+    const context = useContext(MyContext);
+
     const handleOpenMyAccDrop = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -49,7 +53,14 @@ const Header = () => {
                         </div>
 
                         <div className="col-sm-3 d-flex align-items-center part2 pl-4">
-                            <Button className="rounded-circle"><MdMenuOpen/></Button>
+                            <Button
+                                className="rounded-circle mr-3"
+                                onClick={() => context.setIsToggleSidebar(!context.isToggleSidebar)}
+                            >
+                            {
+                                context.isToggleSidebar === false ? <MdMenuOpen/> : <MdOutlineMenu/>
+                            }
+                            </Button>
                             <SearchBox />
                         </div>
 
