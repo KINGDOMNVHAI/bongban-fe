@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Chart } from "react-google-charts";
-import { Menu, MenuItem, Select, FormControl, Button } from "@mui/material/";
+import { Menu, MenuItem, Select, FormControl, Button, Pagination } from "@mui/material/";
 
 import { IoMdCart, IoIosTimer } from "react-icons/io";
 import { HiDotsVertical } from "react-icons/hi";
@@ -208,8 +208,82 @@ const Dashboard = () => {
                                     </div>
                                 </td>
                             </tr>
+                            <tr>
+                                <td>#2</td>
+                                <td>
+                                    <div className="d-flex align-items-center productBox">
+                                        <div className="imgWrapper">
+                                            <div className="img">
+                                                <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp" className="w-100" />
+                                            </div>
+                                        </div>
+                                        <div className="info pl-0">
+                                            <h6>Tops and skirt set for Female...</h6>
+                                            <p>Women's exclusive summer Tops and skirt set for Female Top and skirt set...</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Womans</td>
+                                <td>richman</td>
+                                <td>
+                                    <div style={{width:'150px'}}>
+                                        <del className="old">$21.00</del>
+                                        <span className="new text-danger">$19.00</span>
+                                    </div>
+                                </td>
+                                <td>30</td>
+                                <td>4.9 (16)</td>
+                                <td>380</td>
+                                <td>$38k</td>
+                                <td>
+                                    <div className="actions d-flex align-items-center">
+                                        <Button className="secondary" color="secondary"><FaEye/></Button>
+                                        <Button className="success" color="success"><FaPencilAlt/></Button>
+                                        <Button className="error" color="error"><MdDelete/></Button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#3</td>
+                                <td>
+                                    <div className="d-flex align-items-center productBox">
+                                        <div className="imgWrapper">
+                                            <div className="img">
+                                                <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp" className="w-100" />
+                                            </div>
+                                        </div>
+                                        <div className="info pl-0">
+                                            <h6>Tops and skirt set for Female...</h6>
+                                            <p>Women's exclusive summer Tops and skirt set for Female Top and skirt set...</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Womans</td>
+                                <td>richman</td>
+                                <td>
+                                    <div style={{width:'70px'}}>
+                                        <del className="old">$21.00</del>
+                                        <span className="new text-danger">$19.00</span>
+                                    </div>
+                                </td>
+                                <td>30</td>
+                                <td>4.9 (16)</td>
+                                <td>380</td>
+                                <td>$38k</td>
+                                <td>
+                                    <div className="actions d-flex align-items-center">
+                                        <Button className="secondary" color="secondary"><FaEye/></Button>
+                                        <Button className="success" color="success"><FaPencilAlt/></Button>
+                                        <Button className="error" color="error"><MdDelete/></Button>
+                                    </div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
+
+                    <div className="d-flex tableFooter">
+                        <Pagination count={10} color="primary" className="pagination" showFirstButton showLastButton />
+                    </div>
                 </div>
             </div>
 

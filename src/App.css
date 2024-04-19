@@ -13,7 +13,7 @@ body {
 
 .btn-blue {background: #0858f7 !important; font-size: 14px !important; font-weight: 500; color: #FFF !important; text-transform: capitalize !important; border-radius: 5px !important;}
 
-header {width: 100%; height: 70px; background: #FFF; position: fixed; top: 0px; left: 0px; z-index: 1000;}
+header {width: 100%; height: 70px; background: rgba(255, 255, 255, 0.8); position: fixed; top: 0px; left: 0px; z-index: 1000; -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px);}
 header .logo {text-decoration: none;}
 header .logo img{width: 45px;}
 header .logo span{color: #292929; font-weight: 800; font-size: 24px;}
@@ -113,7 +113,7 @@ header button.rounded-circle:hover svg {color: #0858f7 !important; transition: a
 .dashboardBoxWrapper .dashboardBox .toggleIcon {font-size: 22px; color: rgba(0,0,0,0.5); cursor: pointer;
   min-width: 40px !important; width: 40px !important; height: 40px !important; border-radius: 50% !important;}
 
-.dashboardBoxWrapper .dashboardBox .chart {opacity: 0.1; position: absolute; bottom: 20px; left: 20px;}
+.dashboardBoxWrapper .dashboardBox .chart {opacity: 0.030; position: absolute; bottom: 20px; left: 20px;}
 .dashboardBoxWrapper .dashboardBox .chart svg {font-size: 110px; color: #000;}
 .dashboardBoxWrapper .dashboardBox .bottomEle {position: relative; top: 25px}
 .dashboardBoxWrapperRow .box {width: 100%; height: 100%;}
@@ -155,8 +155,13 @@ table.v-align td {vertical-align: middle !important;}
 /* .table td .imgWrapper .img {width: 25%; flex: 0 0 25%;} */
 .table td .info {width: 65%; flex: 0 0 65%;}
 
-table td .info h6 {overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px; font-weight: 600; margin-bottom: 5px;}
+table td .info h6 {overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px; font-weight: 600; margin-bottom: 1px;}
 
 .table td .info p {font-size: 13px; line-height: 18px; line-height: 18px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #5e5d72; margin-bottom: 0px;}
 
 .table.v-align td .productBox {width: 250px;}
+
+.tableFooter {padding-bottom: 20px;}
+.tableFooter .pagination {margin-left: 20px;}
+
+.css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {background-color: #0858f7 !important;}
