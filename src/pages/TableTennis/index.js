@@ -118,6 +118,7 @@ const TableTennis = () => {
                     </table>
 
                     <div className="d-flex tableFooter">
+                        <p>Showing <b>12</b> of <b>60</b> results</p>
                         <Pagination count={10} color="primary" className="pagination" showFirstButton showLastButton />
                     </div>
                 </div>

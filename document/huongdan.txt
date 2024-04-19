@@ -1,5 +1,5 @@
 Build a Complete React Admin Dashboard App | React, Material UI, Bootstrap 4, Light & Dark Mode
-https://www.youtube.com/watch?v=CZdArmMnH14&list=PLhFBHuT4t3aApRKcTgTi3Sfu6zudkg7bW&index=6
+https://www.youtube.com/watch?v=6FGnoMqSSLA&list=PLhFBHuT4t3aApRKcTgTi3Sfu6zudkg7bW&index=7
 
 Video 1
 npx create-react-app pingpong
@@ -432,6 +432,16 @@ Header index.js
 
 Bấm nút menu, alert ra kết quả true/false là đúng.
 Icon thay đổi <MdMenuOpen/> và <MdOutlineMenu/>
+
+10:00
+Thêm class toggle mỗi khi click nút menu.
+
+11:36
+CSS cho toggle
+
+
+
+
 
 
 ==============================================================

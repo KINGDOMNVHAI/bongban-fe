@@ -19,7 +19,7 @@ function App() {
   };
 
   useEffect(() => {
-    alert(isToggleSidebar)
+    // alert(isToggleSidebar)
   },[isToggleSidebar])
 
   return (
@@ -27,11 +27,11 @@ function App() {
       <MyContext.Provider value={values}>
         <Header/>
         <div className='main d-flex'>
-          <div className='sidebarWrapper'>
+          <div className={`sidebarWrapper ${isToggleSidebar === true ? 'toggle' : ''}`}>
             <Sidebar/>
           </div>
 
-          <div className='content'>
+          <div className={`content ${isToggleSidebar === true ? 'toggle' : ''}`}>
             <Routes>
               <Route path="/" exact={true} element={<Dashboard />} />
               <Route path="/dashboard" exact={true} element={<Dashboard />} />

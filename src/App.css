@@ -4,7 +4,7 @@
 
 body {
   font-family: "Open Sans", sans-serif !important;
-  background: #ebe9e9;
+  background: #ebe9e9; overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {width: 5px !important; height: 5px !important}
@@ -57,8 +57,11 @@ header button.rounded-circle:hover svg {color: #0858f7 !important; transition: a
 
 .text-sky {color: #0858f7 !important}
 
-.main .sidebarWrapper {width: 20%; flex: 0 0 20%; transition: all 0.3s ease-in-out;}
-.main .sidebarWrapper .sidebar {width: 20%; height: 100vh; max-height: calc(100%-70px); position: fixed; top: 70px; left: 0px; background: #FFF; overflow-y: scroll; overflow-x: hidden; padding-bottom: 40px;}
+.main .sidebarWrapper {width: 20%; flex: 0 0 20%; transition: all 0.3s;}
+.main .sidebarWrapper.toggle {width: 0%; flex: 0 0 0%;}
+.main .sidebarWrapper.toggle .sidebar {left: -100%; transition: all 0.3s ease-in-out; opacity: 0;}
+.main .sidebarWrapper .sidebar {width: 20%; height: 100vh; max-height: calc(100%-70px); position: fixed; top: 70px; left: 0px; background: #FFF;
+  overflow-y: scroll; overflow-x: hidden; padding-bottom: 40px; transition: all 0.3s;}
 
 .main .sidebarWrapper .sidebar::-webkit-scrollbar {width: 3px !important;}
 .main .sidebarWrapper .sidebar::-webkit-scrollbar-thumb {background: transparent !important;}
@@ -98,9 +101,10 @@ header button.rounded-circle:hover svg {color: #0858f7 !important; transition: a
 .logoutWrapper .logoutBox button {font-size: 14px !important; font-weight: 600 !important;}
 .logoutWrapper .logoutBox button svg {margin-right: 5px; font-size: 18px !important;}
 
-.main .content {width: 80%; flex: 0 0 80%;}
+.main .content {width: 80%; flex: 0 0 80%; transition: all 0.3s;}
+.main .content.toggle {width: 100%; flex: 0 0 100%;}
 
-.right-content {padding: 90px 30px;}
+.right-content {padding: 90px 30px 10px 30px; }
 
 .dashboardBoxWrapper {gap: 20px; width: 100%; flex-wrap: wrap;}
 .dashboardBoxWrapper .dashboardBox {width: 48%; height: 170px; border-radius: 10px; overflow: hidden; padding: 20px;
@@ -165,6 +169,6 @@ table td .info h6 {overflow: hidden; text-overflow: ellipsis; white-space: nowra
 
 .tableFooter {padding-bottom: 14px;}
 .tableFooter .pagination {margin-left: auto;}
-.tableFooter p {font-size: 13px; font-weight: 500; margin-bottom: 0px;}
+.tableFooter p {font-size: 16px; font-weight: 500; margin-bottom: 0px;}
 
 .css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {background-color: #0858f7 !important;}
