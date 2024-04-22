@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Dashboard from './pages/Dashboard';
 import TableTennis from './pages/TableTennis';
+import TableTennisDetail from './pages/TableTennisDetail';
 import Login from './pages/Login';
 
 const MyContext = createContext();
@@ -14,7 +15,7 @@ function App() {
 
   const [isToggleSidebar, setIsToggleSidebar] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
-  const [isHideSidebarAndHeader, setIsHideSidebarAndHeader] = useState(true);
+  const [isHideSidebarAndHeader, setIsHideSidebarAndHeader] = useState(false);
 
   const values = {
     isToggleSidebar,
@@ -49,7 +50,9 @@ function App() {
               <Route path="/" exact={true} element={<Dashboard />} />
               <Route path="/dashboard" exact={true} element={<Dashboard />} />
               <Route path="/login" exact={true} element={<Login />} />
+
               <Route path="/table-tennis" exact={true} element={<TableTennis />} />
+              <Route path="/table-tennis-detail" exact={true} element={<TableTennisDetail />} />
             </Routes>
           </div>
         </div>

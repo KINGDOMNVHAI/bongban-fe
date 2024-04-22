@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Chart } from "react-google-charts";
+import { Link } from "react-router-dom";
 import { Menu, MenuItem, Select, FormControl, Button, Pagination } from "@mui/material/";
 
-import { IoMdCart, IoIosTimer } from "react-icons/io";
-import { HiDotsVertical } from "react-icons/hi";
+// import { IoMdCart, IoIosTimer } from "react-icons/io";
+// import { HiDotsVertical } from "react-icons/hi";
 import { FaUserCircle, FaEye, FaPencilAlt } from "react-icons/fa"
 import { MdShoppingBag, MdDelete } from "react-icons/md";
 import { GiStarsStack } from "react-icons/gi";
@@ -108,7 +108,7 @@ const TableTennis = () => {
                                 <td>3.000.000 VND</td>
                                 <td>
                                     <div className="actions d-flex align-items-center">
-                                        <Button className="secondary" color="secondary"><FaEye/></Button>
+                                        <Link to={'/table-tennis-detail'}><Button className="secondary" color="secondary"><FaEye/></Button></Link>
                                         <Button className="success" color="success"><FaPencilAlt/></Button>
                                         <Button className="error" color="error"><MdDelete/></Button>
                                     </div>

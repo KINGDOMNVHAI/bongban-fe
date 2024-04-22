@@ -181,10 +181,11 @@ table td .info h6 {overflow: hidden; text-overflow: ellipsis; white-space: nowra
 
 .css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {background-color: #0858f7 !important;}
 
-.loginSection {width: 100%; height: 100vh; padding: 35px 25px;}
+.loginSection {width: 100%; height: 100vh; padding: 35px 25px; background: #FFF;}
+.loginPatern {width: 100%; height: 100%; opacity: 0.08; position: fixed; top: 0px; left: 0px; z-index: 99; pointer-events: none;}
 
-
-
+.loginSection .loginBox {width: 400px; height: auto; margin: auto;}
+.loginSection .loginBox .wrapper {width: 100%; height: 300px; background: #f0f0f0; position: relative; z-index: 100;}
 
 /*
 .form .form-group {margin-bottom: 15px;}
@@ -194,3 +195,6 @@ table td .info h6 {overflow: hidden; text-overflow: ellipsis; white-space: nowra
 .form .form-group textarea {height: 120px; padding-top: 15px;}
 
 */
+
+/* Box Table Tennis Detail */
+.tableTennisBox {text-align: center;}

@@ -475,5 +475,16 @@ const values = {
 17:00
 Thiết kế trang login ở file Login -> index.js
 
+19:00
+Thiết kế background
+Download hình nền từ link mironcoder-hotash.netlify.app/images/pattern.webp
+Để vào thư mục src -> assets -> images
+
+23:50
+Thiết kế form bên dưới
+
+26:00
+Tạo form và các input
+
 ==============================================================
 Video 8: đăng ký
