@@ -15,7 +15,8 @@ const Login = () => {
         <section className="loginSection">
             <div className="loginBox">
                 <div className="logo text-center">
-                    <img src={Logo} />
+                    <img src={Logo} width="70px" />
+                    <h5 className='font-weight-bold'>Login to 탁구</h5>
                 </div>
             </div>
         </section>
