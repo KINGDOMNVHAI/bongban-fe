@@ -246,7 +246,7 @@ const Header = () => {
                             </div>
 
                             {
-                                isLogin !== true ? <Button className='btn-blue'>Sign In</Button>
+                                context.isLogin !== true ? <Button className='btn-blue btn-lg btn-round'>Sign In</Button>
                                 :
                                 <div className="myAccWrapper">
                                     <Button className="myAcc d-flex align-items-center" onClick={handleOpenMyAccDrop}>

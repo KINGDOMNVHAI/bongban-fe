@@ -13,6 +13,10 @@ body {
 
 .btn-blue {background: #0858f7 !important; font-size: 14px !important; font-weight: 500; color: #FFF !important; text-transform: capitalize !important; border-radius: 5px !important;}
 
+.btn-lg {padding:5px 25px !important;}
+
+.btn-round {border-radius: 30px !important;}
+
 header {width: 100%; height: 70px; background: rgba(255, 255, 255, 0.8); position: fixed; top: 0px; left: 0px; z-index: 1000; -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px);}
 header .logo {text-decoration: none;}
 header .logo img{width: 45px;}
@@ -21,7 +25,7 @@ header .logo span{color: #292929; font-weight: 800; font-size: 24px;}
 header button.rounded-circle {min-width: 40px !important; width: 40px !important; height: 40px !important; background: #f0f5ff !important; color: #0858f7}
 header button.rounded-circle svg {color: #292929; font-size: 28px !important;}
 
-header .part2 {padding-left: 70px;}
+header .part2 {padding-left: 60px;}
 
 header button.rounded-circle:hover svg {color: #0858f7 !important; transition: all 0 2s ease-in-out;}
 
@@ -175,7 +179,7 @@ table td .info h6 {overflow: hidden; text-overflow: ellipsis; white-space: nowra
 
 .css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {background-color: #0858f7 !important;}
 
-
+.loginSection {width: 100%; height: 100vh; padding: 35px 25px;}
 
 
 

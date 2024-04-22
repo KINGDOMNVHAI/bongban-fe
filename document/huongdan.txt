@@ -452,7 +452,25 @@ Tạo const [isLogin, setIsLogin] = useState(false);
 isLogin !== true hiển thị nút Sign In
 Ngược lại, hiển thị avatar
 
+7:54
+App.js thêm Route /login
+Tạo pages -> Login -> index.js
 
+App.js thêm
+const [isLogin, setIsLogin] = useState(false);
+const [isHideSidebarAndHeader, setIsHideSidebarAndHeader] = useState(false);
+
+const values = {
+  isToggleSidebar,
+  setIsToggleSidebar,
+  isLogin,
+  setIsLogin,
+  isHideSidebarAndHeader,
+  setIsHideSidebarAndHeader
+};
+
+14:20
+Ẩn sidebar nếu đây là trang login.
 
 ==============================================================
 Video 8: đăng ký
