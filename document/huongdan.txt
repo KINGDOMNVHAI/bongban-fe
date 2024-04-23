@@ -498,5 +498,13 @@ Tạo nút ẩn hiện password
 43:00
 Tạo Button Sign In
 
+45:00
+Link Forgot Password
+
+47:50
+Tạo vạch "OR"
+
+51:00
+
 ==============================================================
 Video 8: đăng ký

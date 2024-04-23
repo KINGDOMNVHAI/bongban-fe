@@ -7,6 +7,7 @@ import { MdMail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
 
@@ -34,14 +35,14 @@ const Login = () => {
 
                     <div className='wrapper mt-3 card border'>
                         <form>
-                            <div className={`form-group mb-3 position-relative ${inputIndex === 0 && 'focus'}`}>
+                            <div className={`form-group mb-4 position-relative ${inputIndex === 0 && 'focus'}`}>
                                 <span className='icon'><MdMail/></span>
                                 <input type='text' className='form-control' placeholder='your email'
                                     onFocus={()=>focusInput(0)} onBlur={()=>setInputIndex(null)}
                                 />
                             </div>
 
-                            <div className={`form-group mb-3 position-relative ${inputIndex === 1 && 'focus'}`}>
+                            <div className={`form-group mb-4 position-relative ${inputIndex === 1 && 'focus'}`}>
                                 <span className='icon'><RiLockPasswordFill/></span>
                                 <input type={`${isShowPassword === true ? 'text' : 'password'}`} className='form-control' placeholder='your password'
                                     onFocus={()=>focusInput(1)} onBlur={()=>setInputIndex(null)}
@@ -55,7 +56,16 @@ const Login = () => {
                             </div>
 
                             <div className='form-group'>
-                                <Button className='btn-blue btn-lg w-100'>Sign In</Button>
+                                <Button className='btn-blue btn-lg w-100 btn-big'>Sign In</Button>
+                            </div>
+
+                            <div className='form-group text-center'>
+                                <Link to={'/forgot-password'} className='link'>FORGOT PASSWORD</Link>
+                                <div className='d-flex align-items-center justify-content-center or mt-1'>
+                                    <span className='line'></span>
+                                    <span className='txt'>OR</span>
+                                    <span className='line'></span>
+                                </div>
                             </div>
                         </form>
                     </div>
