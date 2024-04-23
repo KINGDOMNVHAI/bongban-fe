@@ -1,18 +1,26 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Logo from '../../assets/images/table-tennis-logo.png';
 import patern from '../../assets/images/pattern.webp';
 import { MyContext } from '../../App';
 
 import { MdMail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
+import { IoMdEye, IoMdEyeOff } from "react-icons/io";
+import { Button } from '@mui/material';
 
 const Login = () => {
 
+    const [inputIndex, setInputIndex] = useState(null);
+    const [isShowPassword, setIsShowPassword] = useState(false);
     const context = useContext(MyContext);
 
     useEffect(() => {
         context.setIsHideSidebarAndHeader(true);
     },[])
+
+    const focusInput = (index) => {
+        setInputIndex(index);
+    }
 
     return (
         <>
@@ -24,11 +32,30 @@ const Login = () => {
                         <h5 className='font-weight-bold'>Login to 탁구</h5>
                     </div>
 
-                    <div className='wrapper mt-3 card border p-4'>
+                    <div className='wrapper mt-3 card border'>
                         <form>
-                            <div className='form-group mb-3 position-relative'>
+                            <div className={`form-group mb-3 position-relative ${inputIndex === 0 && 'focus'}`}>
                                 <span className='icon'><MdMail/></span>
-                                <input type='text' className='form-control' placeholder='your email' />
+                                <input type='text' className='form-control' placeholder='your email'
+                                    onFocus={()=>focusInput(0)} onBlur={()=>setInputIndex(null)}
+                                />
+                            </div>
+
+                            <div className={`form-group mb-3 position-relative ${inputIndex === 1 && 'focus'}`}>
+                                <span className='icon'><RiLockPasswordFill/></span>
+                                <input type={`${isShowPassword === true ? 'text' : 'password'}`} className='form-control' placeholder='your password'
+                                    onFocus={()=>focusInput(1)} onBlur={()=>setInputIndex(null)}
+                                />
+
+                                <span className='toggleShowPassword' onClick={()=>setIsShowPassword(!isShowPassword)}>
+                                    {
+                                        isShowPassword === true ? <IoMdEyeOff/> : <IoMdEye/>
+                                    }
+                                </span>
+                            </div>
+
+                            <div className='form-group'>
+                                <Button className='btn-blue btn-lg w-100'>Sign In</Button>
                             </div>
                         </form>
                     </div>

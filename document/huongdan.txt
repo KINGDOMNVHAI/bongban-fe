@@ -492,5 +492,11 @@ Thiết kế icon cho input
 34:35
 onFocus cho input
 
+38:00
+Tạo nút ẩn hiện password
+
+43:00
+Tạo Button Sign In
+
 ==============================================================
 Video 8: đăng ký
