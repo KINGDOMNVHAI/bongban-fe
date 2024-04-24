@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import { createContext, useEffect, useState } from 'react';
 import "./assets/css/bootstrap.min.css"
 import './App.css';
@@ -17,6 +17,12 @@ function App() {
   const [isToggleSidebar, setIsToggleSidebar] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
   const [isHideSidebarAndHeader, setIsHideSidebarAndHeader] = useState(false);
+
+  // const location = useLocation();
+
+  // useEffect(()=>{
+  //   alert(location.pathname);
+  // },[location])
 
   const values = {
     isToggleSidebar,

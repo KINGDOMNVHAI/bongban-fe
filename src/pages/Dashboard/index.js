@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Chart } from "react-google-charts";
 import { Menu, MenuItem, Select, FormControl, Button, Pagination } from "@mui/material/";
 
@@ -9,6 +9,7 @@ import { MdShoppingBag, MdDelete } from "react-icons/md";
 import { GiStarsStack } from "react-icons/gi";
 
 import DashboardBox from "./components/dashboardBox";
+import { MyContext } from "../../App";
 
 export const data = [
     ["Year", "Sales", "Expenses"],
@@ -36,6 +37,12 @@ const Dashboard = () => {
     const open = Boolean(anchorEl);
 
     const ITEM_HEIGHT = 48;
+
+    const context = useContext(MyContext);
+
+    useEffect(()=>{
+        context.setIsHideSidebarAndHeader(false);
+    })
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);

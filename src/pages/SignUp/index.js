@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import googleIcon from '../../assets/images/logo-google.png';
 import Logo from '../../assets/images/logo-google.png';
 import patern from '../../assets/images/pattern.webp';
@@ -6,11 +7,10 @@ import { MyContext } from '../../App';
 
 import { MdMail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
-import { IoMdEye, IoMdEyeOff } from "react-icons/io";
+import { IoMdEye, IoMdEyeOff, IoMdHome } from "react-icons/io";
 import { FaUserCircle } from "react-icons/fa";
 import { IoShieldCheckmark } from "react-icons/io5";
-import { Button } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Button, Checkbox, FormControlLabel, FormGroup } from '@mui/material';
 
 const SignUp = () => {
 
@@ -33,8 +33,13 @@ const SignUp = () => {
             {/* if you want to change form style, remove signUpSection  */}
             <section className="loginSection signUpSection">
                 <div className="row">
-                    <div className='col-md-8'>
+                    <div className='col-md-8 d-flex align-items-center flex-column part1 justify-content-center'>
+                        <h1>BEST UX/UI FASHION ECOMMERCE DASHBOARD & ADMIN PANEL</h1>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
 
+                        <div className='w-100 mt-4'>
+                            <Link to={'/'}><Button className='btn-blue btn-lg btn-big'><IoMdHome/> Go To Home</Button></Link>
+                        </div>
                     </div>
 
                     <div className='col-md-4 pr-0'>
@@ -85,6 +90,8 @@ const SignUp = () => {
                                             }
                                         </span>
                                     </div>
+
+                                    <FormControlLabel required control={<Checkbox />} label="I agree to the all Terms & Conditions." />
 
                                     <div className='form-group'>
                                         <Button className='btn-blue btn-lg w-100 btn-big'>Sign Up</Button>

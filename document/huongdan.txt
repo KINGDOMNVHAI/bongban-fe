@@ -1,5 +1,5 @@
 Build a Complete React Admin Dashboard App | React, Material UI, Bootstrap 4, Light & Dark Mode
-https://www.youtube.com/watch?v=qBgiAnVUbxA&list=PLhFBHuT4t3aApRKcTgTi3Sfu6zudkg7bW&index=8
+https://www.youtube.com/watch?v=0c39nyxMb_0&list=PLhFBHuT4t3aApRKcTgTi3Sfu6zudkg7bW&index=9
 Mẫu: https://dashboardreactapplication.netlify.app/
 
 Video 1
@@ -525,3 +525,22 @@ Thêm nút check cho confirm password
 
 15:25
 Đổi tên Sign Up
+
+17:00
+Tạo checkbox
+
+19:35
+Tạo văn bản
+
+22:50
+Tạo nút Go To Home
+
+25:35
+Lỗi: khi bấm nút Go To Home, menu trang dashboard không hiện ra.
+Hoặc từ màn hình Đăng Nhập, back về trang dashboard bằng trình duyệt, menu cũng không hiện ra.
+Giải pháp: dashboard -> index.js thêm
+const context = useContext(MyContext);
+
+useEffect(()=>{
+    context.setIsHideSidebarAndHeader(false);
+})
