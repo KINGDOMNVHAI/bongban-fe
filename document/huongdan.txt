@@ -512,5 +512,14 @@ Tạo ô register
 
 ==============================================================
 Video 8: đăng ký
+Copy giống file Login -> index.js qua SignUp
 
 5:00
+Thiết kế form login sang bên phải
+
+11:20
+Tạo thêm input
+Thêm nút check cho confirm password
+
+15:25
+Đổi tên Sign Up
