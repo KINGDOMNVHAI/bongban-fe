@@ -30,6 +30,7 @@ const SignUp = () => {
     return (
         <>
             <img src={patern} className='loginPatern' />
+            {/* if you want to change form style, remove signUpSection  */}
             <section className="loginSection signUpSection">
                 <div className="row">
                     <div className='col-md-8'>
@@ -90,7 +91,6 @@ const SignUp = () => {
                                     </div>
 
                                     <div className='form-group text-center mb-0'>
-                                        <Link to={'/forgot-password'} className='link'>FORGOT PASSWORD</Link>
                                         <div className='d-flex align-items-center justify-content-center or mt-1'>
                                             <span className='line'></span>
                                             <span className='txt'>OR</span>
@@ -102,14 +102,12 @@ const SignUp = () => {
                                         </Button>
                                     </div>
                                 </form>
-                            </div>
-
-                            <div className='wrapper mt-3 card border footer p-3'>
-                                <span className='text-center'>
-                                    Don't have account?
-                                    <Link to={'/sign-up'} className='link color ml-1'>Register</Link>
+                                <span className='text-center d-block mt-3'>
+                                    Already have account?
+                                    <Link to={'/login'} className='link color ml-1'>Sign In</Link>
                                 </span>
                             </div>
+
                         </div>
                     </div>
                 </div>

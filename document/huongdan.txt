@@ -519,6 +519,8 @@ Thiết kế form login sang bên phải
 
 11:20
 Tạo thêm input
+
+13:25
 Thêm nút check cho confirm password
 
 15:25
