@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Box, MenuItem, Select, FormControl, Button, Pagination } from "@mui/material/";
+import circlePlusIcon from '../../assets/images/icon-plus-circle.png';
 
 import { IoMdCart, IoIosTimer } from "react-icons/io";
 import { HiDotsVertical } from "react-icons/hi";
@@ -182,6 +183,19 @@ const TableTennisDetail = () => {
                         <div className="tableTennisBox img">
                             <img src="/upload/images/avatar-1.jpg" className="w-50" />
                             <p className="mt-1">Huỳnh Xuân An</p>
+                        </div>
+                    </Box>
+
+                    <Box
+                        height={200}
+                        width={200}
+                        display="flex"
+                        alignItems="center"
+                        sx={{ border: '2px solid grey' }}
+                        className="btn-round ml-3 mt-3"
+                    >
+                        <div className="tableTennisBox img">
+                            <img src={circlePlusIcon} className="w-50" />
                         </div>
                     </Box>
                 </div>

@@ -1,5 +1,5 @@
 Build a Complete React Admin Dashboard App | React, Material UI, Bootstrap 4, Light & Dark Mode
-https://www.youtube.com/watch?v=6FGnoMqSSLA&list=PLhFBHuT4t3aApRKcTgTi3Sfu6zudkg7bW&index=7
+https://www.youtube.com/watch?v=qBgiAnVUbxA&list=PLhFBHuT4t3aApRKcTgTi3Sfu6zudkg7bW&index=8
 Mẫu: https://dashboardreactapplication.netlify.app/
 
 Video 1
@@ -504,7 +504,13 @@ Link Forgot Password
 47:50
 Tạo vạch "OR"
 
-51:00
+52:00
+Tạo nút đăng nhập bằng mạng xh.
+
+57:00
+Tạo ô register
 
 ==============================================================
 Video 8: đăng ký
+
+5:00

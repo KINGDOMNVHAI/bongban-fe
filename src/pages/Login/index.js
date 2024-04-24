@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
-import Logo from '../../assets/images/table-tennis-logo.png';
+import googleIcon from '../../assets/images/logo-google.png';
+import Logo from '../../assets/images/logo-google.png';
 import patern from '../../assets/images/pattern.webp';
 import { MyContext } from '../../App';
 
@@ -35,14 +36,14 @@ const Login = () => {
 
                     <div className='wrapper mt-3 card border'>
                         <form>
-                            <div className={`form-group mb-4 position-relative ${inputIndex === 0 && 'focus'}`}>
+                            <div className={`form-group position-relative ${inputIndex === 0 && 'focus'}`}>
                                 <span className='icon'><MdMail/></span>
                                 <input type='text' className='form-control' placeholder='your email'
                                     onFocus={()=>focusInput(0)} onBlur={()=>setInputIndex(null)}
                                 />
                             </div>
 
-                            <div className={`form-group mb-4 position-relative ${inputIndex === 1 && 'focus'}`}>
+                            <div className={`form-group position-relative ${inputIndex === 1 && 'focus'}`}>
                                 <span className='icon'><RiLockPasswordFill/></span>
                                 <input type={`${isShowPassword === true ? 'text' : 'password'}`} className='form-control' placeholder='your password'
                                     onFocus={()=>focusInput(1)} onBlur={()=>setInputIndex(null)}
@@ -59,15 +60,26 @@ const Login = () => {
                                 <Button className='btn-blue btn-lg w-100 btn-big'>Sign In</Button>
                             </div>
 
-                            <div className='form-group text-center'>
+                            <div className='form-group text-center mb-0'>
                                 <Link to={'/forgot-password'} className='link'>FORGOT PASSWORD</Link>
                                 <div className='d-flex align-items-center justify-content-center or mt-1'>
                                     <span className='line'></span>
                                     <span className='txt'>OR</span>
                                     <span className='line'></span>
                                 </div>
+
+                                <Button variant="outlined" className='w-100 btn-lg btn-lg loginWithGoogle mt-3'>
+                                    <img src={googleIcon} width="30px" /> &nbsp; Sign In with Google
+                                </Button>
                             </div>
                         </form>
+                    </div>
+
+                    <div className='wrapper mt-3 card border footer p-3'>
+                        <span className='text-center'>
+                            Don't have account?
+                            <Link to={'/sign-up'} className='link color ml-1'>Register</Link>
+                        </span>
                     </div>
                 </div>
             </section>
