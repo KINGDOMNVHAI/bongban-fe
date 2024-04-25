@@ -42,6 +42,8 @@ const Dashboard = () => {
 
     useEffect(()=>{
         context.setIsHideSidebarAndHeader(false);
+
+        window.scrollTo(0,0);
     })
 
     const handleClick = (event) => {

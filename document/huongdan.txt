@@ -544,3 +544,34 @@ const context = useContext(MyContext);
 useEffect(()=>{
     context.setIsHideSidebarAndHeader(false);
 })
+
+
+==============================================================
+Video 9: đổi màu
+
+1:45
+autoFocus
+
+5:00
+
+
+7:45
+onclick cho nút theme
+
+11:10
+Kết quả: mở tab Application -> storage của trình duyệt. Click vào nút theme. themeMode thay đổi kết quả là đúng.
+
+==============================================================
+Video 10: trang detail
+
+
+
+
+
+
+
+
+
+==============================================================
+React Google Login 2024
+https://www.youtube.com/watch?v=WhbtXwSnzNo

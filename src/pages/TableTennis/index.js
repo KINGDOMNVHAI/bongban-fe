@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { MyContext } from "../../App";
 import { Menu, MenuItem, Select, FormControl, Button, Pagination } from "@mui/material/";
 
 // import { IoMdCart, IoIosTimer } from "react-icons/io";
@@ -12,6 +13,14 @@ const TableTennis = () => {
 
     const [showBy, setShowBy] = useState('');
     const [showBysetCatBy, setCatBy] = useState('');
+
+    const context = useContext(MyContext);
+
+    useEffect(()=>{
+        context.setIsHideSidebarAndHeader(false);
+
+        window.scrollTo(0,0);
+    })
 
     return <>
         <section className="right-content w-100">

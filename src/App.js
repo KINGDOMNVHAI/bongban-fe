@@ -17,6 +17,19 @@ function App() {
   const [isToggleSidebar, setIsToggleSidebar] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
   const [isHideSidebarAndHeader, setIsHideSidebarAndHeader] = useState(false);
+  const [themeMode, setThemeMode] = useState(true);
+
+  useEffect(()=>{
+    if (themeMode === true) {
+      document.body.classList.remove('dark');
+      document.body.classList.add('light');
+      localStorage.setItem('themeMode','light')
+    } else {
+      document.body.classList.remove('light');
+      document.body.classList.add('dark');
+      localStorage.setItem('themeMode','dark')
+    }
+  },[themeMode]);
 
   // const location = useLocation();
 
@@ -30,7 +43,9 @@ function App() {
     isLogin,
     setIsLogin,
     isHideSidebarAndHeader,
-    setIsHideSidebarAndHeader
+    setIsHideSidebarAndHeader,
+    themeMode,
+    setThemeMode
   };
 
   useEffect(() => {
