@@ -1,6 +1,5 @@
 
 import axios from "axios";
-import bcrypt from "bcryptjs-react";
 import { useContext, useEffect, useState } from 'react';
 import googleIcon from '../../assets/images/logo-google.png';
 import Logo from '../../assets/images/logo-google.png';
@@ -36,48 +35,25 @@ const Login = () => {
     const [error, setError] = useState("");
     const request = {};
 
-    // const handleLogin = (event) => {
-    //     event.preventDefault();
-
-    //     fetch('http://localhost:8080/api/v1/public/signin', {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify(formData)
-    //     })
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         // Handle the response data
-    //         console.log(data);
-    //     })
-    //     .catch(error => {
-    //         // Handle any errors
-    //         console.error(error);
-    //     });
-    // };
-
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const salt = await bcrypt.genSalt(10);
-            // const hash = await bcrypt.hash(password, salt);
             const request = {
                 email: email,
                 password: password,
             }
 
             const res = await axios.post('http://localhost:8080/api/v1/public/signin', request)
+            // console.log(res.config.data)
 
-            console.log(res.config.data)
-            // if (res.status != 200) {
-            //     setError(res.data.message)
-            //     return;
-            // }
+            if (res.status != 200) {
+                setError(res.data.message)
+                return;
+            }
 
             setError("");
-            // const token = res.data.token;
-            // localStorage.setItem('jwtToken', token);
+            const token = res.data.token;
+            localStorage.setItem('jwtToken', token);
             return navigate('/table-tennis');
             // Redirect or perform any other actions
         } catch (error) {
