@@ -9,7 +9,7 @@ import { FaUserCircle, FaEye, FaPencilAlt } from "react-icons/fa"
 import { MdShoppingBag, MdDelete } from "react-icons/md";
 import { GiStarsStack } from "react-icons/gi";
 
-const TableTennisDetail = () => {
+const BladeDetail = () => {
 
     const [showBy, setShowBy] = useState('');
     const [showBysetCatBy, setCatBy] = useState('');
@@ -31,7 +31,7 @@ const TableTennisDetail = () => {
             </div>
 
             <div className="card shadow border-0 p-3 mt-4">
-                <h3 className="hd">Table Tennis Detail</h3>
+                <h3 className="hd">Blade Detail</h3>
 
                 <div className="row cardFilters mt-3">
 
@@ -82,7 +82,7 @@ const TableTennisDetail = () => {
                         sx={{ border: '2px solid grey' }}
                         className="btn-round ml-3 mt-3"
                     >
-                        <div className="tableTennisBox img">
+                        <div className="bladeBox img">
                             <img src="/upload/images/avatar-1.jpg" className="w-50" />
                             <p className="mt-1">Huỳnh Xuân An</p>
                         </div>
@@ -96,7 +96,7 @@ const TableTennisDetail = () => {
                         sx={{ border: '2px solid grey' }}
                         className="btn-round ml-3 mt-3"
                     >
-                        <div className="tableTennisBox img">
+                        <div className="bladeBox img">
                             <img src="/upload/images/avatar-1.jpg" className="w-50" />
                             <p className="mt-1">Adam Levine</p>
                         </div>
@@ -110,7 +110,7 @@ const TableTennisDetail = () => {
                         sx={{ border: '2px solid grey' }}
                         className="btn-round ml-3 mt-3"
                     >
-                        <div className="tableTennisBox img">
+                        <div className="bladeBox img">
                             <img src="/upload/images/avatar-1.jpg" className="w-50" />
                             <p className="mt-1">Huỳnh Xuân An</p>
                         </div>
@@ -124,7 +124,7 @@ const TableTennisDetail = () => {
                         sx={{ border: '2px solid grey' }}
                         className="btn-round ml-3 mt-3"
                     >
-                        <div className="tableTennisBox img">
+                        <div className="bladeBox img">
                             <img src="/upload/images/avatar-1.jpg" className="w-50" />
                             <p className="mt-1">Huỳnh Xuân An</p>
                         </div>
@@ -138,7 +138,7 @@ const TableTennisDetail = () => {
                         sx={{ border: '2px solid grey' }}
                         className="btn-round ml-3 mt-3"
                     >
-                        <div className="tableTennisBox img">
+                        <div className="bladeBox img">
                             <img src="/upload/images/avatar-1.jpg" className="w-50" />
                             <p className="mt-1">Huỳnh Xuân An</p>
                         </div>
@@ -152,7 +152,7 @@ const TableTennisDetail = () => {
                         sx={{ border: '2px solid grey' }}
                         className="btn-round ml-3 mt-3"
                     >
-                        <div className="tableTennisBox img">
+                        <div className="bladeBox img">
                             <img src="/upload/images/avatar-1.jpg" className="w-50" />
                             <p className="mt-1">Huỳnh Xuân An</p>
                         </div>
@@ -166,7 +166,7 @@ const TableTennisDetail = () => {
                         sx={{ border: '2px solid grey' }}
                         className="btn-round ml-3 mt-3"
                     >
-                        <div className="tableTennisBox img">
+                        <div className="bladeBox img">
                             <img src="/upload/images/avatar-1.jpg" className="w-50" />
                             <p className="mt-1">Huỳnh Xuân An</p>
                         </div>
@@ -180,7 +180,7 @@ const TableTennisDetail = () => {
                         sx={{ border: '2px solid grey' }}
                         className="btn-round ml-3 mt-3"
                     >
-                        <div className="tableTennisBox img">
+                        <div className="bladeBox img">
                             <img src="/upload/images/avatar-1.jpg" className="w-50" />
                             <p className="mt-1">Huỳnh Xuân An</p>
                         </div>
@@ -194,7 +194,7 @@ const TableTennisDetail = () => {
                         sx={{ border: '2px solid grey' }}
                         className="btn-round ml-3 mt-3"
                     >
-                        <div className="tableTennisBox img">
+                        <div className="bladeBox img">
                             <img src={circlePlusIcon} className="w-50" />
                         </div>
                     </Box>
@@ -204,4 +204,4 @@ const TableTennisDetail = () => {
     </>
 }
 
-export default TableTennisDetail;
+export default BladeDetail;

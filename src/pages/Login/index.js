@@ -54,7 +54,7 @@ const Login = () => {
             setError("");
             const token = res.data.token;
             localStorage.setItem('jwtToken', token);
-            return navigate('/table-tennis');
+            return navigate('/blade');
             // Redirect or perform any other actions
         } catch (error) {
             // Handle error

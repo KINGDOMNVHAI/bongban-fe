@@ -4,7 +4,6 @@ import DashboardBox from "../Dashboard/components/dashboardBox";
 
 // Breadcrum code
 const StyledBreadcrumb = styled(Chip)(({theme}) => {
-
     const backgroundColor =
         theme.palette.mode === 'light'
         ? theme.palette.grey[100]
