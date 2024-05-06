@@ -561,6 +561,26 @@ onclick cho nút theme
 11:10
 Kết quả: mở tab Application -> storage của trình duyệt. Click vào nút theme. themeMode thay đổi kết quả là đúng.
 
+13:00
+Thêm CSS.
+Kết quả: Click vào nút theme. Phần header thay đổi màu.
+body.dark header {background: #112143 !important;}
+body.dark header button.rounded-circle {background: #12254e !important;}
+body.dark header button.rounded-circle svg {color: #FFF !important;}
+body.dark .searchBox {background: #12254e !important;}
+body.dark .searchBox input, body.dark .searchBox input::-webkit-input-placeholder, .searchBox svg {color: #FFF !important;}
+
+17:00
+const [themeMode, setThemeMode] = useState(true);
+
+Thiết kế Header, User Info.
+
+19:20
+Thiết kế Notification
+
+21:10
+Thiết kế Sidebar
+
 ==============================================================
 Video 10: trang detail
 

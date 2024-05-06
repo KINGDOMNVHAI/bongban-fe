@@ -116,7 +116,6 @@ const Dashboard = () => {
                             data={data}
                             options={options}
                         />
-
                     </div>
                 </div>
             </div>
