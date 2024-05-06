@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import Popup from 'reactjs-popup';
 import { useNavigate, Link } from "react-router-dom";
 import { MyContext } from "../../App";
 import { Menu, MenuItem, Select, FormControl, Button, Pagination } from "@mui/material/";
@@ -6,8 +7,8 @@ import { Menu, MenuItem, Select, FormControl, Button, Pagination } from "@mui/ma
 // import { IoMdCart, IoIosTimer } from "react-icons/io";
 // import { HiDotsVertical } from "react-icons/Xhi";
 import { FaUserCircle, FaEye, FaPencilAlt, FaPlus } from "react-icons/fa"
-import { MdShoppingBag, MdDelete } from "react-icons/md";
 import { GiStarsStack } from "react-icons/gi";
+import PopupAdd from "./components/PopupAdd";
 
 const TableTennis = () => {
 
@@ -26,6 +27,13 @@ const TableTennis = () => {
 
         window.scrollTo(0,0);
     })
+
+
+
+    const [showModalPopupAdd, setShowModalPopupAdd] = useState(false);
+    const openPopupAdd = () => {
+        setShowModalPopupAdd(!showModalPopupAdd);
+    }
 
     return <>
         <section className="right-content w-100">
@@ -126,13 +134,16 @@ const TableTennis = () => {
                                     <div className="actions d-flex align-items-center">
                                         <Link to={'/table-tennis-detail'}><Button className="secondary" color="secondary"><FaEye/></Button></Link>
                                         <Button className="success" color="success"><FaPencilAlt/></Button>
-                                        <Button className="success" color="success"><FaPlus /></Button>
+                                        <Button className="success" color="success" onClick={openPopupAdd}><FaPlus /></Button>
+
                                         {/* <Button className="error" color="error"><MdDelete/></Button> */}
                                     </div>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
+
+                    {showModalPopupAdd && <PopupAdd onClose={() => setShowModalPopupAdd(false)} />}
 
                     <div className="d-flex tableFooter">
                         <p>Showing <b>12</b> of <b>60</b> results</p>
