@@ -1,15 +1,26 @@
 import { useState, option, useRef } from "react";
 import { HiDotsVertical } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
-import { Menu, MenuItem, Select, FormControl, Button } from "@mui/material/";
+import { Box, Backdrop, Select, FormControl, Button, Typography, Modal } from "@mui/material/";
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import TrendingDownIcon from '@mui/icons-material/TrendingDown';
-import "./PopupAddStyle.css"
+import "./PopupAddStyle.css";
 
-const PopupAdd = ({onClose}) => {
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    border: '2px solid #1866ee',
+    boxShadow: 24,
+    p: 4,
+};
+
+const PopupAdd = ({ onClose, showModalPopupAdd }) => {
 
     const modalRef = useRef();
-
     const closeModal = (e) => {
         if (modalRef.current === e.target) {
             onClose();
@@ -17,14 +28,22 @@ const PopupAdd = ({onClose}) => {
     }
 
     return (
-        <div rel={modalRef} onClick={closeModal} className="fixed inset-0 bg-black bg-opacity-30 backgrop-blur-sm flex justify-center items-center">
-            <div className="mt-10 flex flex-col gap-5 text-white">
-                <button onClick={onClose} className="place-self-end"><IoMdClose size={30}/></button>
-                <div className="bg-indigo-600 rounded-xl px-20 py-10">
-                    <h1>Download free ebook</h1>
-                    <p>Want to learn how to crack......</p>
-                </div>
-            </div>
+        <div>
+            <Modal
+                open={showModalPopupAdd}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+            >
+                <Box sx={style}>
+                    <Typography id="modal-modal-title" variant="h6" component="h2">
+                        Bạn muốn đăng ký?
+                    </Typography>
+                    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                        Nhấn vào đây để đăng ký
+                    </Typography>
+                    <Button className="close-modal" onClick={onClose}>Bỏ qua</Button>
+                </Box>
+            </Modal>
         </div>
     )
 }

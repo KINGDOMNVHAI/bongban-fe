@@ -4,10 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { MyContext } from "../../App";
 import { Menu, MenuItem, Select, FormControl, Button, Pagination } from "@mui/material/";
 
-// import { IoMdCart, IoIosTimer } from "react-icons/io";
-// import { HiDotsVertical } from "react-icons/Xhi";
-import { FaUserCircle, FaEye, FaPencilAlt, FaPlus } from "react-icons/fa"
-import { GiStarsStack } from "react-icons/gi";
+import { FaEye, FaPencilAlt, FaPlus } from "react-icons/fa"
 import PopupAdd from "./components/PopupAdd";
 
 const TableTennis = () => {
@@ -143,7 +140,12 @@ const TableTennis = () => {
                         </tbody>
                     </table>
 
-                    {showModalPopupAdd && <PopupAdd onClose={() => setShowModalPopupAdd(false)} />}
+                    {showModalPopupAdd &&
+                        <PopupAdd
+                            onClose={() => setShowModalPopupAdd(false)}
+                            showModalPopupAdd={showModalPopupAdd}
+                        />
+                    }
 
                     <div className="d-flex tableFooter">
                         <p>Showing <b>12</b> of <b>60</b> results</p>
