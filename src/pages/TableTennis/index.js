@@ -5,7 +5,7 @@ import { Menu, MenuItem, Select, FormControl, Button, Pagination } from "@mui/ma
 
 // import { IoMdCart, IoIosTimer } from "react-icons/io";
 // import { HiDotsVertical } from "react-icons/Xhi";
-import { FaUserCircle, FaEye, FaPencilAlt } from "react-icons/fa"
+import { FaUserCircle, FaEye, FaPencilAlt, FaPlus } from "react-icons/fa"
 import { MdShoppingBag, MdDelete } from "react-icons/md";
 import { GiStarsStack } from "react-icons/gi";
 
@@ -92,6 +92,7 @@ const TableTennis = () => {
                             <tr>
                                 <th>UID</th>
                                 <th style={{width:'300px'}}>PRODUCT</th>
+                                <th>PEOPLE</th>
                                 <th>STARTED PRICE (khởi điểm)</th>
                                 <th>DEPOSIT (đặt cọc)</th>
                                 <th>DEPRECIATION (khấu hao)</th>
@@ -116,6 +117,7 @@ const TableTennis = () => {
                                         </div>
                                     </div>
                                 </td>
+                                <td>10</td>
                                 <td>6.500.000 VND</td>
                                 <td>3.000.000 VND</td>
                                 <td>100.000 VND</td>
@@ -124,7 +126,8 @@ const TableTennis = () => {
                                     <div className="actions d-flex align-items-center">
                                         <Link to={'/table-tennis-detail'}><Button className="secondary" color="secondary"><FaEye/></Button></Link>
                                         <Button className="success" color="success"><FaPencilAlt/></Button>
-                                        <Button className="error" color="error"><MdDelete/></Button>
+                                        <Button className="success" color="success"><FaPlus /></Button>
+                                        {/* <Button className="error" color="error"><MdDelete/></Button> */}
                                     </div>
                                 </td>
                             </tr>

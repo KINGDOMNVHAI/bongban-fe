@@ -581,6 +581,12 @@ Thiết kế Notification
 21:10
 Thiết kế Sidebar
 
+25:20
+Thiết kế Logout
+
+27:20
+Thiết kế Body
+
 ==============================================================
 Video 10: trang detail
 
