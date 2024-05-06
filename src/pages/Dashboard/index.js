@@ -190,7 +190,7 @@ const Dashboard = () => {
                                                 <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp" className="w-100" />
                                             </div>
                                         </div>
-                                        <div className="info pl-0">
+                                        <div className="info pl-2">
                                             <h6>Tops and skirt set for Female...</h6>
                                             <p>Women's exclusive summer Tops and skirt set for Female Top and skirt set...</p>
                                         </div>
@@ -225,7 +225,7 @@ const Dashboard = () => {
                                                 <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp" className="w-100" />
                                             </div>
                                         </div>
-                                        <div className="info pl-0">
+                                        <div className="info pl-2">
                                             <h6>Tops and skirt set for Female...</h6>
                                             <p>Women's exclusive summer Tops and skirt set for Female Top and skirt set...</p>
                                         </div>
@@ -260,7 +260,7 @@ const Dashboard = () => {
                                                 <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp" className="w-100" />
                                             </div>
                                         </div>
-                                        <div className="info pl-0">
+                                        <div className="info pl-2">
                                             <h6>Tops and skirt set for Female...</h6>
                                             <p>Women's exclusive summer Tops and skirt set for Female Top and skirt set...</p>
                                         </div>

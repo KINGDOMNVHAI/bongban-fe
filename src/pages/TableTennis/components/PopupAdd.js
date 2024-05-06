@@ -20,13 +20,6 @@ const style = {
 
 const PopupAdd = ({ onClose, showModalPopupAdd }) => {
 
-    const modalRef = useRef();
-    const closeModal = (e) => {
-        if (modalRef.current === e.target) {
-            onClose();
-        }
-    }
-
     return (
         <div>
             <Modal

@@ -587,6 +587,15 @@ Thiết kế Logout
 27:20
 Thiết kế Body
 
+27.50
+Thiết kế List
+
+35:00
+Thiết kế Pagination
+
+38:40
+Thiết kế Login
+
 ==============================================================
 Video 10: trang detail
 
@@ -597,6 +606,14 @@ Video 10: trang detail
 
 
 
+
+
+
+==============================================================
+Popup: nguồn từ các video
+https://www.youtube.com/watch?v=Gy4G68WoHq4
+https://www.youtube.com/watch?v=9DwGahSqcEc
+https://mui.com/material-ui/react-modal/
 
 ==============================================================
 React Google Login 2024
