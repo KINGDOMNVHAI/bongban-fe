@@ -608,6 +608,14 @@ Tạo route tại App.js
 5:00
 Kiểm tra trang product/details hiển thị chính xác
 
+6:40
+Thiết kế Product Gallery, Product Details
+
+8:15
+slick-slider
+
+9:00
+productSliderOptions
 
 
 

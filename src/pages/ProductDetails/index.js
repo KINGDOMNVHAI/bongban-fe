@@ -1,5 +1,6 @@
 import { Home, ExpandMore } from "@mui/icons-material";
 import { Breadcrumbs, Chip, emphasize, styled } from "@mui/material";
+import Slider from "react-slick";
 import DashboardBox from "../Dashboard/components/dashboardBox";
 
 // Breadcrum code
@@ -37,10 +38,29 @@ const ProductDetails = () => {
                             icon={<Home fontSize="small"/>}
                         />
                         <StyledBreadcrumb
+                            component="a"
+                            href="#"
                             label="Products"
-                            deleteIcon={<ExpandMore/>}
+                        />
+                        <StyledBreadcrumb
+                            label="Product View"
                         />
                     </Breadcrumbs>
+                </div>
+
+                <div className="card">
+                    <br/>
+                    <div className="col-md-12">
+                        <div className="row">
+                            <div className="col-md-4">
+
+                            </div>
+
+                            <div className="col-md-8">
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>

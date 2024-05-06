@@ -14,6 +14,14 @@ const BladeDetail = () => {
     const [showBy, setShowBy] = useState('');
     const [showBysetCatBy, setCatBy] = useState('');
 
+    var productSliderOptions = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    }
+
     return <>
         <section className="right-content w-100">
             <div className="row dashboardBoxWrapperRow">
