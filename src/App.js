@@ -9,6 +9,7 @@ import TableTennis from './pages/TableTennis';
 import TableTennisDetail from './pages/TableTennisDetail';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
+import ProductDetails from './pages/ProductDetails';
 
 const MyContext = createContext();
 
@@ -73,6 +74,7 @@ function App() {
               <Route path="/dashboard" exact={true} element={<Dashboard />} />
               <Route path="/login" exact={true} element={<Login />} />
               <Route path="/sign-up" exact={true} element={<SignUp />} />
+              <Route path="/product/details" exact={true} element={<ProductDetails />} />
 
               <Route path="/table-tennis" exact={true} element={<TableTennis />} />
               <Route path="/table-tennis-detail" exact={true} element={<TableTennisDetail />} />

@@ -593,18 +593,20 @@ Thiết kế List
 35:00
 Thiết kế Pagination
 
-38:40
-Thiết kế Login
-
 ==============================================================
 Video 10: trang detail
+Thiết kế Login
 
+2:00
+Tạo pages -> ProductDetails -> index.js
+Tạo StyledBreadcrumb
+Tạo Import
 
+4:00
+Tạo route tại App.js
 
-
-
-
-
+5:00
+Kiểm tra trang product/details hiển thị chính xác
 
 
 
