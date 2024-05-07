@@ -1,7 +1,6 @@
 import { Home, ExpandMore } from "@mui/icons-material";
 import { Breadcrumbs, Chip, emphasize, styled } from "@mui/material";
 import Slider from "react-slick";
-import DashboardBox from "../Dashboard/components/dashboardBox";
 
 // Breadcrum code
 const StyledBreadcrumb = styled(Chip)(({theme}) => {
@@ -25,6 +24,23 @@ const StyledBreadcrumb = styled(Chip)(({theme}) => {
 })
 
 const ProductDetails = () => {
+
+    var productSliderOptions = {
+        dots: false,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    };
+
+    var productSliderSmlOptions = {
+        dots: false,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 1
+    };
+
     return (
         <>
             <div className="right-content w-100">
@@ -49,12 +65,32 @@ const ProductDetails = () => {
                 </div>
 
                 <div className="card">
-                    <br/>
                     <div className="col-md-12">
                         <div className="row">
                             <div className="col-md-4">
-
+                                <Slider {...productSliderOptions}>
+                                    <div className="item">
+                                        <img src="https://mironcoder-hotash.netlify.app/images/product/single/01.webp" className="w-100" />
+                                    </div>
+                                </Slider>
+                                <Slider {...productSliderSmlOptions}>
+                                    <div className="item">
+                                        <img src="https://mironcoder-hotash.netlify.app/images/product/single/02.webp" className="w-100" />
+                                    </div>
+                                    <div className="item">
+                                        <img src="https://mironcoder-hotash.netlify.app/images/product/single/03.webp" className="w-100" />
+                                    </div>
+                                    <div className="item">
+                                        <img src="https://mironcoder-hotash.netlify.app/images/product/single/04.webp" className="w-100" />
+                                    </div>
+                                    <div className="item">
+                                        <img src="https://mironcoder-hotash.netlify.app/images/product/single/05.webp" className="w-100" />
+                                    </div>
+                                </Slider>
                             </div>
+
+
+
 
                             <div className="col-md-8">
 

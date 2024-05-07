@@ -54,7 +54,7 @@ const Login = () => {
             setError("");
             const token = res.data.token;
             localStorage.setItem('jwtToken', token);
-            return navigate('/blade');
+            return navigate('/blade-list');
             // Redirect or perform any other actions
         } catch (error) {
             // Handle error
