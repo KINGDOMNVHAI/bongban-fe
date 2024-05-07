@@ -656,7 +656,10 @@ Thiết kế slider
 12:10
 Tạo productSliderSmlOptions
 Tạo hình sản phẩm nhỏ bên dưới
+Thiết kế slider nhỏ
 
+17:30
+Xem kết quả
 
 ==============================================================
 Popup: nguồn từ các video

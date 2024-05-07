@@ -289,6 +289,16 @@ body.dark .css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root {color: rgba(25
 .signUpSection .part1 h1 {font-size: 50px; font-weight: 800;}
 .signUpSection .part1 p {font-size: 18px; font-weight: 500;}
 
+.breadcrumbs_ a:hover {text-decoration: none !important;}
+body.dark .breadcrumbs_ a {background-color: #112143 !important;}
+body.dark .breadcrumbs_ a *{color: rgba(255, 255, 255, 0.7) !important;}
+body.dark .breadcrumbs_ li .MuiChip-filled {background-color: #112143 !important; color: rgba(255, 255, 255, 0.7) !important;}
+
+body.dark .css-1wuw8dw-MuiBreadcrumbs-separator {background-color: #112143 !important; color: rgba(255, 255, 255, 0.7) !important;}
+body.dark .MuiChip-label {color: rgba(255, 255, 255, 0.7) !important;}
+
+.sliderSml .slick-slide {padding-right: 10px;}
+
 /*
 .form .form-group {margin-bottom: 15px;}
 .form .form-group h6 {margin-bottom: 10px;}
