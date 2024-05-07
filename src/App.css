@@ -193,10 +193,30 @@ body.dark .logoutWrapper .logoutBox {background: linear-gradient(rgba(var(#183e8
 .card {margin: 20px 0px; border-radius: 10px;}
 .card .hd {font-size: 18px; font-weight: bold; color: #403e57;}
 
+body.dark .card {background: #112143 !important;}
+body.dark .card .hd {font-size: 18px; font-weight: bold; color: rgba(255, 255, 255, 0.8);}
+
 .cardFilters .col-md-3 h4 {font-size: 16px; font-weight: 600; text-transform: capitalize; color: #403e57;}
+body.dark .cardFilters .col-md-3 h4 {color: rgba(255, 255, 255, 0.8);}
 
 h1, h2, h3, h4, h5, h6, p {color: #403e57;}
-.table-responsive::-webkit-scrollbar-thumb {background: #CCC}
+
+body.dark .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root,
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6,
+body.dark p,
+body.dark .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon,
+body.dark .css-bpeome-MuiSvgIcon-root-MuiSelect-icon
+{color: rgba(255, 255, 255, 0.8) !important;}
+
+body.dark .css-1d3z3hw-MuiOutlinedInput-notchedOutline {border-color: rgba(255, 255, 255, 0.3) !important;}
+
+.table-responsive::-webkit-scrollbar-thumb {background: #CCC !important;}
+body.dark .table-responsive::-webkit-scrollbar-thumb {background: rgba(255, 255, 255, 0.1) !important;}
 
 .table .thead-dark th {background-color: #1866ee !important; border-color: rgba(255, 255, 255, 0.1) !important; font-size: 13px !important;}
 .table tbody td {font-size: 14px !important; color: #2f2d3e; font-weight: 500;}
@@ -224,7 +244,13 @@ table td .info h6 {overflow: hidden; text-overflow: ellipsis; white-space: nowra
 .tableFooter .pagination {margin-left: auto;}
 .tableFooter p {font-size: 16px; font-weight: 500; margin-bottom: 0px;}
 
+body.dark table td {color: rgba(255, 255, 255, 0.5) !important;}
+
 .css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {background-color: #0858f7 !important;}
+
+body.dark .table-bordered td, .table-bordered th {border: 1px solid rgba(255, 255, 255, 0.1) !important;}
+body.dark .css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root:hover {background-color: rgba(255, 255, 255, 0.2) !important; color: #FFF !important;}
+body.dark .css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root {color: rgba(255, 255, 255, 0.8) !important;}
 
 .loginSection {width: 100%; height: 100vh; padding: 35px 25px; background: #FFF;}
 .loginPatern {width: 100%; height: 100%; opacity: 0.1; position: fixed; top: 0px; left: 0px; z-index: 99; pointer-events: none;}
@@ -268,5 +294,5 @@ table td .info h6 {overflow: hidden; text-overflow: ellipsis; white-space: nowra
 
 */
 
-/* Box Table Tennis Detail */
-.tableTennisBox {text-align: center; padding: 35px 0px;}
+/* Box Blade Detail */
+.bladeBox {text-align: center; padding: 35px 0px;}

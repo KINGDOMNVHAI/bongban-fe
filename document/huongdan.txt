@@ -587,16 +587,43 @@ Thiết kế Logout
 27:20
 Thiết kế Body
 
+27.50
+Thiết kế List
+
+35:00
+Thiết kế Pagination
+
 ==============================================================
 Video 10: trang detail
+Thiết kế Login
+
+2:00
+Tạo pages -> ProductDetails -> index.js
+Tạo StyledBreadcrumb
+Tạo Import
+
+4:00
+Tạo route tại App.js
+
+5:00
+Kiểm tra trang product/details hiển thị chính xác
+
+6:40
+Thiết kế Product Gallery, Product Details
+
+8:15
+slick-slider
+
+9:00
+productSliderOptions
 
 
 
-
-
-
-
-
+==============================================================
+Popup: nguồn từ các video
+https://www.youtube.com/watch?v=Gy4G68WoHq4
+https://www.youtube.com/watch?v=9DwGahSqcEc
+https://mui.com/material-ui/react-modal/
 
 ==============================================================
 React Google Login 2024

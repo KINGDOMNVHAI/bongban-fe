@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { Chart } from "react-google-charts";
+import { Link } from "react-router-dom";
 import { Menu, MenuItem, Select, FormControl, Button, Pagination } from "@mui/material/";
 
 import { IoMdCart, IoIosTimer } from "react-icons/io";
@@ -190,7 +191,7 @@ const Dashboard = () => {
                                                 <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp" className="w-100" />
                                             </div>
                                         </div>
-                                        <div className="info pl-0">
+                                        <div className="info pl-2">
                                             <h6>Tops and skirt set for Female...</h6>
                                             <p>Women's exclusive summer Tops and skirt set for Female Top and skirt set...</p>
                                         </div>
@@ -210,7 +211,9 @@ const Dashboard = () => {
                                 <td>$38k</td>
                                 <td>
                                     <div className="actions d-flex align-items-center">
-                                        <Button className="secondary" color="secondary"><FaEye/></Button>
+                                        <Link to="/product/details">
+                                            <Button className="secondary" color="secondary"><FaEye/></Button>
+                                        </Link>
                                         <Button className="success" color="success"><FaPencilAlt/></Button>
                                         <Button className="error" color="error"><MdDelete/></Button>
                                     </div>
@@ -225,7 +228,7 @@ const Dashboard = () => {
                                                 <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp" className="w-100" />
                                             </div>
                                         </div>
-                                        <div className="info pl-0">
+                                        <div className="info pl-2">
                                             <h6>Tops and skirt set for Female...</h6>
                                             <p>Women's exclusive summer Tops and skirt set for Female Top and skirt set...</p>
                                         </div>
@@ -260,7 +263,7 @@ const Dashboard = () => {
                                                 <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp" className="w-100" />
                                             </div>
                                         </div>
-                                        <div className="info pl-0">
+                                        <div className="info pl-2">
                                             <h6>Tops and skirt set for Female...</h6>
                                             <p>Women's exclusive summer Tops and skirt set for Female Top and skirt set...</p>
                                         </div>

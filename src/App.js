@@ -5,10 +5,11 @@ import './App.css';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Dashboard from './pages/Dashboard';
-import TableTennis from './pages/TableTennis';
-import TableTennisDetail from './pages/TableTennisDetail';
+import Blade from './pages/Blade';
+import BladeDetail from './pages/BladeDetail';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
+import ProductDetails from './pages/ProductDetails';
 
 const MyContext = createContext();
 
@@ -73,9 +74,10 @@ function App() {
               <Route path="/dashboard" exact={true} element={<Dashboard />} />
               <Route path="/login" exact={true} element={<Login />} />
               <Route path="/sign-up" exact={true} element={<SignUp />} />
+              <Route path="/product/details" exact={true} element={<ProductDetails />} />
 
-              <Route path="/table-tennis" exact={true} element={<TableTennis />} />
-              <Route path="/table-tennis-detail" exact={true} element={<TableTennisDetail />} />
+              <Route path="/blade-list" exact={true} element={<Blade />} />
+              <Route path="/blade-detail" exact={true} element={<BladeDetail />} />
             </Routes>
           </div>
         </div>
