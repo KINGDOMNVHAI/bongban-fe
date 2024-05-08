@@ -5,11 +5,11 @@ import Logo from '../../assets/images/logo-google.png';
 import patern from '../../assets/images/pattern.webp';
 import { MyContext } from '../../App';
 
+import { FaUserCircle } from "react-icons/fa";
+import { IoMdEye, IoMdEyeOff, IoMdHome } from "react-icons/io";
+import { IoShieldCheckmark } from "react-icons/io5";
 import { MdMail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
-import { IoMdEye, IoMdEyeOff, IoMdHome } from "react-icons/io";
-import { FaUserCircle } from "react-icons/fa";
-import { IoShieldCheckmark } from "react-icons/io5";
 import { Button, Checkbox, FormControlLabel, FormGroup } from '@mui/material';
 
 const SignUp = () => {

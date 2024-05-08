@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import { Box, MenuItem, Select, FormControl, Button, Pagination } from "@mui/material/";
 import circlePlusIcon from '../../assets/images/icon-plus-circle.png';
 
-import { IoMdCart, IoIosTimer } from "react-icons/io";
-import { HiDotsVertical } from "react-icons/hi";
 import { FaUserCircle, FaEye, FaPencilAlt } from "react-icons/fa"
-import { MdShoppingBag, MdDelete } from "react-icons/md";
 import { GiStarsStack } from "react-icons/gi";
+import { HiDotsVertical } from "react-icons/hi";
+import { IoMdCart, IoIosTimer } from "react-icons/io";
+import { MdShoppingBag, MdDelete, MdBrandingWatermark } from "react-icons/md";
 
 const BladeDetail = () => {
 

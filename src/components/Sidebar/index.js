@@ -1,11 +1,12 @@
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { MyContext } from "../../App";
 import Button from '@mui/material/Button';
+
 import { FaProductHunt, FaLock, FaUserCircle } from "react-icons/fa";
 import { FaAngleRight, FaCartArrowDown, FaBell, FaGripVertical } from "react-icons/fa6";
-import { MdDashboard, MdMessage, MdViewKanban } from "react-icons/md";
 import { IoIosSettings, IoMdLogOut } from "react-icons/io";
-import { useContext, useState } from "react";
-import { MyContext } from "../../App";
+import { MdDashboard, MdMessage, MdViewKanban } from "react-icons/md";
 
 const Sidebar = () => {
 

@@ -14,6 +14,8 @@ body.dark {background: #071739 !important;}
 
 h1,h2,h3,h4,h5,h6,p {color: #403e57}
 
+h4 {line-height: 32px;}
+
 .btn-blue {background: #0858f7 !important; font-size: 14px !important; font-weight: 500; color: #FFF !important;
   text-transform: capitalize !important; border-radius: 8px !important;}
 
@@ -298,6 +300,15 @@ body.dark .css-1wuw8dw-MuiBreadcrumbs-separator {background-color: #112143 !impo
 body.dark .MuiChip-label {color: rgba(255, 255, 255, 0.7) !important;}
 
 .sliderSml .slick-slide {padding-right: 10px;}
+.sliderSml .slick-slide .item {border-radius: 7px !important; overflow: hidden;}
+.sliderSml *, .sliderBig * {overflow: hidden; border-radius: 7px;}
+.sliderBig .item {overflow: hidden; border-radius: 7px;}
+
+body.dark .productInfo {color: rgba(255, 255, 255, 0.7) !important;}
+.productDetailsSection .productInfo .icon {width: 18%; flex: 0 0 10%;}
+.productDetailsSection .productInfo .icon svg {font-size: 22px;}
+.productDetailsSection .productInfo .name {width: 82%; flex: 0 0 80%; padding-top: 2px; font-size: 15px;}
+.productDetailsSection .productInfo .row .col-sm-7 span {opacity: 0.8; font-size: 15px; padding-left: 10px;}
 
 /*
 .form .form-group {margin-bottom: 15px;}

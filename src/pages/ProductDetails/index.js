@@ -2,6 +2,12 @@ import { Home, ExpandMore } from "@mui/icons-material";
 import { Breadcrumbs, Chip, emphasize, styled } from "@mui/material";
 import Slider from "react-slick";
 
+import { FaUserCircle, FaEye, FaPencilAlt } from "react-icons/fa"
+import { GiStarsStack } from "react-icons/gi";
+import { HiDotsVertical } from "react-icons/hi";
+import { IoMdCart, IoIosTimer } from "react-icons/io";
+import { MdShoppingBag, MdBrandingWatermark, MdGridView } from "react-icons/md";
+
 // Breadcrum code
 const StyledBreadcrumb = styled(Chip)(({theme}) => {
     const backgroundColor =
@@ -38,7 +44,7 @@ const ProductDetails = () => {
         dots: false,
         infinite: false,
         speed: 500,
-        slidesToShow: 4,
+        slidesToShow: 3,
         slidesToScroll: 1,
         arrows: false
     };
@@ -66,12 +72,12 @@ const ProductDetails = () => {
                     </Breadcrumbs>
                 </div>
 
-                <div className="card">
+                <div className="card productDetailsSection">
                     <div className="row">
-                        <div className="col-md-4">
+                        <div className="col-md-5">
                             <div className="sliderWrapper pt-3 pb-3 pl-4 pr-4">
-                                <h6 className="mb-3">Product Gallery</h6>
-                                <Slider {...productSliderOptions} className="sliderBig">
+                                <h6 className="mb-4">Product Gallery</h6>
+                                <Slider {...productSliderOptions} className="sliderBig mb-2">
                                     <div className="item">
                                         <img src="https://mironcoder-hotash.netlify.app/images/product/single/01.webp" className="w-100" />
                                     </div>
@@ -97,8 +103,35 @@ const ProductDetails = () => {
                         </div>
 
 
-                        <div className="col-md-8">
+                        <div className="col-md-7">
+                            <div className="sliderWrapper pt-3 pb-3 pl-4 pr-4">
+                                <h6 className="mb-4">Product Details</h6>
 
+                                <h4>Formal suits for men wedding slim fit 3 pieces dress business party jacket</h4>
+
+                                <div className="productInfo mt-3">
+                                    <div className="row">
+                                        <div className="col-sm-5 d-flex align-items-center">
+                                            <span className="icon"><MdBrandingWatermark/></span>
+                                            <span className="name">Brand</span>
+                                        </div>
+
+                                        <div className="col-sm-7">
+                                            : <span>Ecstasy</span>
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-sm-5 d-flex align-items-center">
+                                            <span className="icon"><MdGridView/></span>
+                                            <span className="name">Category</span>
+                                        </div>
+
+                                        <div className="col-sm-7">
+                                            : <span>Man's</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

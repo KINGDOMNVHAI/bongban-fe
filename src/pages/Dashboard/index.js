@@ -3,11 +3,11 @@ import { Chart } from "react-google-charts";
 import { Link } from "react-router-dom";
 import { Menu, MenuItem, Select, FormControl, Button, Pagination } from "@mui/material/";
 
-import { IoMdCart, IoIosTimer } from "react-icons/io";
-import { HiDotsVertical } from "react-icons/hi";
 import { FaUserCircle, FaEye, FaPencilAlt } from "react-icons/fa"
-import { MdShoppingBag, MdDelete } from "react-icons/md";
 import { GiStarsStack } from "react-icons/gi";
+import { HiDotsVertical } from "react-icons/hi";
+import { IoMdCart, IoIosTimer } from "react-icons/io";
+import { MdShoppingBag, MdDelete } from "react-icons/md";
 
 import DashboardBox from "./components/dashboardBox";
 import { MyContext } from "../../App";

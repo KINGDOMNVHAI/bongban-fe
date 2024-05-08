@@ -660,6 +660,13 @@ Thiết kế slider nhỏ
 
 17:30
 Xem kết quả
+Thiết kế Product Details
+
+28:00
+Thiết kế productInfo
+
+30:20
+Tạo dấu hai chấm
 
 ==============================================================
 Popup: nguồn từ các video
