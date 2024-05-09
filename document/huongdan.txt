@@ -668,6 +668,12 @@ Thiết kế productInfo
 30:20
 Tạo dấu hai chấm
 
+33:10
+Tạo ô cho từng tag
+
+41:00
+Copy ô cho các mục Color, Size
+
 ==============================================================
 Popup: nguồn từ các video
 https://www.youtube.com/watch?v=Gy4G68WoHq4

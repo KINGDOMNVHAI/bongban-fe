@@ -2,10 +2,13 @@ import { Home, ExpandMore } from "@mui/icons-material";
 import { Breadcrumbs, Chip, emphasize, styled } from "@mui/material";
 import Slider from "react-slick";
 
-import { FaUserCircle, FaEye, FaPencilAlt } from "react-icons/fa"
+import { BsTextareaResize } from "react-icons/bs";
+import { CiSettings } from "react-icons/ci";
+import { FaUserCircle, FaEye, FaRegStar } from "react-icons/fa"
 import { GiStarsStack } from "react-icons/gi";
 import { HiDotsVertical } from "react-icons/hi";
 import { IoMdCart, IoIosTimer } from "react-icons/io";
+import { IoColorPaletteOutline, IoPricetagOutline } from "react-icons/io5";
 import { MdShoppingBag, MdBrandingWatermark, MdGridView } from "react-icons/md";
 
 // Breadcrum code
@@ -111,23 +114,124 @@ const ProductDetails = () => {
 
                                 <div className="productInfo mt-3">
                                     <div className="row">
-                                        <div className="col-sm-5 d-flex align-items-center">
+                                        <div className="col-sm-3 d-flex align-items-center">
                                             <span className="icon"><MdBrandingWatermark/></span>
                                             <span className="name">Brand</span>
                                         </div>
 
-                                        <div className="col-sm-7">
+                                        <div className="col-sm-9">
                                             : <span>Ecstasy</span>
                                         </div>
                                     </div>
                                     <div className="row">
-                                        <div className="col-sm-5 d-flex align-items-center">
+                                        <div className="col-sm-3 d-flex align-items-center">
                                             <span className="icon"><MdGridView/></span>
                                             <span className="name">Category</span>
                                         </div>
 
-                                        <div className="col-sm-7">
-                                            : <span>Man's</span>
+                                        <div className="col-sm-9">
+                                            : <span>
+                                                <ul className="list list-inline tags sml">
+                                                    <li className="list-inline-item">
+                                                        <span>SUITE</span>
+                                                    </li>
+                                                    <li className="list-inline-item">
+                                                        <span>PARTY</span>
+                                                    </li>
+                                                    <li className="list-inline-item">
+                                                        <span>DRESS</span>
+                                                    </li>
+                                                    <li className="list-inline-item">
+                                                        <span>SMART</span>
+                                                    </li>
+                                                    <li className="list-inline-item">
+                                                        <span>MAN</span>
+                                                    </li>
+                                                    <li className="list-inline-item">
+                                                        <span>STYLES</span>
+                                                    </li>
+                                                </ul>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-sm-3 d-flex align-items-center">
+                                            <span className="icon"><CiSettings/></span>
+                                            <span className="name">Tags</span>
+                                        </div>
+
+                                        <div className="col-sm-9">
+                                            : <span>Suite</span>
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-sm-3 d-flex align-items-center">
+                                            <span className="icon"><IoColorPaletteOutline/></span>
+                                            <span className="name">Color</span>
+                                        </div>
+
+                                        <div className="col-sm-9">
+                                            : <span>
+                                                <ul className="list list-inline tags sml">
+                                                    <li className="list-inline-item">
+                                                        <span>RED</span>
+                                                    </li>
+                                                    <li className="list-inline-item">
+                                                        <span>BLUE</span>
+                                                    </li>
+                                                    <li className="list-inline-item">
+                                                        <span>WHITE</span>
+                                                    </li>
+                                                </ul>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-sm-3 d-flex align-items-center">
+                                            <span className="icon"><BsTextareaResize/></span>
+                                            <span className="name">Size</span>
+                                        </div>
+
+                                        <div className="col-sm-9">
+                                            : <span>
+                                                <ul className="list list-inline tags sml">
+                                                    <li className="list-inline-item">
+                                                        <span>SM</span>
+                                                    </li>
+                                                    <li className="list-inline-item">
+                                                        <span>MD</span>
+                                                    </li>
+                                                    <li className="list-inline-item">
+                                                        <span>LG</span>
+                                                    </li>
+                                                    <li className="list-inline-item">
+                                                        <span>XL</span>
+                                                    </li>
+                                                    <li className="list-inline-item">
+                                                        <span>XXL</span>
+                                                    </li>
+                                                </ul>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-sm-3 d-flex align-items-center">
+                                            <span className="icon"><IoPricetagOutline/></span>
+                                            <span className="name">Price</span>
+                                        </div>
+
+                                        <div className="col-sm-9">
+                                            : <span>$37.00</span>
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-sm-3 d-flex align-items-center">
+                                            <span className="icon"><IoMdCart/></span>
+                                            <span className="name">Stock</span>
+                                        </div>
+
+                                        <div className="col-sm-9">
+                                            : <span>(68) Piece</span>
                                         </div>
                                     </div>
                                 </div>
