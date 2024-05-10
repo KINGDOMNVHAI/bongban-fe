@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import { createContext, useEffect, useState } from 'react';
-import "./assets/css/bootstrap.min.css"
+import "./assets/css/bootstrap.min.css";
 import './App.css';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';

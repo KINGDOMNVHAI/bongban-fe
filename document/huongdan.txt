@@ -674,6 +674,22 @@ Tạo ô cho từng tag
 41:00
 Copy ô cho các mục Color, Size
 
+43:00
+<h4 className="mt-4">Product Description</h4>
+
+46:00
+<h5 className="mt-4 mb-3">Rating Analytics</h5>
+
+47:45
+Tạo đường line trong Rating
+https://www.w3schools.com/bootstrap4/bootstrap_progressbars.asp
+
+56:00
+Kết quả: có đường line
+Tô màu cho line
+
+
+
 ==============================================================
 Popup: nguồn từ các video
 https://www.youtube.com/watch?v=Gy4G68WoHq4

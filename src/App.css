@@ -217,6 +217,8 @@ body.dark .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon,
 body.dark .css-bpeome-MuiSvgIcon-root-MuiSelect-icon
 {color: rgba(255, 255, 255, 0.8) !important;}
 
+p {font-weight: 300; font-size: 15px; line-height: 25px;}
+
 body.dark .css-1d3z3hw-MuiOutlinedInput-notchedOutline {border-color: rgba(255, 255, 255, 0.3) !important;}
 
 .table-responsive::-webkit-scrollbar-thumb {background: #CCC !important;}
@@ -314,12 +316,20 @@ body.dark .productInfo {color: rgba(255, 255, 255, 0.7) !important;}
 body.dark .productDetailsSection .productInfo .name {color: rgba(255, 255, 255, 0.8) !important;}
 .productDetailsSection .productInfo .row {margin-bottom: 10px !important;}
 .productDetailsSection .productInfo .row .col-sm-9 {display: flex; align-items: center;}
-.productDetailsSection .productInfo .row .col-sm-9 span {opacity: 0.8; font-size: 15px; padding-left: 20px;}
+.productDetailsSection .productInfo .row .col-sm-9 span {opacity: 0.8; font-size: 15px; padding-left: 20px; color: rgba(255, 255, 255, 0.7) !important;}
 
 .tags {margin-bottom: 0px !important;}
 .tags li span {display: flex; align-items: center; justify-content: center; background: #1b2b4d !important;
   border-radius: 5px !important; font-size: 13px !important; padding: 5px 10px !important;}
 /* .tags li span:first-child {padding-left: 0px !important;} */
+
+.ratingSection {width: 500px;}
+.ratingSection .ratingrow {width: 100%;}
+.ratingSection .ratingrow .progress {height: 3px !important; background: #000 !important;}
+.ratingSection .ratingrow .progress .progress-bar {background: #edb213 !important;}
+.ratingSection .ratingrow .col1 {width: 15%; flex: 0 0 15%; display: flex;}
+.ratingSection .ratingrow .col2 {width: 50%; flex: 0 0 25%;}
+.ratingSection .ratingrow .col3 {width: 25%; flex: 0 0 25%; display: flex; padding-left: 20px;}
 
 /*
 .form .form-group {margin-bottom: 15px;}
@@ -327,7 +337,6 @@ body.dark .productDetailsSection .productInfo .name {color: rgba(255, 255, 255, 
 .form .form-group input {background: #fafafa; width: 100%; outline: none !important; border: 1px solid rgba(0,0,0,0.1) !important;
   height: 40px; padding-left: 15px; border-radius: 5px; font-size: 14px;}
 .form .form-group textarea {height: 120px; padding-top: 15px;}
-
 */
 
 /* Box Blade Detail */
