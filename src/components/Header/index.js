@@ -15,6 +15,7 @@ import Divider from '@mui/material/Divider';
 import PersonAdd from '@mui/icons-material/PersonAdd';
 import Logout from '@mui/icons-material/Logout';
 import { MyContext } from "../../App";
+import UserAvatarImgComponent from "../userAvatarImg";
 
 
 const Header = () => {
@@ -96,11 +97,7 @@ const Header = () => {
                                         <MenuItem onClick={handleCloseNotificationsDrop}>
                                             <div className="d-flex align-items-center">
                                                 <div>
-                                                    <div className="userImg">
-                                                        <span className="rounded-circle">
-                                                            <img src="https://mironcoder-hotash.netlify.app/images/avatar/01.webp" />
-                                                        </span>
-                                                    </div>
+                                                    <UserAvatarImgComponent img="https://mironcoder-hotash.netlify.app/images/avatar/01.webp" />
                                                 </div>
 
                                                 <div className="dropdownInfo">

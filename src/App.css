@@ -64,9 +64,10 @@ body.dark .searchBox input, body.dark .searchBox input::-webkit-input-placeholde
 .userImg .rounded-circle {display: flex; align-items: center; justify-content: center;
   overflow: hidden; width: 100%px; height: 100%px; cursor: pointer; position: relative;}
 .userImg .rounded-circle img {object-fit: cover; width:100%; height: 100%}
+.userImg .lg {width: 60px !important; height: 60px !important;}
 
 .myAcc .userInfo {padding-left: 10px;}
-.myAcc .userInfo h4 {font-size: 15px; font-weight: 600; margin-bottom: 0px; color: #292929;}
+.myAcc .userInfo h4 {font-size: 15px; font-weight: 600; line-height: 15px; margin-bottom: 0px; color: #292929;}
 .myAcc .userInfo p {margin-top: 0px; font-size: 12px; color: #000; opacity: 0.7;}
 
 body.dark .myAcc .userInfo *{color: rgba(255,255,255,0.8) !important;}
@@ -332,7 +333,13 @@ body.dark .productDetailsSection .productInfo .name {color: rgba(255, 255, 255, 
 .ratingSection .ratingrow .col3 {width: 25%; flex: 0 0 25%; display: flex; padding-left: 20px;}
 
 .reviewSection {width: 100%; display: flex; flex-direction: column;}
-.reviewSection .reviewsRow {width: 100%; height: 100px; background: #071739; padding: 35px; border-radius: 10px}
+.reviewSection .reviewRow {width: 100%; height: auto; background: #071739; padding: 35px; border-radius: 10px; margin: 15px 0px;}
+.reviewSection .reviewRow p {padding-left: 20px;}
+.reviewSection .reviewRow.reply {width: 90%; margin-left: auto;}
+.reviewSection .reviewRow .btn-big {font-size: 15px !important;}
+.reviewSection .reviewRow .btn-big svg {font-size: 18px !important;}
+
+.userInfo h6 {margin-bottom: 0px;}
 
 /*
 .form .form-group {margin-bottom: 15px;}

@@ -1,15 +1,16 @@
 import { Home, ExpandMore } from "@mui/icons-material";
-import { Breadcrumbs, Chip, emphasize, styled } from "@mui/material";
+import { Breadcrumbs, Button, Chip, emphasize, Rating, styled } from "@mui/material";
 import Slider from "react-slick";
 
 import { BsTextareaResize } from "react-icons/bs";
 import { CiSettings } from "react-icons/ci";
-import { FaUserCircle, FaEye, FaRegStar } from "react-icons/fa"
+import { FaUserCircle, FaReply } from "react-icons/fa"
 import { GiStarsStack } from "react-icons/gi";
 import { HiDotsVertical } from "react-icons/hi";
 import { IoMdCart, IoIosTimer } from "react-icons/io";
 import { IoColorPaletteOutline, IoPricetagOutline } from "react-icons/io5";
 import { MdShoppingBag, MdBrandingWatermark, MdGridView } from "react-icons/md";
+import UserAvatarImgComponent from "../../components/userAvatarImg";
 
 // Breadcrum code
 const StyledBreadcrumb = styled(Chip)(({theme}) => {
@@ -112,7 +113,7 @@ const ProductDetails = () => {
 
                                 <h4>Formal suits for men wedding slim fit 3 pieces dress business party jacket</h4>
 
-                                <div className="productInfo mt-3">
+                                <div className="productInfo mt-4">
                                     <div className="row">
                                         <div className="col-sm-3 d-flex align-items-center">
                                             <span className="icon"><MdBrandingWatermark/></span>
@@ -318,12 +319,116 @@ const ProductDetails = () => {
                         <div className="reviewSection">
                             <div className="reviewRow">
                                 <div className="row">
-                                    <div className="col-sm-7">
+                                    <div className="col-sm-7 d-flex">
+                                        <div className="d-flex flex-column">
+                                            <div className="userInfo d-flex align-items-center mb-3">
+                                                <UserAvatarImgComponent img="https://mironcoder-hotash.netlify.app/images/avatar/01.webp" lg={true} />
 
+                                                <div className="info pl-2">
+                                                    <h6>Miron Mahmud</h6>
+                                                    <span>25 minutes ago!</span>
+                                                </div>
+                                            </div>
+                                            <Rating name="read-only" value={4.5} precision={0.5} readOnly />
+                                        </div>
                                     </div>
+
+                                    <div className="col-md-5 d-flex align-items-center">
+                                        <div className="ml-auto">
+                                            <Button className="btn-blue btn-big btn-lg ml-auto"><FaReply/> &nbsp; Reply</Button>
+                                        </div>
+                                    </div>
+
+                                    <p className="mt-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+                                </div>
+                            </div>
+
+                            <div className="reviewRow reply">
+                                <div className="row">
+                                    <div className="col-sm-7 d-flex">
+                                        <div className="d-flex flex-column">
+                                            <div className="userInfo d-flex align-items-center mb-3">
+                                                <UserAvatarImgComponent img="https://mironcoder-hotash.netlify.app/images/avatar/01.webp" lg={true} />
+
+                                                <div className="info pl-2">
+                                                    <h6>Miron Mahmud</h6>
+                                                    <span>25 minutes ago!</span>
+                                                </div>
+                                            </div>
+                                            <Rating name="read-only" value={4.5} precision={0.5} readOnly />
+                                        </div>
+                                    </div>
+
+                                    <div className="col-md-5 d-flex align-items-center">
+                                        <div className="ml-auto">
+                                            <Button className="btn-blue btn-big btn-lg ml-auto"><FaReply/> &nbsp; Reply</Button>
+                                        </div>
+                                    </div>
+
+                                    <p className="mt-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+                                </div>
+                            </div>
+
+                            <div className="reviewRow reply">
+                                <div className="row">
+                                    <div className="col-sm-7 d-flex">
+                                        <div className="d-flex flex-column">
+                                            <div className="userInfo d-flex align-items-center mb-3">
+                                                <UserAvatarImgComponent img="https://mironcoder-hotash.netlify.app/images/avatar/01.webp" lg={true} />
+
+                                                <div className="info pl-2">
+                                                    <h6>Miron Mahmud</h6>
+                                                    <span>25 minutes ago!</span>
+                                                </div>
+                                            </div>
+                                            <Rating name="read-only" value={4.5} precision={0.5} readOnly />
+                                        </div>
+                                    </div>
+
+                                    <div className="col-md-5 d-flex align-items-center">
+                                        <div className="ml-auto">
+                                            <Button className="btn-blue btn-big btn-lg ml-auto"><FaReply/> &nbsp; Reply</Button>
+                                        </div>
+                                    </div>
+
+                                    <p className="mt-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+                                </div>
+                            </div>
+
+                            <div className="reviewRow">
+                                <div className="row">
+                                    <div className="col-sm-7 d-flex">
+                                        <div className="d-flex flex-column">
+                                            <div className="userInfo d-flex align-items-center mb-3">
+                                                <UserAvatarImgComponent img="https://mironcoder-hotash.netlify.app/images/avatar/01.webp" lg={true} />
+
+                                                <div className="info pl-2">
+                                                    <h6>Miron Mahmud</h6>
+                                                    <span>25 minutes ago!</span>
+                                                </div>
+                                            </div>
+                                            <Rating name="read-only" value={4.5} precision={0.5} readOnly />
+                                        </div>
+                                    </div>
+
+                                    <div className="col-md-5 d-flex align-items-center">
+                                        <div className="ml-auto">
+                                            <Button className="btn-blue btn-big btn-lg ml-auto"><FaReply/> &nbsp; Reply</Button>
+                                        </div>
+                                    </div>
+
+                                    <p className="mt-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
                                 </div>
                             </div>
                         </div>
+
+                        <h5 className="mt-4 mb-3">Review Reply Form</h5>
+
+
                     </div>
 
                 </div>
