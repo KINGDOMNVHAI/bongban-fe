@@ -63,6 +63,11 @@ const Login = () => {
         }
     };
 
+    const handleLoginGoogle = async (e) => {
+        // Redirect to an external URL
+        window.location.href = 'http://localhost:8080/oauth2/authorization/google';
+    }
+
     return (
         <>
             <img src={patern} className='loginPatern' />
@@ -110,7 +115,7 @@ const Login = () => {
                                 <span className='line'></span>
                             </div>
 
-                            <Button variant="outlined" className='w-100 btn-lg btn-lg loginWithGoogle mt-3'>
+                            <Button onClick={handleLoginGoogle} variant="outlined" className='w-100 btn-lg btn-lg loginWithGoogle mt-3'>
                                 <img src={googleIcon} width="30px" /> &nbsp; Sign In with Google
                             </Button>
                         </div>

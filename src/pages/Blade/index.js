@@ -152,7 +152,7 @@ const Blade = () => {
                                                 <img src="/upload/images/product/takku-1.jpg" className="w-100" />
                                             </div>
                                         </div>
-                                        <div className="info pl-0">
+                                        <div className="info pl-2">
                                             <h6>Butterfly Tamca 5000</h6>
                                             <p>Vợt Butterfly Tamca 5000 được thiết kế với tính năng trợ lực cho người chơi cùng 2 lớp sợi Carbon đan xen 3 lớp gỗ nằm gần lớp gỗ hinoki ở ngoài.</p>
                                         </div>

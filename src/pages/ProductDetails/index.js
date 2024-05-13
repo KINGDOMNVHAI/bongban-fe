@@ -259,6 +259,70 @@ const ProductDetails = () => {
                                     (22)
                                 </span>
                             </div>
+                            <div className="ratingrow d-flex align-items-center">
+                                <span className="col1">
+                                    4 Star
+                                </span>
+                                <div className="col2">
+                                    <div className="progress">
+                                        <div className="progress-bar" style={{width:'50%'}}></div>
+                                    </div>
+                                </div>
+                                <span className="col3">
+                                    (22)
+                                </span>
+                            </div>
+                            <div className="ratingrow d-flex align-items-center">
+                                <span className="col1">
+                                    3 Star
+                                </span>
+                                <div className="col2">
+                                    <div className="progress">
+                                        <div className="progress-bar" style={{width:'50%'}}></div>
+                                    </div>
+                                </div>
+                                <span className="col3">
+                                    (22)
+                                </span>
+                            </div>
+                            <div className="ratingrow d-flex align-items-center">
+                                <span className="col1">
+                                    2 Star
+                                </span>
+                                <div className="col2">
+                                    <div className="progress">
+                                        <div className="progress-bar" style={{width:'30%'}}></div>
+                                    </div>
+                                </div>
+                                <span className="col3">
+                                    (22)
+                                </span>
+                            </div>
+                            <div className="ratingrow d-flex align-items-center">
+                                <span className="col1">
+                                    1 Star
+                                </span>
+                                <div className="col2">
+                                    <div className="progress">
+                                        <div className="progress-bar" style={{width:'20%'}}></div>
+                                    </div>
+                                </div>
+                                <span className="col3">
+                                    (22)
+                                </span>
+                            </div>
+                        </div>
+
+                        <h5 className="mt-4 mb-4">Customer Reviews</h5>
+
+                        <div className="reviewSection">
+                            <div className="reviewRow">
+                                <div className="row">
+                                    <div className="col-sm-7">
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 

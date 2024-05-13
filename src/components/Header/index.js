@@ -24,7 +24,7 @@ const Header = () => {
     const openMyAcc = Boolean(anchorEl);
     const openNotifications = Boolean(isOpenNotificationDrop);
 
-    const [isLogin, setIsLogin] = useState(false);
+    const [isLogin, setIsLogin] = useState(true);
 
     const context = useContext(MyContext);
 

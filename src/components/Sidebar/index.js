@@ -37,7 +37,7 @@ const Sidebar = () => {
                         <Link to="/">
                             <Button className={`w-100 ${activeTab === 1 && isToggleSubmenu === true ? 'active' : ''}`} onClick={() => isOpenSubmenu(1)}>
                                 <span className='icon'><FaProductHunt/></span>
-                                Products
+                                Products (제품)
                                 <span className='arrow'><FaAngleRight/></span>
                             </Button>
                             <div className={`submenuWrapper ${activeTab === 1 && isToggleSubmenu === true ? 'collapsed' : 'collapse'}`}>

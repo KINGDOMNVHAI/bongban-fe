@@ -688,6 +688,17 @@ https://www.w3schools.com/bootstrap4/bootstrap_progressbars.asp
 Kết quả: có đường line
 Tô màu cho line
 
+57:20
+Copy thêm nhiều đường rating khác.
+
+1:00:00
+Tạo mục bình luận
+
+1:02:30
+Tạo components -> userAvatarImg -> index.js
+
+
+
 
 
 ==============================================================
