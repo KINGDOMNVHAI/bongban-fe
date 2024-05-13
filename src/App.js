@@ -6,10 +6,12 @@ import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Dashboard from './pages/Dashboard';
 import Blade from './pages/Blade';
+import BladeCreate from './pages/BladeCreate';
 import BladeDetail from './pages/BladeDetail';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import ProductDetails from './pages/ProductDetails';
+import ProductUpload from './pages/ProductUpload';
 
 const MyContext = createContext();
 
@@ -75,9 +77,11 @@ function App() {
               <Route path="/login" exact={true} element={<Login />} />
               <Route path="/sign-up" exact={true} element={<SignUp />} />
               <Route path="/product/details" exact={true} element={<ProductDetails />} />
+              <Route path="/product/upload" exact={true} element={<ProductUpload />} />
 
               <Route path="/blade-list" exact={true} element={<Blade />} />
               <Route path="/blade-detail" exact={true} element={<BladeDetail />} />
+              <Route path="/blade-create" exact={true} element={<BladeCreate />} />
             </Routes>
           </div>
         </div>

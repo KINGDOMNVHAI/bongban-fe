@@ -7,7 +7,7 @@ import circlePlusIcon from '../../assets/images/icon-plus-circle.png';
 
 import { BsTextareaResize } from "react-icons/bs";
 import { CiSettings } from "react-icons/ci";
-import { FaEye, FaPencilAlt, FaRegStar } from "react-icons/fa"
+import { FaEye, FaPencilAlt, FaPiggyBank } from "react-icons/fa"
 import { GiStarsStack } from "react-icons/gi";
 import { HiDotsVertical } from "react-icons/hi";
 import { IoMdCart, IoIosTimer } from "react-icons/io";
@@ -56,6 +56,10 @@ const BladeDetail = () => {
         slidesToShow: 3,
         slidesToScroll: 1,
         arrows: false
+    };
+
+    const handleRegisterLine = (event) => {
+        console.log("Register Line");
     };
 
     return <>
@@ -279,6 +283,21 @@ const BladeDetail = () => {
                                         </div>
                                     </div>
                                 </div>
+
+                                <h4 className="mt-5">Thông tin Line</h4>
+
+                                <div className="productInfo mt-3">
+                                    <div className="row">
+                                        <div className="col-sm-3 d-flex align-items-center">
+                                            <span className="icon"><FaPiggyBank /></span>
+                                            <span className="name">Deposit</span>
+                                        </div>
+
+                                        <div className="col-sm-9">
+                                            : <span>$37.00</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -307,6 +326,8 @@ const BladeDetail = () => {
                     </div>
 
                 </div>
+
+                <h5 class="mt-4 mb-3">Danh sách khách hàng</h5>
 
                 <div className="row">
                     <Box
@@ -429,9 +450,11 @@ const BladeDetail = () => {
                         sx={{ border: '2px solid grey' }}
                         className="btn-round ml-3 mt-3"
                     >
-                        <div className="bladeBox img">
-                            <img src={circlePlusIcon} className="w-50" />
-                        </div>
+                        <Button onClick={handleRegisterLine}>
+                            <div className="bladeBox img">
+                                <img src={circlePlusIcon} className="w-50" />
+                            </div>
+                        </Button>
                     </Box>
                 </div>
             </div>

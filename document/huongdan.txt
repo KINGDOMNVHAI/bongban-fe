@@ -1,5 +1,6 @@
 Build a Complete React Admin Dashboard App | React, Material UI, Bootstrap 4, Light & Dark Mode
-https://www.youtube.com/watch?v=K9WxoSf7zkw&list=PLhFBHuT4t3aApRKcTgTi3Sfu6zudkg7bW&index=10
+https://www.youtube.com/watch?v=VafJEgON5as&list=PLhFBHuT4t3aApRKcTgTi3Sfu6zudkg7bW&index=11
+Next series: https://www.youtube.com/playlist?list=PLhFBHuT4t3aBL59pIGo13H4tUVzS_GlYm
 Mẫu: https://dashboardreactapplication.netlify.app/
 
 Video 1
@@ -718,6 +719,30 @@ Thiết kế màu cho body.light
 Tạo productSliderBig
 Khi click vào từng ô trong slider nhỏ, border sẽ từ viền đứt nét thành viền thẳng.
 
+==============================================================
+Video 11: Thiết kế trang create upload
+
+2:00
+Sidebar -> index.js thêm route /product/upload
+App.js thêm /product/upload
+Tạo src -> pages -> ProductUpload -> index.js
+
+8:20
+Tạo vùng Basic Information
+Thiết kế Title và Description
+
+16:00
+Thiết kế Category, Brand
+https://mui.com/material-ui/react-select/
+Copy <Select> của phần Labels and helper text
+
+21:00
+Thiết kế Regular Price, Discount Price
+Tạo thêm 1 row mới cho mỗi select ngang
+
+27:00
+Media and published
+Tạo nút published
 
 ==============================================================
 Popup: nguồn từ các video
