@@ -11,6 +11,7 @@ import { IoMdCart, IoIosTimer } from "react-icons/io";
 import { IoColorPaletteOutline, IoPricetagOutline } from "react-icons/io5";
 import { MdShoppingBag, MdBrandingWatermark, MdGridView } from "react-icons/md";
 import UserAvatarImgComponent from "../../components/userAvatarImg";
+import { useRef } from "react";
 
 // Breadcrum code
 const StyledBreadcrumb = styled(Chip)(({theme}) => {
@@ -35,6 +36,9 @@ const StyledBreadcrumb = styled(Chip)(({theme}) => {
 
 const ProductDetails = () => {
 
+    const productSliderBig = useRef();
+    const productSliderSml = useRef();
+
     var productSliderOptions = {
         dots: false,
         infinite: false,
@@ -52,6 +56,11 @@ const ProductDetails = () => {
         slidesToScroll: 1,
         arrows: false
     };
+
+    const goToSlide=(index)=>{
+        productSliderBig.current.slickGoTo(index);
+        productSliderSml.current.slickGoTo(index);
+    }
 
     return (
         <>
@@ -81,25 +90,25 @@ const ProductDetails = () => {
                         <div className="col-md-5">
                             <div className="sliderWrapper pt-3 pb-3 pl-4 pr-4">
                                 <h6 className="mb-4">Product Gallery</h6>
-                                <Slider {...productSliderOptions} className="sliderBig mb-2">
+                                <Slider {...productSliderOptions} ref={productSliderBig} className="sliderBig mb-2">
                                     <div className="item">
                                         <img src="https://mironcoder-hotash.netlify.app/images/product/single/01.webp" className="w-100" />
                                     </div>
                                 </Slider>
-                                <Slider {...productSliderSmlOptions} className="sliderSml">
-                                    <div className="item">
+                                <Slider {...productSliderSmlOptions} ref={productSliderSml} className="sliderSml">
+                                    <div className="item" onClick={() => goToSlide(1)}>
                                         <img src="https://mironcoder-hotash.netlify.app/images/product/single/02.webp" className="w-100" />
                                     </div>
-                                    <div className="item">
+                                    <div className="item" onClick={() => goToSlide(2)}>
                                         <img src="https://mironcoder-hotash.netlify.app/images/product/single/03.webp" className="w-100" />
                                     </div>
-                                    <div className="item">
+                                    <div className="item" onClick={() => goToSlide(3)}>
                                         <img src="https://mironcoder-hotash.netlify.app/images/product/single/04.webp" className="w-100" />
                                     </div>
-                                    <div className="item">
+                                    <div className="item" onClick={() => goToSlide(4)}>
                                         <img src="https://mironcoder-hotash.netlify.app/images/product/single/05.webp" className="w-100" />
                                     </div>
-                                    <div className="item">
+                                    <div className="item" onClick={() => goToSlide(5)}>
                                         <img src="https://mironcoder-hotash.netlify.app/images/product/single/02.webp" className="w-100" />
                                     </div>
                                 </Slider>
@@ -428,7 +437,12 @@ const ProductDetails = () => {
 
                         <h5 className="mt-4 mb-3">Review Reply Form</h5>
 
+                        <form className="reviewForm">
+                            <textarea placeholder="write here">
+                            </textarea>
 
+                            <Button className="btn-blue btn-big btn-lg w-100 mt-4">Drop your replies</Button>
+                        </form>
                     </div>
 
                 </div>

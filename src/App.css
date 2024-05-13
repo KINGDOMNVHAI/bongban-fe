@@ -220,6 +220,8 @@ body.dark .css-bpeome-MuiSvgIcon-root-MuiSelect-icon
 
 p {font-weight: 300; font-size: 15px; line-height: 25px;}
 
+body.light p {font-weight: 400 !important;}
+
 body.dark .css-1d3z3hw-MuiOutlinedInput-notchedOutline {border-color: rgba(255, 255, 255, 0.3) !important;}
 
 .table-responsive::-webkit-scrollbar-thumb {background: #CCC !important;}
@@ -304,29 +306,39 @@ body.dark .breadcrumbs_ li .MuiChip-filled {background-color: #112143 !important
 body.dark .css-1wuw8dw-MuiBreadcrumbs-separator {background-color: #112143 !important; color: rgba(255, 255, 255, 0.7) !important;}
 body.dark .MuiChip-label {color: rgba(255, 255, 255, 0.7) !important;}
 
+.sliderSml .slick-current .item{border: 1px dashed #ccc !important;}
+
 .sliderSml .slick-slide {padding-right: 10px;}
 .sliderSml .slick-slide .item {border-radius: 7px !important; overflow: hidden;}
 .sliderSml *, .sliderBig * {overflow: hidden; border-radius: 7px;}
 .sliderBig {overflow: hidden; border-radius: 10px;}
-.sliderBig .item {overflow: hidden; border-radius: 7px;}
+.sliderBig .item {overflow: hidden; border-radius: 7px; border: 2px dashed #ccc !important;}
+.sliderSml .item {overflow: hidden; border-radius: 7px; border: 2px dashed #ccc !important; cursor: pointer;}
 
 body.dark .productInfo {color: rgba(255, 255, 255, 0.7) !important;}
 .productDetailsSection .productInfo .icon {width: 28%; flex: 0 0 28%;}
 .productDetailsSection .productInfo .icon svg {font-size: 22px;}
+body.light .productDetailsSection .productInfo .icon svg {color: #5e5d72 !important;}
 .productDetailsSection .productInfo .name {width: 72%; flex: 0 0 72%; padding-top: 2px; font-weight: 600; font-size: 15px;}
-body.dark .productDetailsSection .productInfo .name {color: rgba(255, 255, 255, 0.8) !important;}
+body.light .productDetailsSection .productInfo .name {color: #403e57 !important;}
+
 .productDetailsSection .productInfo .row {margin-bottom: 10px !important;}
 .productDetailsSection .productInfo .row .col-sm-9 {display: flex; align-items: center;}
 .productDetailsSection .productInfo .row .col-sm-9 span {opacity: 0.8; font-size: 15px; padding-left: 20px; color: rgba(255, 255, 255, 0.7) !important;}
+body.light .productDetailsSection .productInfo .row .col-sm-9 span {color: #403e57 !important;}
+
 
 .tags {margin-bottom: 0px !important;}
+.tags li {margin: 3px 5px !important;}
 .tags li span {display: flex; align-items: center; justify-content: center; background: #1b2b4d !important;
   border-radius: 5px !important; font-size: 13px !important; padding: 5px 10px !important;}
+body.light .tags li span {background: #f0f0f0 !important; color: #000 !important; padding: 4px 10px !important;}
 /* .tags li span:first-child {padding-left: 0px !important;} */
 
 .ratingSection {width: 500px;}
 .ratingSection .ratingrow {width: 100%; margin-bottom: 15px !important;}
 .ratingSection .ratingrow .progress {height: 3px !important; background: #000 !important;}
+body.light .ratingSection .ratingrow .progress {background: #CCC !important;}
 .ratingSection .ratingrow .progress .progress-bar {background: #edb213 !important;}
 .ratingSection .ratingrow .col1 {width: 15%; flex: 0 0 15%; display: flex;}
 .ratingSection .ratingrow .col2 {width: 50%; flex: 0 0 25%;}
@@ -338,6 +350,15 @@ body.dark .productDetailsSection .productInfo .name {color: rgba(255, 255, 255, 
 .reviewSection .reviewRow.reply {width: 90%; margin-left: auto;}
 .reviewSection .reviewRow .btn-big {font-size: 15px !important;}
 .reviewSection .reviewRow .btn-big svg {font-size: 18px !important;}
+body.light .reviewSection .reviewRow {background: #ededed !important;}
+
+.reviewForm {width: 100%;}
+.reviewForm textarea {width: 100%; height: 200px; background: #132345 !important; outline: navajowhite !important; padding: 15px;
+  border-radius: 10px; color: rgba(255, 255, 255, 0.7); border: 1px solid #0d1a36 !important;}
+.reviewForm textarea::-webkit-input-placeholder {color: rgba(255, 255, 255, 0.7);}
+body.light .reviewForm textarea::-webkit-input-placeholder {color: rgba(0, 0, 0, 0.5);}
+
+body.light .reviewForm textarea {background: #f4f4f4 !important; color: rgba(0, 0, 0, 0.8) !important; border: 1px solid #dbdbdb !important;}
 
 .userInfo h6 {margin-bottom: 0px;}
 

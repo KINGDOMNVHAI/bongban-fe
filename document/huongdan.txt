@@ -708,7 +708,15 @@ Bình luận reply
 1:20:20
 Review Reply Form
 
+1:23:30
+Tạo button Reply Form
 
+1:25:00
+Thiết kế màu cho body.light
+
+1:32:00
+Tạo productSliderBig
+Khi click vào từng ô trong slider nhỏ, border sẽ từ viền đứt nét thành viền thẳng.
 
 
 ==============================================================
