@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Box, MenuItem, Select, FormControl, Button, Rating, Breadcrumbs, Chip, emphasize, styled } from "@mui/material/";
+import { emphasize, Box, Breadcrumbs, Button, Chip, FormControl, InputLabel, MenuItem, Select, Rating, styled } from "@mui/material/";
 import { Home, ExpandMore } from "@mui/icons-material";
 
 import { FaCloudUploadAlt } from "react-icons/fa";
@@ -28,11 +28,12 @@ const StyledBreadcrumb = styled(Chip)(({theme}) => {
 
 const BladeCreate = () => {
 
-    const [categoryVal, setCategoryVal] = useState(null);
-    const [ratingsValue, setRatingValue] = useState(1);
+    const [brandVal, setBrandVal] = useState(null);
+    const [subBranchVal, setSubBranchVal] = useState(null);
 
-    const handleChangeCategory = (event) => {
-        setCategoryVal(event.target.value);
+    const handleChangeBrand = (event) => {
+        setBrandVal(event.target.value);
+        // Nếu brand có sub brand, setSubBranchVal
     }
 
     return (
@@ -62,9 +63,9 @@ const BladeCreate = () => {
                     <div className="row">
                         <div className="col-sm-9">
                             <div className="card p-4">
-                                <h5 className="mb-4">Basic Information</h5>
+                                <h5 className="mb-4">Blade Information</h5>
                                 <div className="form-group">
-                                    <h6>TITLE</h6>
+                                    <h6>* TITLE</h6>
                                     <input type="text" />
                                 </div>
                                 <div className="form-group">
@@ -73,43 +74,145 @@ const BladeCreate = () => {
                                 </div>
 
                                 <div className="row">
+                                    <div className="col-md-4">
+                                        <div className="form-group">
+                                            <Box sx={{ minWidth: 120 }}>
+                                                <FormControl fullWidth>
+                                                    <InputLabel id="demo-simple-select-label">* BRAND</InputLabel>
+                                                    <Select
+                                                        labelId="demo-simple-select-label"
+                                                        id="demo-simple-select"
+                                                        value={brandVal}
+                                                        label="BRAND"
+                                                        onChange={handleChangeBrand}
+                                                    >
+                                                        <MenuItem value={'NTK'}>Nittaku</MenuItem>
+                                                        <MenuItem value={'BUT'}>Butterfly</MenuItem>
+                                                        <MenuItem value={'YSK'}>Yasaka</MenuItem>
+                                                    </Select>
+                                                </FormControl>
+                                            </Box>
+                                        </div>
+                                    </div>
+
+                                    <div className="col-md-4">
+                                        <div className="form-group">
+                                            <Box sx={{ minWidth: 120 }}>
+                                                <FormControl fullWidth>
+                                                    <InputLabel id="demo-simple-select-label">* SUB BRANCH</InputLabel>
+                                                    <Select
+                                                        labelId="demo-simple-select-label"
+                                                        id="demo-simple-select"
+                                                        value={subBranchVal}
+                                                        label="SUB BRANCH"
+                                                    >
+                                                        <MenuItem value={'XXX'}>NONE</MenuItem>
+                                                    </Select>
+                                                </FormControl>
+                                            </Box>
+                                        </div>
+                                    </div>
+
+                                    <div className="col-md-4">
+                                        <div className="form-group">
+                                            <Box sx={{ minWidth: 120 }}>
+                                                <FormControl fullWidth>
+                                                    <InputLabel id="demo-simple-select-label">* PADDLE</InputLabel>
+                                                    <Select
+                                                        labelId="demo-simple-select-label"
+                                                        id="demo-simple-select"
+                                                        value={brandVal}
+                                                        label="PADDLE"
+                                                    >
+                                                        <MenuItem value={'FL'}>FL</MenuItem>
+                                                        <MenuItem value={'ST'}>ST</MenuItem>
+                                                    </Select>
+                                                </FormControl>
+                                            </Box>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="col-sm-3">
+                            <div className="card p-4">
+                                <h5 className="mb-4">Image</h5>
+                                <div className="form-group">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="row">
+                        <div className="col-sm-9">
+                            <div className="card p-4">
+                                <h5 className="mb-4">Line Information</h5>
+
+                                <div className="row">
                                     <div className="col">
                                         <div className="form-group">
-                                            <h6>CATEGORY</h6>
-                                            <Select
-                                                value={categoryVal}
-                                                onChange={handleChangeCategory}
-                                                displayEmpty
-                                                inputProps={{ 'aria-label': 'Without label' }}
-                                                className="w-100"
-                                            >
-                                                <MenuItem value="">
-                                                    <em>None</em>
-                                                </MenuItem>
-                                                <MenuItem value={10}>Ten</MenuItem>
-                                                <MenuItem value={20}>Twenty</MenuItem>
-                                                <MenuItem value={30}>Thirty</MenuItem>
-                                            </Select>
+                                            <Box sx={{ minWidth: 120 }}>
+                                                <FormControl fullWidth>
+                                                    <InputLabel id="demo-simple-select-label">PERIOD</InputLabel>
+                                                    <Select
+                                                        labelId="demo-simple-select-label"
+                                                        id="demo-simple-select"
+                                                        value={brandVal}
+                                                        label="PERIOD"
+                                                        onChange={handleChangeBrand}
+                                                    >
+                                                        <MenuItem value={'2W'}>2 weeks</MenuItem>
+                                                        <MenuItem value={'1M'}>1 month</MenuItem>
+                                                        <MenuItem value={'2M'}>2 months</MenuItem>
+                                                    </Select>
+                                                </FormControl>
+                                            </Box>
                                         </div>
                                     </div>
 
                                     <div className="col">
                                         <div className="form-group">
-                                            <h6>BRAND</h6>
-                                            <Select
-                                                value={categoryVal}
-                                                onChange={handleChangeCategory}
-                                                displayEmpty
-                                                inputProps={{ 'aria-label': 'Without label' }}
-                                                className="w-100"
-                                            >
-                                                <MenuItem value="">
-                                                    <em>None</em>
-                                                </MenuItem>
-                                                <MenuItem value={10}>Ten</MenuItem>
-                                                <MenuItem value={20}>Twenty</MenuItem>
-                                                <MenuItem value={30}>Thirty</MenuItem>
-                                            </Select>
+                                            <Box sx={{ minWidth: 120 }}>
+                                                <FormControl fullWidth>
+                                                    <InputLabel id="demo-simple-select-label">* PERIOD COUNT</InputLabel>
+                                                    <Select
+                                                        labelId="demo-simple-select-label"
+                                                        id="demo-simple-select"
+                                                        value={brandVal}
+                                                        label="* PERIOD COUNT"
+                                                        onChange={handleChangeBrand}
+                                                    >
+                                                        <MenuItem value={1}>1</MenuItem>
+                                                        <MenuItem value={2}>2</MenuItem>
+                                                        <MenuItem value={3}>3</MenuItem>
+                                                    </Select>
+                                                </FormControl>
+                                            </Box>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="row">
+                                    <div className="col-md-4">
+                                        <div className="form-group">
+                                            <h6>INIT PRICE</h6>
+                                            <input type="number"/>
+                                        </div>
+                                    </div>
+
+                                    <div className="col-md-4">
+                                        <div className="form-group">
+                                            <h6>DEPOSIT</h6>
+                                            <input type="number"/>
+                                        </div>
+                                    </div>
+
+                                    <div className="col-md-4">
+                                        <div className="form-group">
+                                            <h6>DEPRECIATION</h6>
+                                            <input type="number"/>
                                         </div>
                                     </div>
                                 </div>
@@ -117,37 +220,15 @@ const BladeCreate = () => {
                                 <div className="row">
                                     <div className="col">
                                         <div className="form-group">
-                                            <h6>REGULAR PRICE</h6>
-                                            <input type="text"/>
+                                            <h6>FEE</h6>
+                                            <input type="number"/>
                                         </div>
                                     </div>
 
                                     <div className="col">
                                         <div className="form-group">
-                                            <h6>DISCOUNT PRICE</h6>
-                                            <input type="text"/>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="row">
-                                    <div className="col">
-                                        <div className="form-group">
-                                            <h6>RATINGS</h6>
-                                            <Rating
-                                                name="simple-controlled"
-                                                value={ratingsValue}
-                                                onChange={(event, newValue) => {
-                                                    setRatingValue(newValue)
-                                                }}
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div className="col">
-                                        <div className="form-group">
-                                            <h6>PRODUCT STOCK</h6>
-                                            <input type="text"/>
+                                            <h6>END PRICE</h6>
+                                            <input type="number"/>
                                         </div>
                                     </div>
                                 </div>
