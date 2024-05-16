@@ -1,10 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from 'react-router-dom';
 import { emphasize, Box, Breadcrumbs, Button, Chip, FormControl, InputLabel, MenuItem, Select, Rating, styled } from "@mui/material/";
 import { Home, ExpandMore } from "@mui/icons-material";
 
 import { FaCloudUploadAlt } from "react-icons/fa";
+import { GrBladesHorizontal } from "react-icons/gr";
+import { IoIosInformationCircleOutline } from "react-icons/io";
+import { MdOutlineCalendarViewDay, MdOutlineImage } from "react-icons/md";
 
 // Breadcrum code
 const StyledBreadcrumb = styled(Chip)(({theme}) => {
@@ -29,11 +32,45 @@ const StyledBreadcrumb = styled(Chip)(({theme}) => {
 
 const BladeCreate = () => {
 
+    const [fullnameVal, setFullnameVal] = useState(null);
+    const [bladeNameVal, setBladeNameVal] = useState(null);
+
     const [brandVal, setBrandVal] = useState(null);
     const [brandData, setBrandData] = useState([]);
 
     const [subBranchVal, setSubBranchVal] = useState(null);
     const [subBranchData, setSubBranchData] = useState(null);
+
+    const [paddleVal, setPaddleVal] = useState(null);
+    const [periorVal, setPeriorVal] = useState(null);
+    const [periorCntVal, setPeriorCntVal] = useState(null);
+
+    const navigate = useNavigate();
+    const [error, setError] = useState("");
+    const [formData, setFormData] = useState({
+        brandCD: '',
+        brandName: '',
+        bladeCD: '',
+        bladeName: '',
+        bladeFullName: '',
+        subBranch: '',
+        paddleTP: '',
+
+        id: null,
+        bladeUnitID: '',
+        periodCnt: '',
+        period: '',
+        initPrice: 0,
+        deposit: 0,
+        depreciation: 0,
+        fee: 0,
+        endPrice: 0,
+        userEmail: 'nvhai061993@gmail.com'
+    });
+
+    const handleChange = (event) => {
+        setFormData({ ...formData, [event.target.name]: event.target.value });
+    };
 
     useEffect(() => {
         const fetchData = async () => {
@@ -61,15 +98,75 @@ const BladeCreate = () => {
         }
     }
 
-    const handleClickSubBranch = async (event) => {
-        setSubBranchVal(event.target.value);
-    }
+    const validateForm = () => {
+        const errors = {};
+
+        // Check if username is empty
+        if (!formData.username) {
+            errors.username = "Username is required";
+        }
+
+        // Check if fee is empty
+        if (!formData.fee) {
+            errors.fee = "Fee is required";
+        }
+
+        setFormData((prevState) => ({ ...prevState, errors }));
+
+        // Return true if there are no errors
+        return Object.keys(errors).length === 0;
+    };
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        // if (validateForm()) {
+            // Form is valid, submit data
+            console.log(formData);
+
+            // axios.post('https://api.example.com/endpoint', formData)
+            // .then(response => {
+            //     // Handle success
+            //     console.log(response.data);
+            // })
+            // .catch(error => {
+            //     // Handle error
+            //     console.error(error);
+            // });
+
+            formData.brandCD = brandVal;
+            formData.bladeName = bladeNameVal;
+            formData.bladeFullName = fullnameVal;
+            formData.subBranch = subBranchVal;
+            formData.paddleTP = paddleVal;
+            formData.periodCnt = periorCntVal;
+            formData.period = periorVal;
+            formData.bladeUnitID = brandVal + '_' + subBranchVal + '_' + paddleVal;
+
+            const res = await axios.post('http://localhost:8080/api/v1/public/blade/insert', formData)
+            // console.log(res.config.data)
+
+            if (res.status != 200) {
+                setError(res.data.message)
+                return;
+            }
+
+            setError("");
+            const token = res.data.token;
+            localStorage.setItem('jwtToken', token);
+            return navigate('/blade-list');
+
+        // } else {
+        //     // Form is invalid, do nothing
+        //     setError("Invalid email or password");
+        //     console.log(error)
+        // }
+    };
 
     return (
         <>
             <div className="right-content w-100">
                 <div className="card shadow border-0 w-100 flex-row p-4">
-                    <h5 className="mb-0">Blade Create</h5>
+                    <h5 className="mb-0"><GrBladesHorizontal/> Blade Create</h5>
                     <Breadcrumbs aria-label="breadcrumb" className="ml-auto breadcrumbs_">
                         <StyledBreadcrumb
                             component="a"
@@ -88,14 +185,26 @@ const BladeCreate = () => {
                     </Breadcrumbs>
                 </div>
 
-                <form className='form'>
+                <form className='form' onSubmit={handleSubmit}>
                     <div className="row">
                         <div className="col-sm-9">
                             <div className="card p-4">
-                                <h5 className="mb-4">Blade Information</h5>
+                                <h5 className="mb-4"><IoIosInformationCircleOutline/> Blade Information</h5>
                                 <div className="form-group">
-                                    <h6>* TITLE</h6>
-                                    <input type="text" name="bladeName" />
+                                    <h6>* FULLNAME</h6>
+                                    <input
+                                        type="text"
+                                        value={fullnameVal}
+                                        onChange={(e) => setFullnameVal(e.target.value)}
+                                    />
+                                </div>
+                                <div className="form-group">
+                                    <h6>* BLADE NAME</h6>
+                                    <input
+                                        type="text"
+                                        value={bladeNameVal}
+                                        onChange={(e) => setBladeNameVal(e.target.value)}
+                                    />
                                 </div>
 
                                 <div className="row">
@@ -134,7 +243,7 @@ const BladeCreate = () => {
                                                         id="demo-simple-select"
                                                         value={subBranchVal}
                                                         label="SUB BRANCH"
-                                                        onChange={handleClickSubBranch}
+                                                        onChange={(e) => setSubBranchVal(e.target.value)}
                                                     >
                                                         {subBranchData && subBranchData.length > 0 ? (
                                                             subBranchData.map((item) => (
@@ -157,8 +266,9 @@ const BladeCreate = () => {
                                                     <Select
                                                         labelId="demo-simple-select-label"
                                                         id="demo-simple-select"
-                                                        value={brandVal}
+                                                        value={paddleVal}
                                                         label="PADDLE"
+                                                        onChange={(e) => setPaddleVal(e.target.value)}
                                                     >
                                                         <MenuItem value={'FL'}>FL</MenuItem>
                                                         <MenuItem value={'ST'}>ST</MenuItem>
@@ -173,7 +283,7 @@ const BladeCreate = () => {
 
                         <div className="col-sm-3">
                             <div className="card p-4">
-                                <h5 className="mb-4">Image</h5>
+                                <h5 className="mb-4"><MdOutlineImage/> Image</h5>
                                 <div className="form-group">
 
                                 </div>
@@ -184,7 +294,7 @@ const BladeCreate = () => {
                     <div className="row">
                         <div className="col-sm-9">
                             <div className="card p-4">
-                                <h5 className="mb-4">Line Information</h5>
+                                <h5 className="mb-4"><MdOutlineCalendarViewDay /> Line Information</h5>
 
                                 <div className="row">
                                     <div className="col">
@@ -195,9 +305,9 @@ const BladeCreate = () => {
                                                     <Select
                                                         labelId="demo-simple-select-label"
                                                         id="demo-simple-select"
-                                                        value={brandVal}
+                                                        value={periorVal}
                                                         label="PERIOD"
-                                                        onChange={handleClickBrand}
+                                                        onChange={(e) => setPeriorVal(e.target.value)}
                                                     >
                                                         <MenuItem value={'2W'}>2 weeks</MenuItem>
                                                         <MenuItem value={'1M'}>1 month</MenuItem>
@@ -216,13 +326,14 @@ const BladeCreate = () => {
                                                     <Select
                                                         labelId="demo-simple-select-label"
                                                         id="demo-simple-select"
-                                                        value={brandVal}
+                                                        value={periorCntVal}
                                                         label="* PERIOD COUNT"
-                                                        onChange={handleClickBrand}
+                                                        onChange={(e) => setPeriorCntVal(e.target.value)}
                                                     >
-                                                        <MenuItem value={1}>1</MenuItem>
-                                                        <MenuItem value={2}>2</MenuItem>
                                                         <MenuItem value={3}>3</MenuItem>
+                                                        <MenuItem value={4}>4</MenuItem>
+                                                        <MenuItem value={5}>5</MenuItem>
+                                                        <MenuItem value={6}>6</MenuItem>
                                                     </Select>
                                                 </FormControl>
                                             </Box>
@@ -234,21 +345,36 @@ const BladeCreate = () => {
                                     <div className="col-md-4">
                                         <div className="form-group">
                                             <h6>INIT PRICE</h6>
-                                            <input type="number"/>
+                                            <input
+                                                type="number"
+                                                name="initPrice"
+                                                value={formData.initPrice}
+                                                onChange={handleChange}
+                                            />
                                         </div>
                                     </div>
 
                                     <div className="col-md-4">
                                         <div className="form-group">
                                             <h6>DEPOSIT</h6>
-                                            <input type="number"/>
+                                            <input
+                                                type="number"
+                                                name="deposit"
+                                                value={formData.deposit}
+                                                onChange={handleChange}
+                                            />
                                         </div>
                                     </div>
 
                                     <div className="col-md-4">
                                         <div className="form-group">
                                             <h6>DEPRECIATION</h6>
-                                            <input type="number"/>
+                                            <input
+                                                type="number"
+                                                name="depreciation"
+                                                value={formData.depreciation}
+                                                onChange={handleChange}
+                                            />
                                         </div>
                                     </div>
                                 </div>
@@ -257,19 +383,29 @@ const BladeCreate = () => {
                                     <div className="col">
                                         <div className="form-group">
                                             <h6>FEE</h6>
-                                            <input type="number"/>
+                                            <input
+                                                type="number"
+                                                name="fee"
+                                                value={formData.fee}
+                                                onChange={handleChange}
+                                            />
                                         </div>
                                     </div>
 
                                     <div className="col">
                                         <div className="form-group">
                                             <h6>END PRICE</h6>
-                                            <input type="number"/>
+                                            <input
+                                                type="number"
+                                                name="endPrice"
+                                                value={formData.endPrice}
+                                                onChange={handleChange}
+                                            />
                                         </div>
                                     </div>
                                 </div>
 
-                                <Button className="btn-blue btn-big btn-lg"><FaCloudUploadAlt/> &nbsp; PUBLISH AND VIEW</Button>
+                                <Button type="submit" className="btn-blue btn-big btn-lg"><FaCloudUploadAlt/> &nbsp; PUBLISH AND VIEW</Button>
                             </div>
                         </div>
                     </div>
