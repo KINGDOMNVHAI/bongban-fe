@@ -30,14 +30,15 @@ const StyledBreadcrumb = styled(Chip)(({theme}) => {
 const BladeCreate = () => {
 
     const [brandVal, setBrandVal] = useState(null);
-    const [subBranchVal, setSubBranchVal] = useState(null);
-
     const [brandData, setBrandData] = useState([]);
+
+    const [subBranchVal, setSubBranchVal] = useState(null);
+    const [subBranchData, setSubBranchData] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/api/v1/public/brand/list-root');
+                const response = await axios.get('http://localhost:8080/api/v1/public/brand/list');
                 setBrandData(response.data);
                 console.error(response);
             } catch (error) {
@@ -48,9 +49,20 @@ const BladeCreate = () => {
         fetchData();
     }, []);
 
-    const handleChangeBrand = (event) => {
+    // Nếu brand có sub brand, setSubBranchVal
+    const handleClickBrand = async (event) => {
+        console.error(event.target.value);
         setBrandVal(event.target.value);
-        // Nếu brand có sub brand, setSubBranchVal
+        try {
+            const response = await axios.get('http://localhost:8080/api/v1/public/brand/list-sub/' + event.target.value);
+            setSubBranchData(response.data);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    const handleClickSubBranch = async (event) => {
+        setSubBranchVal(event.target.value);
     }
 
     return (
@@ -97,11 +109,15 @@ const BladeCreate = () => {
                                                         id="demo-simple-select"
                                                         value={brandVal}
                                                         label="BRAND"
-                                                        onChange={handleChangeBrand}
+                                                        onChange={handleClickBrand}
                                                     >
-                                                        {brandData.map((item) => (
+                                                        {brandData && brandData.length > 0 ? (
+                                                            brandData.map((item) => (
                                                             <MenuItem value={item.brandCD}>{item.brandName}</MenuItem>
-                                                        ))}
+                                                            ))
+                                                        ) : (
+                                                            <MenuItem value={'XXX'}>NONE</MenuItem>
+                                                        )}
                                                     </Select>
                                                 </FormControl>
                                             </Box>
@@ -118,8 +134,15 @@ const BladeCreate = () => {
                                                         id="demo-simple-select"
                                                         value={subBranchVal}
                                                         label="SUB BRANCH"
+                                                        onChange={handleClickSubBranch}
                                                     >
-                                                        <MenuItem value={'XXX'}>NONE</MenuItem>
+                                                        {subBranchData && subBranchData.length > 0 ? (
+                                                            subBranchData.map((item) => (
+                                                            <MenuItem value={item.brandCD}>{item.brandName}</MenuItem>
+                                                            ))
+                                                        ) : (
+                                                            <MenuItem value={'XXX'}>NONE</MenuItem>
+                                                        )}
                                                     </Select>
                                                 </FormControl>
                                             </Box>
@@ -174,7 +197,7 @@ const BladeCreate = () => {
                                                         id="demo-simple-select"
                                                         value={brandVal}
                                                         label="PERIOD"
-                                                        onChange={handleChangeBrand}
+                                                        onChange={handleClickBrand}
                                                     >
                                                         <MenuItem value={'2W'}>2 weeks</MenuItem>
                                                         <MenuItem value={'1M'}>1 month</MenuItem>
@@ -195,7 +218,7 @@ const BladeCreate = () => {
                                                         id="demo-simple-select"
                                                         value={brandVal}
                                                         label="* PERIOD COUNT"
-                                                        onChange={handleChangeBrand}
+                                                        onChange={handleClickBrand}
                                                     >
                                                         <MenuItem value={1}>1</MenuItem>
                                                         <MenuItem value={2}>2</MenuItem>
