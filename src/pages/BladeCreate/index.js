@@ -1,4 +1,5 @@
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { emphasize, Box, Breadcrumbs, Button, Chip, FormControl, InputLabel, MenuItem, Select, Rating, styled } from "@mui/material/";
 import { Home, ExpandMore } from "@mui/icons-material";
@@ -30,6 +31,22 @@ const BladeCreate = () => {
 
     const [brandVal, setBrandVal] = useState(null);
     const [subBranchVal, setSubBranchVal] = useState(null);
+
+    const [brandData, setBrandData] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('http://localhost:8080/api/v1/public/brand/list-root');
+                setBrandData(response.data);
+                console.error(response);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        fetchData();
+    }, []);
 
     const handleChangeBrand = (event) => {
         setBrandVal(event.target.value);
@@ -66,11 +83,7 @@ const BladeCreate = () => {
                                 <h5 className="mb-4">Blade Information</h5>
                                 <div className="form-group">
                                     <h6>* TITLE</h6>
-                                    <input type="text" />
-                                </div>
-                                <div className="form-group">
-                                    <h6>DESCRIPTION</h6>
-                                    <textarea rows={5} cols={10}/>
+                                    <input type="text" name="bladeName" />
                                 </div>
 
                                 <div className="row">
@@ -86,9 +99,9 @@ const BladeCreate = () => {
                                                         label="BRAND"
                                                         onChange={handleChangeBrand}
                                                     >
-                                                        <MenuItem value={'NTK'}>Nittaku</MenuItem>
-                                                        <MenuItem value={'BUT'}>Butterfly</MenuItem>
-                                                        <MenuItem value={'YSK'}>Yasaka</MenuItem>
+                                                        {brandData.map((item) => (
+                                                            <MenuItem value={item.brandCD}>{item.brandName}</MenuItem>
+                                                        ))}
                                                     </Select>
                                                 </FormControl>
                                             </Box>

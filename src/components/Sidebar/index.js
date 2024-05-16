@@ -7,6 +7,7 @@ import { FaProductHunt, FaLock, FaUserCircle } from "react-icons/fa";
 import { FaAngleRight, FaCartArrowDown, FaBell, FaGripVertical } from "react-icons/fa6";
 import { IoIosSettings, IoMdLogOut } from "react-icons/io";
 import { MdDashboard, MdMessage, MdViewKanban } from "react-icons/md";
+import { GrTransaction } from "react-icons/gr";
 
 const Sidebar = () => {
 
@@ -112,6 +113,18 @@ const Sidebar = () => {
                             <ul className="submenu">
                                 <li><Link to="/blade-list">List Blade</Link></li>
                                 <li><Link to="/blade-create">Create Blade</Link></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <Button className={`w-100 ${activeTab === 10 ? 'active' : ''}`} onClick={() => isOpenSubmenu(10)}>
+                            <span className='icon'><GrTransaction /></span>
+                            Transaction
+                            <span className='arrow'><FaAngleRight/></span>
+                        </Button>
+                        <div className={`submenuWrapper ${activeTab === 10 && isToggleSubmenu === true ? 'collapsed' : 'collapse'}`}>
+                            <ul className="submenu">
+                                <li><Link to="/transaction-report">Report</Link></li>
                             </ul>
                         </div>
                     </li>
