@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import Popup from 'reactjs-popup';
 import { useNavigate, Link } from "react-router-dom";
@@ -47,12 +48,26 @@ const Blade = () => {
         window.scrollTo(0,0);
     })
 
-
-
+    // Popup
     const [showModalPopupAdd, setShowModalPopupAdd] = useState(false);
     const openPopupAdd = () => {
         setShowModalPopupAdd(!showModalPopupAdd);
     }
+
+    // API list blade
+    const [bladeData, setBladeData] = useState(null);
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('http://localhost:8080/api/v1/public/blade/list');
+                setBladeData(response.data);
+                console.error(response);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        fetchData();
+    }, []);
 
     return <>
         <section className="right-content w-100">
@@ -143,6 +158,32 @@ const Blade = () => {
                         </thead>
 
                         <tbody>
+                            {bladeData && bladeData.length > 0 ? (
+                                bladeData.map((item) => (
+                                <tr>
+                                    <td>{item.seq}</td>
+                                    <td>{item.bladeFullName}</td>
+                                    <td>{item.periodCnt}</td>
+                                    <td>{item.initPrice} VND</td>
+                                    <td>{item.deposit} VND</td>
+                                    <td>{item.fee} VND</td>
+                                    <td>{item.endPrice} VND</td>
+                                    <td>
+                                        <div className="actions d-flex align-items-center">
+                                            <Link to={'/blade-detail'}><Button className="secondary" color="secondary"><FaEye/></Button></Link>
+                                            <Button className="success" color="success"><FaPencilAlt/></Button>
+                                            <Button className="success" color="success" onClick={openPopupAdd}><FaPlus /></Button>
+
+                                            {/* <Button className="error" color="error"><MdDelete/></Button> */}
+                                        </div>
+                                    </td>
+                                </tr>
+                                ))
+                            ) : (
+                                <tr className="bladeBox">
+                                    <td colSpan="8">Không có sản phẩm</td>
+                                </tr>
+                            )}
                             <tr>
                                 <td>#1</td>
                                 <td>
