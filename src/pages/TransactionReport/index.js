@@ -5,7 +5,7 @@ import { MyContext } from "../../App";
 import { Breadcrumbs, Chip, emphasize, styled, MenuItem, Select, FormControl, Button, Pagination } from "@mui/material/";
 import { Home, ExpandMore } from "@mui/icons-material";
 
-import { FaEye, FaPencilAlt, FaPlus } from "react-icons/fa";
+import { FaEye, FaPencilAlt, FaPlus } from "react-icons/fa"
 import PopupAdd from "./components/PopupAdd";
 
 // Breadcrum code
@@ -29,7 +29,7 @@ const StyledBreadcrumb = styled(Chip)(({theme}) => {
     };
 })
 
-const Blade = () => {
+const TransactionReport = () => {
 
     // Check login
     // const navigate = useNavigate();
@@ -47,8 +47,6 @@ const Blade = () => {
         window.scrollTo(0,0);
     })
 
-
-
     const [showModalPopupAdd, setShowModalPopupAdd] = useState(false);
     const openPopupAdd = () => {
         setShowModalPopupAdd(!showModalPopupAdd);
@@ -57,7 +55,7 @@ const Blade = () => {
     return <>
         <section className="right-content w-100">
             <div className="card shadow border-0 w-100 flex-row p-4">
-                <h5 className="mb-0">Blade List</h5>
+                <h5 className="mb-0">Báo Cáo Giao Dịch</h5>
                 <Breadcrumbs aria-label="breadcrumb" className="ml-auto breadcrumbs_">
                     <StyledBreadcrumb
                         component="a"
@@ -132,37 +130,25 @@ const Blade = () => {
                         <thead className="thead-dark">
                             <tr>
                                 <th>UID</th>
-                                <th style={{width:'300px'}}>PRODUCT</th>
-                                <th>PEOPLE</th>
-                                <th>STARTED PRICE (khởi điểm)</th>
-                                <th>DEPOSIT (đặt cọc)</th>
-                                <th>DEPRECIATION (khấu hao)</th>
-                                <th>ENDED PRICE (kết thúc)</th>
-                                <th>ACTION</th>
+                                <th>THỜI GIAN</th>
+                                <th style={{width:'300px'}}>MÃ ĐƠN HÀNG</th>
+                                <th>TÊN KHÁCH HÀNG</th>
+                                <th>SỐ ĐT KHÁCH HÀNG</th>
+                                <th>SỐ TIỀN</th>
+                                <th>NỀN TẢNG</th>
+                                <th>HÀNH ĐỘNG</th>
                             </tr>
                         </thead>
 
                         <tbody>
                             <tr>
                                 <td>#1</td>
-                                <td>
-                                    <div className="d-flex align-items-center productBox">
-                                        <div className="imgWrapper">
-                                            <div className="img">
-                                                <img src="/upload/images/product/takku-1.jpg" className="w-100" />
-                                            </div>
-                                        </div>
-                                        <div className="info pl-2">
-                                            <h6>Butterfly Tamca 5000</h6>
-                                            <p>Vợt Butterfly Tamca 5000 được thiết kế với tính năng trợ lực cho người chơi cùng 2 lớp sợi Carbon đan xen 3 lớp gỗ nằm gần lớp gỗ hinoki ở ngoài.</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>10</td>
-                                <td>6.500.000 VND</td>
-                                <td>3.000.000 VND</td>
+                                <td>2024-06-01</td>
+                                <td>123456789</td>
+                                <td>Huỳnh Xuân An</td>
+                                <td>0706533308</td>
                                 <td>100.000 VND</td>
-                                <td>3.000.000 VND</td>
+                                <td>PayOS</td>
                                 <td>
                                     <div className="actions d-flex align-items-center">
                                         <Link to={'/blade-detail'}><Button className="secondary" color="secondary"><FaEye/></Button></Link>
@@ -193,4 +179,4 @@ const Blade = () => {
     </>
 }
 
-export default Blade;
+export default TransactionReport;

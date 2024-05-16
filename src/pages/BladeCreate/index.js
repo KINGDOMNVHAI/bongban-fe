@@ -134,6 +134,7 @@ const BladeCreate = () => {
             // });
 
             formData.brandCD = brandVal;
+            formData.bladeCD = brandVal + '_' + subBranchVal + '_' + paddleVal;
             formData.bladeName = bladeNameVal;
             formData.bladeFullName = fullnameVal;
             formData.subBranch = subBranchVal;
