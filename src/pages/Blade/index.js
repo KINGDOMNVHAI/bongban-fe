@@ -172,7 +172,12 @@ const Blade = () => {
                                         <div className="actions d-flex align-items-center">
                                             <Link to={'/blade-detail'}><Button className="secondary" color="secondary"><FaEye/></Button></Link>
                                             <Button className="success" color="success"><FaPencilAlt/></Button>
-                                            <Button className="success" color="success" onClick={openPopupAdd}><FaPlus /></Button>
+
+                                            {item.periodCnt > item.countRegister ? (
+                                                <Button className="success" color="success" onClick={openPopupAdd}><FaPlus /></Button>
+                                            ) : (
+                                                ''
+                                            )}
 
                                             {/* <Button className="error" color="error"><MdDelete/></Button> */}
                                         </div>
