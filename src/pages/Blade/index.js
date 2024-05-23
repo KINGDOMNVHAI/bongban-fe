@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import Popup from 'reactjs-popup';
 import { useNavigate, Link } from "react-router-dom";
 import { MyContext } from "../../App";
-import { Breadcrumbs, Chip, emphasize, styled, MenuItem, Select, FormControl, Button, Pagination } from "@mui/material/";
+import { Box, Breadcrumbs, Button, Chip, emphasize, FormControl, InputLabel, MenuItem, Pagination, styled, Select } from "@mui/material/";
 import { Home, ExpandMore } from "@mui/icons-material";
 
 import { FaEye, FaPencilAlt, FaPlus } from "react-icons/fa";
@@ -37,16 +37,45 @@ const Blade = () => {
     // const token = localStorage.getItem("jwtToken");
     // if (token == null || token == undefined) navigate("/login");
 
-    const [showBy, setShowBy] = useState('');
-    const [showBysetCatBy, setCatBy] = useState('');
+    const [brandVal, setBrandVal] = useState(null);
+    const [brandData, setBrandData] = useState([]);
+    const [searchData, setSearchData] = useState({
+        brandCD: '',
+    });
 
     const context = useContext(MyContext);
 
     useEffect(()=>{
+        // Hide sidebar
         context.setIsHideSidebarAndHeader(false);
-
         window.scrollTo(0,0);
     })
+
+    useEffect(()=>{
+        // Call API
+        const fetchDataBrand = async () => {
+            try {
+                const response = await axios.get('http://localhost:8080/api/v1/public/brand/list');
+                setBrandData(response.data);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        fetchDataBrand();
+    }, []);
+
+    // Nếu brand có sub brand, setSubBranchVal
+    const handleClickBrand = async (event) => {
+        try {
+            searchData.brandCD = event.target.value;
+            const response = await axios.post('http://localhost:8080/api/v1/public/blade/search', searchData);
+            setBladeData(response.data);
+            setBrandVal(event.target.value);
+        } catch (error) {
+            console.error(error);
+        }
+    }
 
     // Popup
     const [showModalPopupAdd, setShowModalPopupAdd] = useState(false);
@@ -104,40 +133,47 @@ const Blade = () => {
             <div className="card shadow border-0 p-3 mt-4">
                 <div className="row cardFilters mt-3">
                     <div className="col-md-3">
-                        <h4>SHOW BY</h4>
-                        <FormControl size="small" className="w-100">
-                        <Select
-                            value={showBy}
-                            onChange={(e) => setShowBy(e.target.value)}
-                            displayEmpty
-                            inputProps={{'aria-label': 'Without label'}}
-                            labelId="demo-select-small-label"
-                            className="w-100"
-                        >
-                            <MenuItem value=""><em>None</em></MenuItem>
-                            <MenuItem value={10}>Ten</MenuItem>
-                            <MenuItem value={20}>Twenty</MenuItem>
-                            <MenuItem value={30}>Thirty</MenuItem>
-                        </Select>
-                        </FormControl>
+                        <Box sx={{ minWidth: 120 }}>
+                            <FormControl fullWidth>
+                                <InputLabel id="demo-simple-select-label">BRAND</InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={brandVal}
+                                    label="BRAND"
+                                    onChange={handleClickBrand}
+                                >
+                                    {brandData && brandData.length > 0 ? (
+                                        brandData.map((item) => (
+                                        <MenuItem value={item.brandCD}>{item.brandName}</MenuItem>
+                                        ))
+                                    ) : (
+                                        <MenuItem value={'XXX'}>NONE</MenuItem>
+                                    )}
+                                </Select>
+                            </FormControl>
+                        </Box>
                     </div>
 
                     <div className="col-md-3">
                         <h4>CATEGORY BY</h4>
                         <FormControl size="small" className="w-100">
-                        <Select
-                            value={showBysetCatBy}
-                            onChange={(e) => setCatBy(e.target.value)}
-                            displayEmpty
-                            inputProps={{'aria-label': 'Without label'}}
-                            labelId="demo-select-small-label"
-                            className="w-100"
-                        >
-                            <MenuItem value=""><em>None</em></MenuItem>
-                            <MenuItem value={10}>Ten</MenuItem>
-                            <MenuItem value={20}>Twenty</MenuItem>
-                            <MenuItem value={30}>Thirty</MenuItem>
-                        </Select>
+                            <Select
+                                value={brandData}
+                                onChange={(e) => setBrandData(e.target.value)}
+                                displayEmpty
+                                inputProps={{'aria-label': 'Without label'}}
+                                labelId="demo-select-small-label"
+                                className="w-100"
+                            >
+                                {brandData && brandData.length > 0 ? (
+                                    brandData.map((item) => (
+                                    <MenuItem value={item.brandCD}>{item.brandName}</MenuItem>
+                                    ))
+                                ) : (
+                                    <MenuItem value={'XXX'}><em>NONE</em></MenuItem>
+                                )}
+                            </Select>
                         </FormControl>
                     </div>
                 </div>
