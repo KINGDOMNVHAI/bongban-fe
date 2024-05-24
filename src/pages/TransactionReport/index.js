@@ -39,6 +39,8 @@ const TransactionReport = () => {
     const [showBy, setShowBy] = useState('');
     const [showBysetCatBy, setCatBy] = useState('');
 
+    const [statusPayment, setStatusPayment] = useState(1);
+
     const context = useContext(MyContext);
 
     useEffect(()=>{
@@ -64,7 +66,7 @@ const TransactionReport = () => {
                         icon={<Home fontSize="small"/>}
                     />
                     <StyledBreadcrumb
-                        label="Products"
+                        label="Transaction"
                         deleteIcon={<ExpandMore/>}
                     />
                 </Breadcrumbs>
@@ -135,7 +137,7 @@ const TransactionReport = () => {
                                 <th>TÊN KHÁCH HÀNG</th>
                                 <th>SỐ ĐT KHÁCH HÀNG</th>
                                 <th>SỐ TIỀN</th>
-                                <th>NỀN TẢNG</th>
+                                <th>TRẠNG THÁI</th>
                                 <th>HÀNH ĐỘNG</th>
                             </tr>
                         </thead>
@@ -148,14 +150,16 @@ const TransactionReport = () => {
                                 <td>Huỳnh Xuân An</td>
                                 <td>0706533308</td>
                                 <td>100.000 VND</td>
-                                <td>PayOS</td>
+
+                                {statusPayment == 2 ? (
+                                    <td className="process"><span>Process</span></td>
+                                ) : (
+                                    <td className="new"><span>New</span></td>
+                                )}
+
                                 <td>
                                     <div className="actions d-flex align-items-center">
-                                        <Link to={'/blade-detail'}><Button className="secondary" color="secondary"><FaEye/></Button></Link>
-                                        <Button className="success" color="success"><FaPencilAlt/></Button>
-                                        <Button className="success" color="success" onClick={openPopupAdd}><FaPlus /></Button>
-
-                                        {/* <Button className="error" color="error"><MdDelete/></Button> */}
+                                        <Button className="secondary" color="secondary"><FaEye/></Button>
                                     </div>
                                 </td>
                             </tr>
