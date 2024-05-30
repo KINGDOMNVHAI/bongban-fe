@@ -13,6 +13,7 @@ import SignUp from './pages/SignUp';
 import ProductDetails from './pages/ProductDetails';
 import ProductUpload from './pages/ProductUpload';
 import TransactionReport from './pages/TransactionReport';
+import TransactionDetail from './pages/TransactionDetail';
 
 const MyContext = createContext();
 
@@ -85,6 +86,7 @@ function App() {
               <Route path="/blade-create" exact={true} element={<BladeCreate />} />
 
               <Route path="/transaction-report" exact={true} element={<TransactionReport />} />
+              <Route path="/transaction-detail" exact={true} element={<TransactionDetail />} />
             </Routes>
           </div>
         </div>

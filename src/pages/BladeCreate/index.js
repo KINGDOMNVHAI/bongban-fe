@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, Link } from 'react-router-dom';
-import { emphasize, Box, Breadcrumbs, Button, Chip, FormControl, InputLabel, MenuItem, Select, Rating, styled } from "@mui/material/";
-import { Home, ExpandMore } from "@mui/icons-material";
+import { emphasize, Box, Breadcrumbs, Button, Chip, FormControl, InputLabel, MenuItem, Select, styled } from "@mui/material/";
+import { Home } from "@mui/icons-material";
 
 import { FaCloudUploadAlt } from "react-icons/fa";
 import { GrBladesHorizontal } from "react-icons/gr";

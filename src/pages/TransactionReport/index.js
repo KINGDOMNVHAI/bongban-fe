@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import Popup from 'reactjs-popup';
 import { useNavigate, Link } from "react-router-dom";
@@ -5,7 +6,7 @@ import { MyContext } from "../../App";
 import { Breadcrumbs, Chip, emphasize, styled, MenuItem, Select, FormControl, Button, Pagination } from "@mui/material/";
 import { Home, ExpandMore } from "@mui/icons-material";
 
-import { FaEye, FaPencilAlt, FaPlus } from "react-icons/fa"
+import { FaEye, FaPencilAlt, FaPlus } from "react-icons/fa";
 import PopupAdd from "./components/PopupAdd";
 
 // Breadcrum code
@@ -53,6 +54,21 @@ const TransactionReport = () => {
     const openPopupAdd = () => {
         setShowModalPopupAdd(!showModalPopupAdd);
     }
+
+    // API list blade
+    const [paymentData, setPaymentData] = useState(null);
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('http://localhost:8080/api/v1/public/payos/payment-report/list');
+                setPaymentData(response.data);
+                console.error(paymentData);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        fetchData();
+    }, []);
 
     return <>
         <section className="right-content w-100">
@@ -135,7 +151,6 @@ const TransactionReport = () => {
                                 <th>THỜI GIAN</th>
                                 <th style={{width:'300px'}}>MÃ ĐƠN HÀNG</th>
                                 <th>TÊN KHÁCH HÀNG</th>
-                                <th>SỐ ĐT KHÁCH HÀNG</th>
                                 <th>SỐ TIỀN</th>
                                 <th>TRẠNG THÁI</th>
                                 <th>HÀNH ĐỘNG</th>
@@ -143,26 +158,28 @@ const TransactionReport = () => {
                         </thead>
 
                         <tbody>
-                            <tr>
-                                <td>#1</td>
-                                <td>2024-06-01</td>
-                                <td>123456789</td>
-                                <td>Huỳnh Xuân An</td>
-                                <td>0706533308</td>
-                                <td>100.000 VND</td>
+                            {paymentData && paymentData.length > 0 ? (
+                                paymentData.map((item) => (
+                                <tr>
+                                    <td>{item.id}</td>
+                                    <td>{item.orderCode}</td>
+                                    <td>{item.createdAt}</td>
+                                    <td>{item.description}</td>
+                                    <td>{item.amount} VND</td>
+                                    <td>{item.status}</td>
 
-                                {statusPayment == 2 ? (
-                                    <td className="process"><span>Process</span></td>
-                                ) : (
-                                    <td className="new"><span>New</span></td>
-                                )}
-
-                                <td>
-                                    <div className="actions d-flex align-items-center">
-                                        <Button className="secondary" color="secondary"><FaEye/></Button>
-                                    </div>
-                                </td>
-                            </tr>
+                                    <td>
+                                        <div className="actions d-flex align-items-center">
+                                            <Link to={'/transaction-detail'}><Button className="secondary" color="secondary"><FaEye/></Button></Link>
+                                        </div>
+                                    </td>
+                                </tr>
+                                ))
+                            ) : (
+                                <tr className="bladeBox">
+                                    <td colSpan="8">Không có sản phẩm</td>
+                                </tr>
+                            )}
                         </tbody>
                     </table>
 
