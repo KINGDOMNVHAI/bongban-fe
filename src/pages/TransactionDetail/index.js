@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
-import { Box, MenuItem, Select, FormControl, Button, Pagination, Breadcrumbs, Chip, emphasize, styled } from "@mui/material/";
-import { Home, ExpandMore } from "@mui/icons-material";
+import { Box, Select, FormControl, Button, Breadcrumbs, Chip, emphasize, styled } from "@mui/material/";
+import { Home } from "@mui/icons-material";
+import QRCode from 'qrcode.react';
+
 import circlePlusIcon from '../../assets/images/icon-plus-circle.png';
 
 import { BsTextareaResize } from "react-icons/bs";
@@ -61,6 +63,8 @@ const TransactionDetail = () => {
     const handleRegisterLine = (event) => {
         console.log("Register Line");
     };
+
+    var qrcode = "00020101021238570010A000000727012700069704220113VQRQ0001uig8k0208QRIBFTTA530370454062000005802VN62070803abc6304D84C";
 
     return <>
         <section className="right-content w-100">
@@ -305,6 +309,8 @@ const TransactionDetail = () => {
                     <div className="p-4">
                         <h5 className="mt-4 mb-3">Mô tả sản phẩm</h5>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+                        <QRCode value={qrcode} />
 
                         <h5 className="mt-4 mb-4">Độ bền</h5>
 
