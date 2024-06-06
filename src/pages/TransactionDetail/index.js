@@ -1,7 +1,9 @@
-import { useState } from "react";
+import axios from "axios";
+import { useContext, useEffect, useState } from "react";
+import { usePathname } from 'next/router';
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
-import { Box, Select, FormControl, Button, Breadcrumbs, Chip, emphasize, styled } from "@mui/material/";
+import { Box, Button, Breadcrumbs, Chip, emphasize, styled } from "@mui/material/";
 import { Home } from "@mui/icons-material";
 import QRCode from 'qrcode.react';
 
@@ -39,6 +41,10 @@ const StyledBreadcrumb = styled(Chip)(({theme}) => {
 
 const TransactionDetail = () => {
 
+    const pathname = usePathname();
+    // const { param } = router.query;
+    console.log(pathname);
+
     const [showBy, setShowBy] = useState('');
     const [showBysetCatBy, setCatBy] = useState('');
 
@@ -63,6 +69,20 @@ const TransactionDetail = () => {
     const handleRegisterLine = (event) => {
         console.log("Register Line");
     };
+
+    useEffect(()=>{
+        // Call API
+        const fetchDataBrand = async () => {
+            try {
+                const response = await axios.get('http://localhost:8080/api/v1/public/payos/transaction-report/' + 1);
+                // setBrandData(response.data);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        fetchDataBrand();
+    }, []);
 
     var qrcode = "00020101021238570010A000000727012700069704220113VQRQ0001uig8k0208QRIBFTTA530370454062000005802VN62070803abc6304D84C";
 

@@ -60,7 +60,7 @@ const TransactionReport = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/api/v1/public/payos/payment-report/list');
+                const response = await axios.get('http://localhost:8080/api/v1/public/payos/transaction-report/list');
                 setPaymentData(response.data);
                 console.error(paymentData);
             } catch (error) {
@@ -170,7 +170,9 @@ const TransactionReport = () => {
 
                                     <td>
                                         <div className="actions d-flex align-items-center">
-                                            <Link to={'/transaction-detail'}><Button className="secondary" color="secondary"><FaEye/></Button></Link>
+                                            <Link href={`/transaction-detail/${item.id}`}>
+                                                <Button className="secondary" color="secondary"><FaEye/></Button>
+                                            </Link>
                                         </div>
                                     </td>
                                 </tr>
