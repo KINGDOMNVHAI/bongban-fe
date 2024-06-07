@@ -162,10 +162,10 @@ const TransactionReport = () => {
                                 paymentData.map((item) => (
                                 <tr>
                                     <td>{item.id}</td>
-                                    <td>{item.orderCode}</td>
                                     <td>{item.createdAt}</td>
-                                    <td>{item.description}</td>
-                                    <td>{item.amount} VND</td>
+                                    <td>{item.orderCode}</td>
+                                    <td>{item.accountName}</td>
+                                    <td>{`${item.amount.toLocaleString()}`} VND</td>
                                     <td>{item.status}</td>
 
                                     <td>
