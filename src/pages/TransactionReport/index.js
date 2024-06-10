@@ -170,7 +170,7 @@ const TransactionReport = () => {
 
                                     <td>
                                         <div className="actions d-flex align-items-center">
-                                            <Link href={`/transaction-detail/${item.id}`}>
+                                            <Link to={`/transaction-detail/${item.id}`}>
                                                 <Button className="secondary" color="secondary"><FaEye/></Button>
                                             </Link>
                                         </div>

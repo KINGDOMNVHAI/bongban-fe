@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
-import { usePathname } from 'next/router';
-import { Link } from "react-router-dom";
+// import { usePathname } from 'next/router';
+import { Link, useParams } from "react-router-dom";
 import Slider from "react-slick";
 import { Box, Button, Breadcrumbs, Chip, emphasize, styled } from "@mui/material/";
 import { Home } from "@mui/icons-material";
@@ -11,12 +11,11 @@ import circlePlusIcon from '../../assets/images/icon-plus-circle.png';
 
 import { BsTextareaResize } from "react-icons/bs";
 import { CiSettings } from "react-icons/ci";
-import { FaEye, FaPencilAlt, FaPiggyBank } from "react-icons/fa"
+import { FaPiggyBank } from "react-icons/fa"
 import { GiStarsStack } from "react-icons/gi";
-import { HiDotsVertical } from "react-icons/hi";
-import { IoMdCart, IoIosTimer } from "react-icons/io";
+import { IoMdCart } from "react-icons/io";
 import { IoColorPaletteOutline, IoPricetagOutline } from "react-icons/io5";
-import { MdDelete, MdShoppingBag, MdBrandingWatermark, MdGridView } from "react-icons/md";
+import { MdBrandingWatermark, MdGridView } from "react-icons/md";
 
 // Breadcrum code
 const StyledBreadcrumb = styled(Chip)(({theme}) => {
@@ -41,12 +40,13 @@ const StyledBreadcrumb = styled(Chip)(({theme}) => {
 
 const TransactionDetail = () => {
 
-    const pathname = usePathname();
-    // const { param } = router.query;
-    console.log(pathname);
+    const params = useParams();
 
     const [showBy, setShowBy] = useState('');
     const [showBysetCatBy, setCatBy] = useState('');
+
+    const [dataTransaction, setDataTransaction] = useState(null);
+    // var qrcode = "00020101021238570010A000000727012700069704220113VQRQ0001uig8k0208QRIBFTTA530370454062000005802VN62070803abc6304D84C";
 
     var productSliderOptions = {
         dots: false,
@@ -74,8 +74,10 @@ const TransactionDetail = () => {
         // Call API
         const fetchDataBrand = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/api/v1/public/payos/transaction-report/' + 1);
-                // setBrandData(response.data);
+                console.log(params.id)
+                const response = await axios.get('http://localhost:8080/api/v1/public/payos/transaction-report/' + params.id);
+                setDataTransaction(response.data);
+                console.log(response.data)
             } catch (error) {
                 console.error(error);
             }
@@ -83,8 +85,6 @@ const TransactionDetail = () => {
 
         fetchDataBrand();
     }, []);
-
-    var qrcode = "00020101021238570010A000000727012700069704220113VQRQ0001uig8k0208QRIBFTTA530370454062000005802VN62070803abc6304D84C";
 
     return <>
         <section className="right-content w-100">
@@ -293,7 +293,7 @@ const TransactionDetail = () => {
                                         </div>
 
                                         <div className="col-sm-9">
-                                            : <span>$37.00</span>
+                                            : <span>{dataTransaction.amount} {dataTransaction.currency}</span>
                                         </div>
                                     </div>
                                     <div className="row">
@@ -328,9 +328,11 @@ const TransactionDetail = () => {
 
                     <div className="p-4">
                         <h5 className="mt-4 mb-3">Mô tả sản phẩm</h5>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        <p>{dataTransaction.description}</p>
 
-                        <QRCode value={qrcode} />
+                        <h5 className="mt-4 mb-3">Mã QR thanh toán</h5>
+                        <p>{dataTransaction.platform}</p>
+                        <QRCode value={dataTransaction.qrCode} />
 
                         <h5 className="mt-4 mb-4">Độ bền</h5>
 
@@ -353,7 +355,7 @@ const TransactionDetail = () => {
 
                 </div>
 
-                <h5 class="mt-4 mb-3">Danh sách khách hàng</h5>
+                <h5 className="mt-4 mb-3">Danh sách khách hàng</h5>
 
                 <div className="row">
                     <Box

@@ -1,4 +1,5 @@
 import { useState, option, useRef } from "react";
+import { Link } from "react-router-dom";
 import { HiDotsVertical } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
 import { Box, Backdrop, Select, FormControl, Button, Typography, Modal } from "@mui/material/";
@@ -31,8 +32,8 @@ const PopupAdd = ({ onClose, showModalPopupAdd }) => {
                     <Typography id="modal-modal-title" variant="h6" component="h2">
                         Bạn muốn đăng ký?
                     </Typography>
-                    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        Nhấn vào đây để đăng ký
+                    <Typography id="modal-modal-description" sx={{ mt: 1 }}>
+                        Nhấn vào <Link to="/blade-list">đây</Link> để đăng ký
                     </Typography>
                     <Button className="close-modal" onClick={onClose}>Bỏ qua</Button>
                 </Box>

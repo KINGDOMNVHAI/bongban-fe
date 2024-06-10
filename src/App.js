@@ -86,7 +86,7 @@ function App() {
               <Route path="/blade-create" exact={true} element={<BladeCreate />} />
 
               <Route path="/transaction-report" exact={true} element={<TransactionReport />} />
-              <Route path="/transaction-detail" exact={true} element={<TransactionDetail />} />
+              <Route path="/transaction-detail/:id" exact={true} element={<TransactionDetail />} />
             </Routes>
           </div>
         </div>
