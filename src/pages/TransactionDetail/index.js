@@ -219,56 +219,6 @@ const TransactionDetail = () => {
                                     </div>
                                     <div className="row">
                                         <div className="col-sm-3 d-flex align-items-center">
-                                            <span className="icon"><IoColorPaletteOutline/></span>
-                                            <span className="name">Color</span>
-                                        </div>
-
-                                        <div className="col-sm-9">
-                                            : <span>
-                                                <ul className="list list-inline tags sml">
-                                                    <li className="list-inline-item">
-                                                        <span>RED</span>
-                                                    </li>
-                                                    <li className="list-inline-item">
-                                                        <span>BLUE</span>
-                                                    </li>
-                                                    <li className="list-inline-item">
-                                                        <span>WHITE</span>
-                                                    </li>
-                                                </ul>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div className="row">
-                                        <div className="col-sm-3 d-flex align-items-center">
-                                            <span className="icon"><BsTextareaResize/></span>
-                                            <span className="name">Size</span>
-                                        </div>
-
-                                        <div className="col-sm-9">
-                                            : <span>
-                                                <ul className="list list-inline tags sml">
-                                                    <li className="list-inline-item">
-                                                        <span>SM</span>
-                                                    </li>
-                                                    <li className="list-inline-item">
-                                                        <span>MD</span>
-                                                    </li>
-                                                    <li className="list-inline-item">
-                                                        <span>LG</span>
-                                                    </li>
-                                                    <li className="list-inline-item">
-                                                        <span>XL</span>
-                                                    </li>
-                                                    <li className="list-inline-item">
-                                                        <span>XXL</span>
-                                                    </li>
-                                                </ul>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div className="row">
-                                        <div className="col-sm-3 d-flex align-items-center">
                                             <span className="icon"><GiStarsStack/></span>
                                             <span className="name">Paddle</span>
                                         </div>

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, Link } from 'react-router-dom';
 import { emphasize, Box, Breadcrumbs, Button, Chip, FormControl, InputLabel, MenuItem, Select, styled } from "@mui/material/";
 import { Home } from "@mui/icons-material";
@@ -44,6 +44,8 @@ const BladeCreate = () => {
     const [paddleVal, setPaddleVal] = useState(null);
     const [periorVal, setPeriorVal] = useState(null);
     const [periorCntVal, setPeriorCntVal] = useState(null);
+
+    const [fileImg, setFileImg] = useState();
 
     const navigate = useNavigate();
     const [error, setError] = useState("");
@@ -118,6 +120,13 @@ const BladeCreate = () => {
     };
 
     const handleSubmit = async (event) => {
+        console.log(fileImg)
+        console.log(imageUrl)
+        if (!fileImg) {
+            alert('Please Select Your Image!');
+            return;
+        }
+
         event.preventDefault();
         // if (validateForm()) {
             // Form is valid, submit data
@@ -161,6 +170,15 @@ const BladeCreate = () => {
         //     setError("Invalid email or password");
         //     console.log(error)
         // }
+    };
+
+    const [imageUrl, setImageUrl] = useState(null);
+
+    const handleFileChange = (event) => {
+        const fileImg = event.target.files[0];
+        setFileImg(fileImg);
+        const imageUrl = URL.createObjectURL(fileImg);
+        setImageUrl(imageUrl);
     };
 
     return (
@@ -286,6 +304,12 @@ const BladeCreate = () => {
                             <div className="card p-4">
                                 <h5 className="mb-4"><MdOutlineImage/> Image</h5>
                                 <div className="form-group">
+                                    {/* <input type="file" onChange={(e) => setFileImg(e.target.value)}></input>
+                                    <button onClick={getFile()}>Send</button> */}
+
+                                    <input type="file" onChange={handleFileChange} />
+
+                                    {imageUrl && <img src={imageUrl} alt="File Preview" style={{width:'100%', margin: '5px'}} />}<br/>
 
                                 </div>
                             </div>
