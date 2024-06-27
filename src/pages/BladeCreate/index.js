@@ -120,8 +120,6 @@ const BladeCreate = () => {
     };
 
     const handleSubmit = async (event) => {
-        console.log(fileImg)
-        console.log(imageUrl)
         if (!fileImg) {
             alert('Please Select Your Image!');
             return;
@@ -130,17 +128,22 @@ const BladeCreate = () => {
         event.preventDefault();
         // if (validateForm()) {
             // Form is valid, submit data
-            console.log(formData);
 
-            // axios.post('https://api.example.com/endpoint', formData)
-            // .then(response => {
-            //     // Handle success
-            //     console.log(response.data);
-            // })
-            // .catch(error => {
-            //     // Handle error
-            //     console.error(error);
-            // });
+            const formUploadImage = new FormData();
+            formUploadImage.append('files', fileImg);
+            console.log(formUploadImage);
+
+            const resUploadImage = await axios.post('http://localhost:8080/api/v1/public/blade/upload-image', formUploadImage)
+            .then(response => {
+                // Handle success
+                console.log("Handle success");
+                console.log(response.data);
+            })
+            .catch(error => {
+                // Handle error
+                console.log("Handle error");
+                console.error(error);
+            });
 
             formData.brandCD = brandVal;
             formData.bladeCD = brandVal + '_' + subBranchVal + '_' + paddleVal;
@@ -153,7 +156,6 @@ const BladeCreate = () => {
             formData.bladeUnitID = brandVal + '_' + subBranchVal + '_' + paddleVal;
 
             const res = await axios.post('http://localhost:8080/api/v1/public/blade/insert', formData)
-            // console.log(res.config.data)
 
             if (res.status != 200) {
                 setError(res.data.message)
