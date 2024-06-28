@@ -1,5 +1,6 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import Slider from "react-slick";
 import { Box, MenuItem, Select, FormControl, Button, Pagination, Breadcrumbs, Chip, emphasize, styled } from "@mui/material/";
 import { Home, ExpandMore } from "@mui/icons-material";
@@ -12,7 +13,7 @@ import { GiStarsStack } from "react-icons/gi";
 import { HiDotsVertical } from "react-icons/hi";
 import { IoMdCart, IoIosTimer } from "react-icons/io";
 import { IoColorPaletteOutline, IoPricetagOutline } from "react-icons/io5";
-import { MdDelete, MdShoppingBag, MdBrandingWatermark, MdGridView } from "react-icons/md";
+import { MdShoppingBag, MdBrandingWatermark, MdGridView } from "react-icons/md";
 
 // Breadcrum code
 const StyledBreadcrumb = styled(Chip)(({theme}) => {
@@ -40,6 +41,10 @@ const BladeDetail = () => {
     const [showBy, setShowBy] = useState('');
     const [showBysetCatBy, setCatBy] = useState('');
 
+    const [bladeDetail, setBladeDetail] = useState('');
+
+    let params = useParams();
+
     var productSliderOptions = {
         dots: false,
         infinite: false,
@@ -57,6 +62,21 @@ const BladeDetail = () => {
         slidesToScroll: 1,
         arrows: false
     };
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('http://localhost:8080/api/v1/public/blade/detail/' + params.unitID);
+                setBladeDetail(response.data[0]);
+                console.log(response.data);
+                console.log("unitID");
+                console.log(params.unitID);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        fetchData();
+    }, []);
 
     const handleRegisterLine = (event) => {
         console.log("Register Line");
@@ -109,7 +129,7 @@ const BladeDetail = () => {
                     <div className="row">
                         <div className="col-md-4">
                             <div className="sliderWrapper pt-3 pb-3 pl-4 pr-4">
-                                <h6 className="mb-4">Product Gallery</h6>
+                                <h6 className="mb-4">Hình ảnh sản phẩm</h6>
                                 <Slider {...productSliderOptions} className="sliderBig mb-2">
                                     <div className="item">
                                         <img src="/upload/images/product/takku-1.jpg" className="w-100" />
@@ -139,7 +159,7 @@ const BladeDetail = () => {
                             <div className="sliderWrapper pt-3 pb-3 pl-4 pr-4">
                                 <h6 className="mb-4">Chi tiết sản phẩm</h6>
 
-                                <h4>Formal suits for men wedding slim fit 3 pieces dress business party jacket</h4>
+                                <h4>{bladeDetail.bladeName}</h4>
 
                                 <div className="productInfo mt-3">
                                     <div className="row">
@@ -149,7 +169,7 @@ const BladeDetail = () => {
                                         </div>
 
                                         <div className="col-sm-9">
-                                            : <span>Ecstasy</span>
+                                            : <span>{bladeDetail.brandName}</span>
                                         </div>
                                     </div>
                                     <div className="row">
@@ -172,12 +192,6 @@ const BladeDetail = () => {
                                                     </li>
                                                     <li className="list-inline-item">
                                                         <span>SMART</span>
-                                                    </li>
-                                                    <li className="list-inline-item">
-                                                        <span>MAN</span>
-                                                    </li>
-                                                    <li className="list-inline-item">
-                                                        <span>STYLES</span>
                                                     </li>
                                                 </ul>
                                             </span>
@@ -289,12 +303,29 @@ const BladeDetail = () => {
                                 <div className="productInfo mt-3">
                                     <div className="row">
                                         <div className="col-sm-3 d-flex align-items-center">
-                                            <span className="icon"><FaPiggyBank /></span>
+                                            <span className="name">Period</span>
+                                        </div>
+
+                                        <div className="col-sm-9">
+                                            : <span>{bladeDetail.period} VND</span>
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-sm-3 d-flex align-items-center">
                                             <span className="name">Deposit</span>
                                         </div>
 
                                         <div className="col-sm-9">
-                                            : <span>$37.00</span>
+                                            : <span>{bladeDetail.deposit} VND</span>
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-sm-3 d-flex align-items-center">
+                                            <span className="name">Fee</span>
+                                        </div>
+
+                                        <div className="col-sm-9">
+                                            : <span>{bladeDetail.fee} VND</span>
                                         </div>
                                     </div>
                                 </div>
@@ -327,7 +358,7 @@ const BladeDetail = () => {
 
                 </div>
 
-                <h5 class="mt-4 mb-3">Danh sách khách hàng</h5>
+                <h5 className="mt-4 mb-3">Danh sách khách hàng</h5>
 
                 <div className="row">
                     <Box

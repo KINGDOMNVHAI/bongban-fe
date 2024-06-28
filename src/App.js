@@ -82,8 +82,11 @@ function App() {
               <Route path="/product/upload" exact={true} element={<ProductUpload />} />
 
               <Route path="/blade-list" exact={true} element={<Blade />} />
-              <Route path="/blade-detail" exact={true} element={<BladeDetail />} />
               <Route path="/blade-create" exact={true} element={<BladeCreate />} />
+
+              <Route path="/blade-detail">
+                <Route path=":unitID" exact={true} element={<BladeDetail />} />
+              </Route>
 
               <Route path="/transaction-report" exact={true} element={<TransactionReport />} />
               <Route path="/transaction-detail/:id" exact={true} element={<TransactionDetail />} />

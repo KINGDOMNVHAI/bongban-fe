@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import Popup from 'reactjs-popup';
-import { useNavigate, Link } from "react-router-dom";
+import { Routes, Route, useParams, useNavigate, Link } from "react-router-dom";
 import { MyContext } from "../../App";
 import { Box, Breadcrumbs, Button, Chip, emphasize, FormControl, InputLabel, MenuItem, Pagination, styled, Select } from "@mui/material/";
 import { Home, ExpandMore } from "@mui/icons-material";
@@ -90,7 +90,7 @@ const Blade = () => {
             try {
                 const response = await axios.get('http://localhost:8080/api/v1/public/blade/list');
                 setBladeData(response.data);
-                console.error(response);
+                console.log(response);
             } catch (error) {
                 console.error(error);
             }
@@ -206,7 +206,9 @@ const Blade = () => {
                                     <td>{item.endPrice} VND</td>
                                     <td>
                                         <div className="actions d-flex align-items-center">
-                                            <Link to={'/blade-detail'}><Button className="secondary" color="secondary"><FaEye/></Button></Link>
+                                            {/* <Link to={`/blade-detail/${item.seq}`}><Button className="secondary" color="secondary"><FaEye/></Button></Link> */}
+
+                                            <Link to={`/blade-detail/${item.unitID}`}><Button className="secondary" color="secondary"><FaEye/></Button></Link>
                                             <Button className="success" color="success"><FaPencilAlt/></Button>
 
                                             {item.periodCnt > item.countRegister ? (
@@ -247,7 +249,7 @@ const Blade = () => {
                                 <td>3.000.000 VND</td>
                                 <td>
                                     <div className="actions d-flex align-items-center">
-                                        <Link to={'/blade-detail'}><Button className="secondary" color="secondary"><FaEye/></Button></Link>
+                                        <Link to={'/blade-detail/${item.seq}'}><Button className="secondary" color="secondary"><FaEye/></Button></Link>
                                         <Button className="success" color="success"><FaPencilAlt/></Button>
                                         <Button className="success" color="success" onClick={openPopupAdd}><FaPlus /></Button>
 
