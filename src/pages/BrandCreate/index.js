@@ -39,9 +39,23 @@ const BrandCreate = () => {
 
     const [brandVal, setBrandVal] = useState(null);
     const [brandData, setBrandData] = useState([]);
+    const [formCreateData, setFormCreateData] = useState({
+        brandCD: '',
+        brandName: '',
+        parent: '',
+        thumbnail: '',
+    });
 
     const handleSubmit = async (event) => {
         alert('handleSubmit');
+
+        event.preventDefault();
+
+        formCreateData.brandCD = brandVal;
+        formCreateData.brandName = brandVal;
+        formCreateData.parent = brandVal;
+        formCreateData.thumbnail = '';
+
     }
 
     const [imageUrl, setImageUrl] = useState(null);
