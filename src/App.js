@@ -8,6 +8,8 @@ import Dashboard from './pages/Dashboard';
 import Blade from './pages/Blade';
 import BladeCreate from './pages/BladeCreate';
 import BladeDetail from './pages/BladeDetail';
+import Brand from './pages/Brand';
+import BrandCreate from './pages/BrandCreate';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import ProductDetails from './pages/ProductDetails';
@@ -80,6 +82,9 @@ function App() {
               <Route path="/sign-up" exact={true} element={<SignUp />} />
               <Route path="/product/details" exact={true} element={<ProductDetails />} />
               <Route path="/product/upload" exact={true} element={<ProductUpload />} />
+
+              <Route path="/brand-list" exact={true} element={<Brand />} />
+              <Route path="/brand-create" exact={true} element={<BrandCreate />} />
 
               <Route path="/blade-list" exact={true} element={<Blade />} />
               <Route path="/blade-create" exact={true} element={<BladeCreate />} />

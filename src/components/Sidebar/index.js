@@ -105,11 +105,24 @@ const Sidebar = () => {
                     </li>
                     <li>
                         <Button className={`w-100 ${activeTab === 9 ? 'active' : ''}`} onClick={() => isOpenSubmenu(9)}>
+                            <span className='icon'><MdViewKanban/></span>
+                            Brand
+                            <span className='arrow'><FaAngleRight/></span>
+                        </Button>
+                        <div className={`submenuWrapper ${activeTab === 9 && isToggleSubmenu === true ? 'collapsed' : 'collapse'}`}>
+                            <ul className="submenu">
+                                <li><Link to="/brand-list">List Brand</Link></li>
+                                <li><Link to="/brand-create">Create Brand</Link></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <Button className={`w-100 ${activeTab === 10 ? 'active' : ''}`} onClick={() => isOpenSubmenu(10)}>
                             <span className='icon'><FaGripVertical/></span>
                             Blade
                             <span className='arrow'><FaAngleRight/></span>
                         </Button>
-                        <div className={`submenuWrapper ${activeTab === 9 && isToggleSubmenu === true ? 'collapsed' : 'collapse'}`}>
+                        <div className={`submenuWrapper ${activeTab === 10 && isToggleSubmenu === true ? 'collapsed' : 'collapse'}`}>
                             <ul className="submenu">
                                 <li><Link to="/blade-list">List Blade</Link></li>
                                 <li><Link to="/blade-create">Create Blade</Link></li>
@@ -117,12 +130,12 @@ const Sidebar = () => {
                         </div>
                     </li>
                     <li>
-                        <Button className={`w-100 ${activeTab === 10 ? 'active' : ''}`} onClick={() => isOpenSubmenu(10)}>
+                        <Button className={`w-100 ${activeTab === 11 ? 'active' : ''}`} onClick={() => isOpenSubmenu(11)}>
                             <span className='icon'><GrTransaction /></span>
                             Transaction
                             <span className='arrow'><FaAngleRight/></span>
                         </Button>
-                        <div className={`submenuWrapper ${activeTab === 10 && isToggleSubmenu === true ? 'collapsed' : 'collapse'}`}>
+                        <div className={`submenuWrapper ${activeTab === 11 && isToggleSubmenu === true ? 'collapsed' : 'collapse'}`}>
                             <ul className="submenu">
                                 <li><Link to="/transaction-report">Report</Link></li>
                             </ul>
