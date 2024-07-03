@@ -38,6 +38,7 @@ const Brand = () => {
 
     const [brandVal, setBrandVal] = useState(null);
     const [brandData, setBrandData] = useState([]);
+    const [brandSelectData, setBrandSelectData] = useState([]);
     const [searchData, setSearchData] = useState({
         brandCD: '',
     });
@@ -47,6 +48,7 @@ const Brand = () => {
             try {
                 const response = await axios.get('http://localhost:8080/api/v1/public/brand/list');
                 setBrandData(response.data);
+                setBrandSelectData(response.data);
                 console.error(response);
             } catch (error) {
                 console.error(error);
@@ -56,11 +58,23 @@ const Brand = () => {
         fetchData();
     }, []);
 
+    // Nếu brand có sub brand, setSubBranchVal
+    const handleClickBrand = async (event) => {
+        try {
+            searchData.brandCD = event.target.value;
+            const response = await axios.post('http://localhost:8080/api/v1/public/brand/search', searchData);
+            setBrandData(response.data);
+            setBrandVal(event.target.value);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
     return <>
 
 <section className="right-content w-100">
             <div className="card shadow border-0 w-100 flex-row p-4">
-                <h5 className="mb-0">Blade List</h5>
+                <h5 className="mb-0">Brand List</h5>
                 <Breadcrumbs aria-label="breadcrumb" className="ml-auto breadcrumbs_">
                     <StyledBreadcrumb
                         component="a"
@@ -100,9 +114,10 @@ const Brand = () => {
                                     id="demo-simple-select"
                                     value={brandVal}
                                     label="BRAND"
+                                    onChange={handleClickBrand}
                                 >
-                                    {brandData && brandData.length > 0 ? (
-                                        brandData.map((item) => (
+                                    {brandSelectData && brandSelectData.length > 0 ? (
+                                        brandSelectData.map((item) => (
                                         <MenuItem value={item.brandCD}>{item.brandName}</MenuItem>
                                         ))
                                     ) : (
@@ -111,28 +126,6 @@ const Brand = () => {
                                 </Select>
                             </FormControl>
                         </Box>
-                    </div>
-
-                    <div className="col-md-3">
-                        <h4>CATEGORY BY</h4>
-                        <FormControl size="small" className="w-100">
-                            <Select
-                                value={brandData}
-                                onChange={(e) => setBrandData(e.target.value)}
-                                displayEmpty
-                                inputProps={{'aria-label': 'Without label'}}
-                                labelId="demo-select-small-label"
-                                className="w-100"
-                            >
-                                {brandData && brandData.length > 0 ? (
-                                    brandData.map((item) => (
-                                    <MenuItem value={item.brandCD}>{item.brandName}</MenuItem>
-                                    ))
-                                ) : (
-                                    <MenuItem value={'XXX'}><em>NONE</em></MenuItem>
-                                )}
-                            </Select>
-                        </FormControl>
                     </div>
                 </div>
 
