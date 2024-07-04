@@ -10,6 +10,7 @@ import BladeCreate from './pages/BladeCreate';
 import BladeDetail from './pages/BladeDetail';
 import Brand from './pages/Brand';
 import BrandCreate from './pages/BrandCreate';
+import BrandDetail from './pages/BrandDetail';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import ProductDetails from './pages/ProductDetails';
@@ -85,6 +86,10 @@ function App() {
 
               <Route path="/brand-list" exact={true} element={<Brand />} />
               <Route path="/brand-create" exact={true} element={<BrandCreate />} />
+
+              <Route path="/brand-detail">
+                <Route path=":brandCD" exact={true} element={<BrandDetail />} />
+              </Route>
 
               <Route path="/blade-list" exact={true} element={<Blade />} />
               <Route path="/blade-create" exact={true} element={<BladeCreate />} />

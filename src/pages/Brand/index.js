@@ -160,9 +160,9 @@ const Brand = () => {
 
                                     <td>
                                         <div className="actions d-flex align-items-center">
-                                            {/* <Link to={`/blade-detail/${item.seq}`}><Button className="secondary" color="secondary"><FaEye/></Button></Link> */}
+                                            {/* <Link to={`/brand-detail/${item.seq}`}><Button className="secondary" color="secondary"><FaEye/></Button></Link> */}
 
-                                            <Link to={`/blade-detail/${item.unitID}`}><Button className="secondary" color="secondary"><FaEye/></Button></Link>
+                                            <Link to={`/brand-detail/${item.brandCD}`}><Button className="secondary" color="secondary"><FaEye/></Button></Link>
                                             <Button className="success" color="success"><FaPencilAlt/></Button>
 
                                             {item.periodCnt > item.countRegister ? (

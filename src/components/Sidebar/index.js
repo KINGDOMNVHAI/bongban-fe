@@ -8,6 +8,7 @@ import { FaAngleRight, FaCartArrowDown, FaBell, FaGripVertical } from "react-ico
 import { IoIosSettings, IoMdLogOut } from "react-icons/io";
 import { MdDashboard, MdMessage, MdViewKanban } from "react-icons/md";
 import { GrTransaction } from "react-icons/gr";
+import { TbBrandCarbon } from "react-icons/tb";
 
 const Sidebar = () => {
 
@@ -105,7 +106,7 @@ const Sidebar = () => {
                     </li>
                     <li>
                         <Button className={`w-100 ${activeTab === 9 ? 'active' : ''}`} onClick={() => isOpenSubmenu(9)}>
-                            <span className='icon'><MdViewKanban/></span>
+                            <span className='icon'><TbBrandCarbon /></span>
                             Brand
                             <span className='arrow'><FaAngleRight/></span>
                         </Button>
