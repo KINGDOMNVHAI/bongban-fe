@@ -32,9 +32,9 @@ const StyledBreadcrumb = styled(Chip)(({theme}) => {
 const Brand = () => {
 
     // Check login
-    // const navigate = useNavigate();
-    // const token = localStorage.getItem("jwtToken");
-    // if (token == null || token == undefined) navigate("/login");
+    const navigate = useNavigate();
+    const token = localStorage.getItem("jwtToken");
+    if (token == null || token == undefined) navigate("/login");
 
     const [brandVal, setBrandVal] = useState(null);
     const [brandData, setBrandData] = useState([]);

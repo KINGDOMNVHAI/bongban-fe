@@ -29,7 +29,7 @@ const Login = () => {
 
     const navigate = useNavigate();
 
-    const [email, setEmail] = useState("");
+    const [emailOrUsername, setEmailOrUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const request = {};
@@ -38,22 +38,30 @@ const Login = () => {
         e.preventDefault();
         try {
             const request = {
-                email: email,
+                emailOrUsername: emailOrUsername,
                 password: password,
             }
 
             const res = await axios.post('http://localhost:8080/api/v1/public/signin', request)
-            // console.log(res.config.data)
+            console.log("res.config.data")
+            console.log(res)
+            console.log(res.status)
+            console.log(res.data.token)
 
             if (res.status != 200) {
                 setError(res.data.message)
-                return;
+                return navigate('/login');
             }
 
-            setError("");
             const token = res.data.token;
+            if (token == null || token == undefined) {
+                setError(res.data.message)
+                return navigate('/login');
+            }
+
             localStorage.setItem('jwtToken', token);
-            return navigate('/blade-list');
+            setError("");
+            return navigate('/dashboard');
             // Redirect or perform any other actions
         } catch (error) {
             // Handle error
@@ -81,15 +89,15 @@ const Login = () => {
                         <form onSubmit={handleLogin}>
                             <div className={`form-group position-relative ${inputIndex === 0 && 'focus'}`}>
                                 <span className='icon'><MdMail/></span>
-                                <input type='text' name="email" className='form-control' placeholder='your email'
+                                <input type='text' name="emailOrUsername" className='form-control' placeholder='email or username'
                                     onFocus={()=>focusInput(0)} onBlur={()=>setInputIndex(null)}
-                                    onChange={(e) => setEmail(e.target.value)}
+                                    onChange={(e) => setEmailOrUsername(e.target.value)}
                                 />
                             </div>
 
                             <div className={`form-group position-relative ${inputIndex === 1 && 'focus'}`}>
                                 <span className='icon'><RiLockPasswordFill/></span>
-                                <input type={`${isShowPassword === true ? 'text' : 'password'}`} name="password" className='form-control' placeholder='your password'
+                                <input type={`${isShowPassword === true ? 'text' : 'password'}`} name="password" className='form-control' placeholder='password'
                                     onFocus={()=>focusInput(1)} onBlur={()=>setInputIndex(null)}
                                     onChange={(e) => setPassword(e.target.value)}
                                 />
