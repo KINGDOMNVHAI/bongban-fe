@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { getApiURL } from "../../common/utils/domainUtil";
 import { useNavigate, Link } from 'react-router-dom';
 import { emphasize, Box, Breadcrumbs, Button, Chip, FormControl, InputLabel, MenuItem, Select, styled } from "@mui/material/";
 import { Home } from "@mui/icons-material";
@@ -31,6 +32,15 @@ const StyledBreadcrumb = styled(Chip)(({theme}) => {
 })
 
 const BladeCreate = () => {
+
+    const apiBrandList = 'public/brand/list';
+    const apiBrandListSub = 'public/brand/list-sub/';
+    const apiBrandInsert = 'public/blade/insert/';
+    const apiBrandUploadImage = 'public/blade/upload-image/';
+    const apiURLBrandList = getApiURL(apiBrandList);
+    const apiURLBrandListSub = getApiURL(apiBrandListSub);
+    const apiURLBrandInsert = getApiURL(apiBrandInsert);
+    const apiURLBrandUploadImage = getApiURL(apiBrandUploadImage);
 
     const [fullnameVal, setFullnameVal] = useState(null);
     const [bladeNameVal, setBladeNameVal] = useState(null);
@@ -77,7 +87,7 @@ const BladeCreate = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/api/v1/public/brand/list');
+                const response = await axios.get(apiURLBrandList);
                 setBrandData(response.data);
                 console.error(response);
             } catch (error) {
@@ -93,7 +103,7 @@ const BladeCreate = () => {
         console.error(event.target.value);
         setBrandVal(event.target.value);
         try {
-            const response = await axios.get('http://localhost:8080/api/v1/public/brand/list-sub/' + event.target.value);
+            const response = await axios.get(apiURLBrandListSub + event.target.value);
             setSubBranchData(response.data);
         } catch (error) {
             console.error(error);
@@ -133,7 +143,7 @@ const BladeCreate = () => {
             formUploadImage.append('files', fileImg);
             console.log(formUploadImage);
 
-            const resUploadImage = await axios.post('http://localhost:8080/api/v1/public/blade/upload-image', formUploadImage)
+            const resUploadImage = await axios.post(apiURLBrandUploadImage, formUploadImage)
             .then(response => {
                 // Handle success
                 console.log("Handle success");
@@ -155,7 +165,7 @@ const BladeCreate = () => {
             formData.period = periorVal;
             formData.bladeUnitID = brandVal + '_' + subBranchVal + '_' + paddleVal;
 
-            const res = await axios.post('http://localhost:8080/api/v1/public/blade/insert', formData)
+            const res = await axios.post(apiURLBrandInsert, formData)
 
             if (res.status != 200) {
                 setError(res.data.message)

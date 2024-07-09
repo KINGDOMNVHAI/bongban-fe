@@ -2,7 +2,7 @@ import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import Popup from 'reactjs-popup';
 import { Routes, Route, useParams, useNavigate, Link } from "react-router-dom";
-import { MyContext } from "../../App";
+import { getApiURL } from "../../common/utils/domainUtil";
 import { Box, Breadcrumbs, Button, Chip, emphasize, FormControl, InputLabel, MenuItem, Pagination, styled, Select } from "@mui/material/";
 import { Home, ExpandMore } from "@mui/icons-material";
 
@@ -36,6 +36,11 @@ const Brand = () => {
     const token = localStorage.getItem("jwtToken");
     if (token == null || token == undefined) navigate("/login");
 
+    const apiBrandList = 'public/brand/list';
+    const apiBrandSearch = 'public/brand/search';
+    const apiURLBrandList = getApiURL(apiBrandList);
+    const apiURLBrandSearch = getApiURL(apiBrandSearch);
+
     const [brandVal, setBrandVal] = useState(null);
     const [brandData, setBrandData] = useState([]);
     const [brandSelectData, setBrandSelectData] = useState([]);
@@ -46,7 +51,7 @@ const Brand = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/api/v1/public/brand/list');
+                const response = await axios.get(apiURLBrandList);
                 setBrandData(response.data);
                 setBrandSelectData(response.data);
                 console.error(response);
@@ -61,8 +66,9 @@ const Brand = () => {
     // Nếu brand có sub brand, setSubBranchVal
     const handleClickBrand = async (event) => {
         try {
+            console.log(apiURLBrandSearch);
             searchData.brandCD = event.target.value;
-            const response = await axios.post('http://localhost:8080/api/v1/public/brand/search', searchData);
+            const response = await axios.post(apiURLBrandSearch, searchData);
             setBrandData(response.data);
             setBrandVal(event.target.value);
         } catch (error) {
@@ -72,7 +78,7 @@ const Brand = () => {
 
     return <>
 
-<section className="right-content w-100">
+    <section className="right-content w-100">
             <div className="card shadow border-0 w-100 flex-row p-4">
                 <h5 className="mb-0">Brand List</h5>
                 <Breadcrumbs aria-label="breadcrumb" className="ml-auto breadcrumbs_">

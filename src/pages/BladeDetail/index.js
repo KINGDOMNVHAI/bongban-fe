@@ -2,18 +2,17 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Slider from "react-slick";
-import { Box, MenuItem, Select, FormControl, Button, Pagination, Breadcrumbs, Chip, emphasize, styled } from "@mui/material/";
-import { Home, ExpandMore } from "@mui/icons-material";
+import { getApiURL } from "../../common/utils/domainUtil";
+import { Box, Button, Breadcrumbs, Chip, emphasize, styled } from "@mui/material/";
+import { Home } from "@mui/icons-material";
 import circlePlusIcon from '../../assets/images/icon-plus-circle.png';
 
 import { BsTextareaResize } from "react-icons/bs";
 import { CiSettings } from "react-icons/ci";
-import { FaEye, FaPencilAlt, FaPiggyBank } from "react-icons/fa"
 import { GiStarsStack } from "react-icons/gi";
-import { HiDotsVertical } from "react-icons/hi";
-import { IoMdCart, IoIosTimer } from "react-icons/io";
+import { IoMdCart } from "react-icons/io";
 import { IoColorPaletteOutline, IoPricetagOutline } from "react-icons/io5";
-import { MdShoppingBag, MdBrandingWatermark, MdGridView } from "react-icons/md";
+import { MdBrandingWatermark, MdGridView } from "react-icons/md";
 
 // Breadcrum code
 const StyledBreadcrumb = styled(Chip)(({theme}) => {
@@ -43,6 +42,9 @@ const BladeDetail = () => {
 
     const [bladeDetail, setBladeDetail] = useState('');
 
+    const apiBladeDetail = 'public/blade/detail/';
+    const apiURLBladeDetail = getApiURL(apiBladeDetail);
+
     let params = useParams();
 
     var productSliderOptions = {
@@ -66,7 +68,7 @@ const BladeDetail = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/api/v1/public/blade/detail/' + params.unitID);
+                const response = await axios.get(apiURLBladeDetail + params.unitID);
                 setBladeDetail(response.data[0]);
                 console.log(response.data);
                 console.log("unitID");

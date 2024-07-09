@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import Popup from 'reactjs-popup';
-import { Routes, Route, useParams, useNavigate, Link } from "react-router-dom";
+import { getApiURL } from "../../common/utils/domainUtil";
+import { Link } from "react-router-dom";
 import { MyContext } from "../../App";
 import { Box, Breadcrumbs, Button, Chip, emphasize, FormControl, InputLabel, MenuItem, Pagination, styled, Select } from "@mui/material/";
 import { Home, ExpandMore } from "@mui/icons-material";
@@ -37,6 +38,11 @@ const Blade = () => {
     // const token = localStorage.getItem("jwtToken");
     // if (token == null || token == undefined) navigate("/login");
 
+    const apiBladeList = 'public/blade/list';
+    const apiBladeSearch = 'public/blade/search';
+    const apiURLBladeList = getApiURL(apiBladeList);
+    const apiURLBladeSearch = getApiURL(apiBladeSearch);
+
     const [brandVal, setBrandVal] = useState(null);
     const [brandData, setBrandData] = useState([]);
     const [searchData, setSearchData] = useState({
@@ -55,7 +61,7 @@ const Blade = () => {
         // Call API
         const fetchDataBrand = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/api/v1/public/brand/list');
+                const response = await axios.get(apiURLBladeList);
                 setBrandData(response.data);
             } catch (error) {
                 console.error(error);
@@ -69,7 +75,7 @@ const Blade = () => {
     const handleClickBrand = async (event) => {
         try {
             searchData.brandCD = event.target.value;
-            const response = await axios.post('http://localhost:8080/api/v1/public/blade/search', searchData);
+            const response = await axios.post(apiURLBladeSearch, searchData);
             setBladeData(response.data);
             setBrandVal(event.target.value);
         } catch (error) {

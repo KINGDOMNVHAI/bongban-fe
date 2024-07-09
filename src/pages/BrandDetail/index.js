@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { getApiURL } from "../../common/utils/domainUtil";
 import Slider from "react-slick";
 import { Box, MenuItem, Select, FormControl, Button, Pagination, Breadcrumbs, Chip, emphasize, styled } from "@mui/material/";
 import { Home, ExpandMore } from "@mui/icons-material";
@@ -38,12 +39,15 @@ const BrandDetail = () => {
 
     const [brandDetail, setBrandDetail] = useState('');
 
+    const apiBrandDetail = 'public/brand/detail/';
+    const apiURLBrandDetail = getApiURL(apiBrandDetail);
+
     let params = useParams();
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/api/v1/public/brand/detail/' + params.brandCD);
+                const response = await axios.get(apiURLBrandDetail + params.brandCD);
                 setBrandDetail(response.data);
                 console.log(response.data);
             } catch (error) {
