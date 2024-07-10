@@ -753,3 +753,33 @@ https://mui.com/material-ui/react-modal/
 ==============================================================
 React Google Login 2024
 https://www.youtube.com/watch?v=WhbtXwSnzNo
+
+==============================================================
+Cách cài NGINX:
+1) Download về
+2) Trong thư mục nginx/html, đưa frontend đã được build vào đây.
+3) File nginx.conf
+
+Sửa port
+server {
+  listen       8282;
+  server_name  localhost;
+
+  client_max_body_size 100M;
+
+  location /bb {
+    root   C:\html;
+    index  index.html index.htm;
+    proxy_read_timeout 300s;
+    proxy_connect_timeout 75s;
+  }
+  location /api/v1/ {
+    #proxy_pass http://172.20.211.110:9191/s91a01-esgmgmt/;
+    proxy_pass http://103.101.162.142:8080/api/v1/;
+  }
+}
+
+Giải thích:
+Copy thư mục html ra bên ngoài C:\html
+Tạo thư mục C:\html\bb
+Bên trong bb là tất cả các file frontend được build + file của thư mục html
