@@ -44,7 +44,7 @@ const Login = () => {
                 password: password,
             }
 
-            const res = await axios.get(`${apiURLSignin}`, request);
+            const res = await axios.post(`${apiURLSignin}`, request);
             // const res = await axios.post('http://localhost:8080/api/v1/public/signin', request)
             console.log("res.config.data")
             console.log(res)
