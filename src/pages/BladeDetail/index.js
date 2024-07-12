@@ -68,10 +68,9 @@ const BladeDetail = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
+                console.log(apiURLBladeDetail);
                 const response = await axios.get(apiURLBladeDetail + params.unitID);
                 setBladeDetail(response.data[0]);
-                console.log(response.data);
-                console.log("unitID");
                 console.log(params.unitID);
             } catch (error) {
                 console.error(error);

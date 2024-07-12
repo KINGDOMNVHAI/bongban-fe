@@ -51,7 +51,9 @@ const Brand = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(apiURLBrandList);
+                console.log(apiURLBrandList);
+                const response = await axios.get(`${apiURLBrandList}`);
+                console.log(response);
                 setBrandData(response.data);
                 setBrandSelectData(response.data);
                 console.error(response);
@@ -66,7 +68,6 @@ const Brand = () => {
     // Nếu brand có sub brand, setSubBranchVal
     const handleClickBrand = async (event) => {
         try {
-            console.log(apiURLBrandSearch);
             searchData.brandCD = event.target.value;
             const response = await axios.post(apiURLBrandSearch, searchData);
             setBrandData(response.data);
@@ -77,8 +78,7 @@ const Brand = () => {
     }
 
     return <>
-
-    <section className="right-content w-100">
+        <section className="right-content w-100">
             <div className="card shadow border-0 w-100 flex-row p-4">
                 <h5 className="mb-0">Brand List</h5>
                 <Breadcrumbs aria-label="breadcrumb" className="ml-auto breadcrumbs_">

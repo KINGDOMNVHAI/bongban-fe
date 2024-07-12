@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useNavigate, Link } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
+import { getApiURL } from "../../common/utils/domainUtil";
 import googleIcon from '../../assets/images/logo-google.png';
 import Logo from '../../assets/images/logo-google.png';
 import patern from '../../assets/images/pattern.webp';
@@ -25,7 +26,8 @@ const Login = () => {
         setInputIndex(index);
     }
 
-
+    const apiSignin = 'public/signin';
+    const apiURLSignin = getApiURL(apiSignin);
 
     const navigate = useNavigate();
 
@@ -42,7 +44,8 @@ const Login = () => {
                 password: password,
             }
 
-            const res = await axios.post('http://localhost:8080/api/v1/public/signin', request)
+            const res = await axios.get(`${apiURLSignin}`, request);
+            // const res = await axios.post('http://localhost:8080/api/v1/public/signin', request)
             console.log("res.config.data")
             console.log(res)
             console.log(res.status)
