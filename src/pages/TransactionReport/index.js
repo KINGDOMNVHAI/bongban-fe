@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import Popup from 'reactjs-popup';
-import { useNavigate, Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { MyContext } from "../../App";
 import { Breadcrumbs, Chip, emphasize, styled, MenuItem, Select, FormControl, Button, Pagination } from "@mui/material/";
 import { Home, ExpandMore } from "@mui/icons-material";
@@ -33,9 +33,9 @@ const StyledBreadcrumb = styled(Chip)(({theme}) => {
 const TransactionReport = () => {
 
     // Check login
-    // const navigate = useNavigate();
-    // const token = localStorage.getItem("jwtToken");
-    // if (token == null || token == undefined) navigate("/login");
+    const navigate = useNavigate();
+    const token = localStorage.getItem("jwtToken");
+    if (token == null || token == undefined) navigate("/login");
 
     const [showBy, setShowBy] = useState('');
     const [showBysetCatBy, setCatBy] = useState('');

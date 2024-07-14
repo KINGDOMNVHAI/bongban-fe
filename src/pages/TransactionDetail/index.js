@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 // import { usePathname } from 'next/router';
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Slider from "react-slick";
 import { Box, Button, Breadcrumbs, Chip, emphasize, styled } from "@mui/material/";
 import { Home } from "@mui/icons-material";
@@ -39,6 +39,10 @@ const StyledBreadcrumb = styled(Chip)(({theme}) => {
 })
 
 const TransactionDetail = () => {
+
+    const navigate = useNavigate();
+    const token = localStorage.getItem("jwtToken");
+    if (token == null || token == undefined) navigate("/login");
 
     const params = useParams();
 
