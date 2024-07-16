@@ -62,6 +62,7 @@ const Login = () => {
                 return navigate('/login');
             }
 
+            localStorage.setItem('emailOrUsername', emailOrUsername);
             localStorage.setItem('jwtToken', token);
             setError("");
             return navigate('/dashboard');

@@ -28,10 +28,9 @@ const Sidebar = () => {
                 <ul>
                     <li>
                         <Link to="/">
-                            <Button className={`w-100 ${activeTab === 0 ? 'active' : ''}`} onClick={() => isOpenSubmenu(0)}>
+                            <Button className={`w-100`}>
                             <span className='icon'><MdDashboard/></span>
                             Dashboard
-                            <span className='arrow'><FaAngleRight/></span>
                             </Button>
                         </Link>
                     </li>
@@ -92,25 +91,18 @@ const Sidebar = () => {
                     </li>
                     <li>
                         <Button className={`w-100 ${activeTab === 7 ? 'active' : ''}`} onClick={() => isOpenSubmenu(7)}>
-                        <span className='icon'><FaUserCircle/></span>
-                        User
-                        <span className='arrow'><FaAngleRight/></span>
-                        </Button>
-                    </li>
-                    <li>
-                        <Button className={`w-100 ${activeTab === 8 ? 'active' : ''}`} onClick={() => isOpenSubmenu(8)}>
                         <span className='icon'><MdViewKanban/></span>
                         Kanban
                         <span className='arrow'><FaAngleRight/></span>
                         </Button>
                     </li>
                     <li>
-                        <Button className={`w-100 ${activeTab === 9 ? 'active' : ''}`} onClick={() => isOpenSubmenu(9)}>
+                        <Button className={`w-100 ${activeTab === 8 ? 'active' : ''}`} onClick={() => isOpenSubmenu(8)}>
                             <span className='icon'><TbBrandCarbon /></span>
                             Brand
                             <span className='arrow'><FaAngleRight/></span>
                         </Button>
-                        <div className={`submenuWrapper ${activeTab === 9 && isToggleSubmenu === true ? 'collapsed' : 'collapse'}`}>
+                        <div className={`submenuWrapper ${activeTab === 8 && isToggleSubmenu === true ? 'collapsed' : 'collapse'}`}>
                             <ul className="submenu">
                                 <li><Link to="/brand-list">List Brand</Link></li>
                                 <li><Link to="/brand-create">Create Brand</Link></li>
@@ -118,12 +110,12 @@ const Sidebar = () => {
                         </div>
                     </li>
                     <li>
-                        <Button className={`w-100 ${activeTab === 10 ? 'active' : ''}`} onClick={() => isOpenSubmenu(10)}>
+                        <Button className={`w-100 ${activeTab === 9 ? 'active' : ''}`} onClick={() => isOpenSubmenu(9)}>
                             <span className='icon'><FaGripVertical/></span>
                             Blade
                             <span className='arrow'><FaAngleRight/></span>
                         </Button>
-                        <div className={`submenuWrapper ${activeTab === 10 && isToggleSubmenu === true ? 'collapsed' : 'collapse'}`}>
+                        <div className={`submenuWrapper ${activeTab === 9 && isToggleSubmenu === true ? 'collapsed' : 'collapse'}`}>
                             <ul className="submenu">
                                 <li><Link to="/blade-list">List Blade</Link></li>
                                 <li><Link to="/blade-create">Create Blade</Link></li>
@@ -131,16 +123,22 @@ const Sidebar = () => {
                         </div>
                     </li>
                     <li>
-                        <Button className={`w-100 ${activeTab === 11 ? 'active' : ''}`} onClick={() => isOpenSubmenu(11)}>
+                        <Button className={`w-100 ${activeTab === 10 ? 'active' : ''}`} onClick={() => isOpenSubmenu(10)}>
                             <span className='icon'><GrTransaction /></span>
                             Transaction
                             <span className='arrow'><FaAngleRight/></span>
                         </Button>
-                        <div className={`submenuWrapper ${activeTab === 11 && isToggleSubmenu === true ? 'collapsed' : 'collapse'}`}>
+                        <div className={`submenuWrapper ${activeTab === 10 && isToggleSubmenu === true ? 'collapsed' : 'collapse'}`}>
                             <ul className="submenu">
                                 <li><Link to="/transaction-report">Report</Link></li>
                             </ul>
                         </div>
+                    </li>
+                    <li>
+                        <Button className={`w-100`}>
+                        <span className='icon'><FaUserCircle/></span>
+                        User
+                        </Button>
                     </li>
                 </ul>
 

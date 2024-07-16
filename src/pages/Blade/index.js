@@ -2,7 +2,7 @@ import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import Popup from 'reactjs-popup';
 import { getApiURL } from "../../common/utils/domainUtil";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from 'react-router-dom';
 import { MyContext } from "../../App";
 import { Box, Breadcrumbs, Button, Chip, emphasize, FormControl, InputLabel, MenuItem, Pagination, styled, Select } from "@mui/material/";
 import { Home, ExpandMore } from "@mui/icons-material";
@@ -34,9 +34,10 @@ const StyledBreadcrumb = styled(Chip)(({theme}) => {
 const Blade = () => {
 
     // Check login
-    // const navigate = useNavigate();
-    // const token = localStorage.getItem("jwtToken");
-    // if (token == null || token == undefined) navigate("/login");
+    const navigate = useNavigate();
+    const token = localStorage.getItem("jwtToken");
+    if (token == null || token == undefined) navigate("/login");
+    const email = localStorage.getItem("email");
 
     const apiBladeList = 'public/blade/list';
     const apiBladeSearch = 'public/blade/search';
@@ -270,6 +271,8 @@ const Blade = () => {
                         <PopupAdd
                             onClose={() => setShowModalPopupAdd(false)}
                             showModalPopupAdd={showModalPopupAdd}
+                            token={token}
+                            email={email}
                         />
                     }
 

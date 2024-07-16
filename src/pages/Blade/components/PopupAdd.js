@@ -1,8 +1,8 @@
-import { useState, option, useRef } from "react";
-import { Link } from "react-router-dom";
-import { HiDotsVertical } from "react-icons/hi";
-import { IoMdClose } from "react-icons/io";
+import axios from "axios";
+import { useContext, useEffect, useState } from "react";
+import { useNavigate, Link } from 'react-router-dom';
 import { Box, Backdrop, Select, FormControl, Button, Typography, Modal } from "@mui/material/";
+import { getApiURL } from "../../../common/utils/domainUtil";
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import TrendingDownIcon from '@mui/icons-material/TrendingDown';
 import "./PopupAddStyle.css";
@@ -21,6 +21,22 @@ const style = {
 
 const PopupAdd = ({ onClose, showModalPopupAdd }) => {
 
+    const apiBladeRegister = 'public/blade/register';
+    const apiURLBladeRegister = getApiURL(apiBladeRegister);
+
+    const [userData, setUserData] = useState({
+        emailOrUsername: localStorage.getItem("email"),
+        token: localStorage.getItem("jwtToken"),
+    });
+
+    const handleRegister = async (event) => {
+        try {
+            const response = await axios.post(apiURLBladeRegister, userData);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
     return (
         <div>
             <Modal
@@ -33,7 +49,7 @@ const PopupAdd = ({ onClose, showModalPopupAdd }) => {
                         Bạn muốn đăng ký?
                     </Typography>
                     <Typography id="modal-modal-description" sx={{ mt: 1 }}>
-                        Nhấn vào <Link to="/blade-list">đây</Link> để đăng ký
+                        Nhấn vào <Link to={handleRegister}>đây</Link> để đăng ký
                     </Typography>
                     <Button className="close-modal" onClick={onClose}>Bỏ qua</Button>
                 </Box>
