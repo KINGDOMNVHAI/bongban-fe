@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import Popup from 'reactjs-popup';
+import { getApiURL } from "../../common/utils/domainUtil";
 import { Link, useNavigate } from "react-router-dom";
 import { MyContext } from "../../App";
 import { Breadcrumbs, Chip, emphasize, styled, MenuItem, Select, FormControl, Button, Pagination } from "@mui/material/";
@@ -42,6 +43,9 @@ const TransactionReport = () => {
 
     const [statusPayment, setStatusPayment] = useState(1);
 
+    const apiPayOSTransReportList = 'public/payos/transaction-report/list';
+    const apiURLPayOSTransReportList = getApiURL(apiPayOSTransReportList);
+
     const context = useContext(MyContext);
 
     useEffect(()=>{
@@ -60,7 +64,7 @@ const TransactionReport = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/api/v1/public/payos/transaction-report/list');
+                const response = await axios.get(`${apiURLPayOSTransReportList}`);
                 setPaymentData(response.data);
                 console.error(paymentData);
             } catch (error) {

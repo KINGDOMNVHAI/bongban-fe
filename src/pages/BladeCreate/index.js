@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { getApiURL } from "../../common/utils/domainUtil";
-import { useNavigate, Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { emphasize, Box, Breadcrumbs, Button, Chip, FormControl, InputLabel, MenuItem, Select, styled } from "@mui/material/";
 import { Home } from "@mui/icons-material";
 
@@ -33,6 +33,11 @@ const StyledBreadcrumb = styled(Chip)(({theme}) => {
 
 const BladeCreate = () => {
 
+    // Check login
+    const navigate = useNavigate();
+    const token = localStorage.getItem("jwtToken");
+    if (token == null || token == undefined) navigate("/login");
+
     const apiBrandList = 'public/brand/list';
     const apiBrandListSub = 'public/brand/list-sub/';
     const apiBrandInsert = 'public/blade/insert/';
@@ -57,7 +62,6 @@ const BladeCreate = () => {
 
     const [fileImg, setFileImg] = useState();
 
-    const navigate = useNavigate();
     const [error, setError] = useState("");
     const [formData, setFormData] = useState({
         brandCD: '',

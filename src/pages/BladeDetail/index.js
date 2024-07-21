@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Slider from "react-slick";
 import { getApiURL } from "../../common/utils/domainUtil";
 import { Box, Button, Breadcrumbs, Chip, emphasize, styled } from "@mui/material/";
@@ -36,6 +36,11 @@ const StyledBreadcrumb = styled(Chip)(({theme}) => {
 })
 
 const BladeDetail = () => {
+
+    // Check login
+    const navigate = useNavigate();
+    const token = localStorage.getItem("jwtToken");
+    if (token == null || token == undefined) navigate("/login");
 
     const [showBy, setShowBy] = useState('');
     const [showBysetCatBy, setCatBy] = useState('');

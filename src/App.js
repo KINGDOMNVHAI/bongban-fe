@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { createContext, useEffect, useState } from 'react';
 import "./assets/css/bootstrap.min.css";
 import './App.css';
@@ -22,8 +22,12 @@ const MyContext = createContext();
 
 function App() {
 
-  const [isToggleSidebar, setIsToggleSidebar] = useState(false);
+  // Check login
+  const token = localStorage.getItem("jwtToken");
+  // if (token == null || token == undefined) navigate("/login");
+
   const [isLogin, setIsLogin] = useState(false); // setIsLogin if localStorage have token
+  const [isToggleSidebar, setIsToggleSidebar] = useState(false);
   const [isHideSidebarAndHeader, setIsHideSidebarAndHeader] = useState(false);
   const [themeMode, setThemeMode] = useState(true);
 
@@ -36,6 +40,9 @@ function App() {
       document.body.classList.remove('light');
       document.body.classList.add('dark');
       localStorage.setItem('themeMode','dark')
+    }
+    if (token != null || token != undefined) {
+      setIsLogin(true)
     }
   },[themeMode]);
 

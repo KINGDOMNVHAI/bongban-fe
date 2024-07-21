@@ -62,7 +62,7 @@ const Blade = () => {
         // Call API
         const fetchDataBrand = async () => {
             try {
-                const response = await axios.get(apiURLBladeList);
+                const response = await axios.get(`${apiURLBladeList}`);
                 setBrandData(response.data);
             } catch (error) {
                 console.error(error);
@@ -76,7 +76,7 @@ const Blade = () => {
     const handleClickBrand = async (event) => {
         try {
             searchData.brandCD = event.target.value;
-            const response = await axios.post(apiURLBladeSearch, searchData);
+            const response = await axios.post(`${apiURLBladeSearch}`, searchData);
             setBladeData(response.data);
             setBrandVal(event.target.value);
         } catch (error) {
@@ -95,7 +95,7 @@ const Blade = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/api/v1/public/blade/list');
+                const response = await axios.get(`${apiURLBladeList}`);
                 setBladeData(response.data);
                 console.log(response);
             } catch (error) {

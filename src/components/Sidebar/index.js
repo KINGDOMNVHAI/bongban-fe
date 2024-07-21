@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { MyContext } from "../../App";
 import Button from '@mui/material/Button';
 
@@ -12,6 +12,8 @@ import { TbBrandCarbon } from "react-icons/tb";
 
 const Sidebar = () => {
 
+    const navigate = useNavigate();
+
     const [activeTab, setActiveTab] = useState(0);
     const [isToggleSubmenu, setIsToggleSubmenu] = useState(false);
 
@@ -20,6 +22,12 @@ const Sidebar = () => {
     const isOpenSubmenu = (index) => {
         setActiveTab(index);
         setIsToggleSubmenu(!isToggleSubmenu);
+    }
+
+    const handleLogout = async (event) => {
+        localStorage.removeItem("jwtToken");
+        localStorage.removeItem("email");
+        navigate("/login");
     }
 
     return (
@@ -33,68 +41,6 @@ const Sidebar = () => {
                             Dashboard
                             </Button>
                         </Link>
-                    </li>
-                    <li>
-                        <Link to="/">
-                            <Button className={`w-100 ${activeTab === 1 && isToggleSubmenu === true ? 'active' : ''}`} onClick={() => isOpenSubmenu(1)}>
-                                <span className='icon'><FaProductHunt/></span>
-                                Products (제품)
-                                <span className='arrow'><FaAngleRight/></span>
-                            </Button>
-                            <div className={`submenuWrapper ${activeTab === 1 && isToggleSubmenu === true ? 'collapsed' : 'collapse'}`}>
-                                <ul className="submenu">
-                                    <li><Link to="/products">Product List</Link></li>
-                                    <li><Link to="/product/details">Product View</Link></li>
-                                    <li><Link to="/product/upload">Product Upload</Link></li>
-                                </ul>
-                            </div>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/">
-                            <Button className={`w-100 ${activeTab === 2 ? 'active' : ''}`} onClick={() => isOpenSubmenu(2)}>
-                            <span className='icon'><FaCartArrowDown/></span>
-                            Orders
-                            <span className='arrow'><FaAngleRight/></span>
-                            </Button>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/">
-                            <Button className={`w-100 ${activeTab === 3 ? 'active' : ''}`} onClick={() => isOpenSubmenu(3)}>
-                            <span className='icon'><MdMessage/></span>
-                            메시지
-                            <span className='arrow'><FaAngleRight/></span>
-                            </Button>
-                        </Link>
-                    </li>
-                    <li>
-                        <Button className={`w-100 ${activeTab === 4 ? 'active' : ''}`} onClick={() => isOpenSubmenu(4)}>
-                        <span className='icon'><FaBell/></span>
-                        Notifications
-                        <span className='arrow'><FaAngleRight/></span>
-                        </Button>
-                    </li>
-                    <li>
-                        <Button className={`w-100 ${activeTab === 5 ? 'active' : ''}`} onClick={() => isOpenSubmenu(5)}>
-                        <span className='icon'><IoIosSettings/></span>
-                        Settings
-                        <span className='arrow'><FaAngleRight/></span>
-                        </Button>
-                    </li>
-                    <li>
-                        <Button className={`w-100 ${activeTab === 6 ? 'active' : ''}`} onClick={() => isOpenSubmenu(6)}>
-                        <span className='icon'><FaLock/></span>
-                        Authentication
-                        <span className='arrow'><FaAngleRight/></span>
-                        </Button>
-                    </li>
-                    <li>
-                        <Button className={`w-100 ${activeTab === 7 ? 'active' : ''}`} onClick={() => isOpenSubmenu(7)}>
-                        <span className='icon'><MdViewKanban/></span>
-                        Kanban
-                        <span className='arrow'><FaAngleRight/></span>
-                        </Button>
                     </li>
                     <li>
                         <Button className={`w-100 ${activeTab === 8 ? 'active' : ''}`} onClick={() => isOpenSubmenu(8)}>
@@ -143,7 +89,7 @@ const Sidebar = () => {
                 </ul>
 
                 <div className="logoutWrapper">
-                    <div className="logoutBox">
+                    <div className="logoutBox" onClick={handleLogout}>
                         <Button variant="contained"><IoMdLogOut/>Logout</Button>
                     </div>
                 </div>

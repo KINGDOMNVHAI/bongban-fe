@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { Chart } from "react-google-charts";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Menu, MenuItem, Select, FormControl, Button, Pagination } from "@mui/material/";
 
 import { FaUserCircle, FaEye, FaPencilAlt } from "react-icons/fa"
@@ -31,6 +31,11 @@ export const options = {
 };
 
 const Dashboard = () => {
+
+    // Check login
+    const navigate = useNavigate();
+    const token = localStorage.getItem("jwtToken");
+    if (token == null || token == undefined) navigate("/login");
 
     const [anchorEl, setAnchorEl] = useState(null);
     const [showBy, setShowBy] = useState('');

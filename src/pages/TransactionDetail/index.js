@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 // import { usePathname } from 'next/router';
+import { getApiURL } from "../../common/utils/domainUtil";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import Slider from "react-slick";
 import { Box, Button, Breadcrumbs, Chip, emphasize, styled } from "@mui/material/";
@@ -40,6 +41,7 @@ const StyledBreadcrumb = styled(Chip)(({theme}) => {
 
 const TransactionDetail = () => {
 
+    // Check login
     const navigate = useNavigate();
     const token = localStorage.getItem("jwtToken");
     if (token == null || token == undefined) navigate("/login");
@@ -51,6 +53,9 @@ const TransactionDetail = () => {
 
     const [dataTransaction, setDataTransaction] = useState(null);
     // var qrcode = "00020101021238570010A000000727012700069704220113VQRQ0001uig8k0208QRIBFTTA530370454062000005802VN62070803abc6304D84C";
+
+    const apiPayOSTransReport = 'public/payos/transaction-report/';
+    const apiURLPayOSTransReport = getApiURL(apiPayOSTransReport);
 
     var productSliderOptions = {
         dots: false,
@@ -79,7 +84,7 @@ const TransactionDetail = () => {
         const fetchDataBrand = async () => {
             try {
                 console.log(params.id)
-                const response = await axios.get('http://localhost:8080/api/v1/public/payos/transaction-report/' + params.id);
+                const response = await axios.get(`${apiURLPayOSTransReport}` + params.id);
                 setDataTransaction(response.data);
                 console.log(response.data)
             } catch (error) {
