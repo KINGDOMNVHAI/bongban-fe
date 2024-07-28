@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import logo from '../../assets/images/table-tennis-logo.png'
 import Button from '@mui/material/Button';
 import { MdMenuOpen, MdOutlineMenu, MdDarkMode, MdOutlineMailOutline, MdOutlineLightMode } from "react-icons/md";
@@ -27,7 +27,12 @@ const Header = () => {
 
     const [isLogin, setIsLogin] = useState(true);
 
+    const navigate = useNavigate();
     const context = useContext(MyContext);
+    // Check login
+    const token = localStorage.getItem("jwtToken");
+    const email = localStorage.getItem("email");
+    const username = localStorage.getItem("username");
 
     const handleOpenMyAccDrop = (event) => {
         setAnchorEl(event.currentTarget);
@@ -258,7 +263,7 @@ const Header = () => {
 
                                         <div className="userInfo">
                                             <h4>Hải</h4>
-                                            <p className="mb-0">@viethai</p>
+                                            <p className="mb-0">@{email}</p>
                                         </div>
                                     </Button>
 
