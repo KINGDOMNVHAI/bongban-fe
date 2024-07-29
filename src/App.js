@@ -4,13 +4,15 @@ import "./assets/css/bootstrap.min.css";
 import './App.css';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
-import Dashboard from './pages/Dashboard';
 import Blade from './pages/Blade';
 import BladeCreate from './pages/BladeCreate';
 import BladeDetail from './pages/BladeDetail';
 import Brand from './pages/Brand';
 import BrandCreate from './pages/BrandCreate';
 import BrandDetail from './pages/BrandDetail';
+import Dashboard from './pages/Dashboard';
+import Line from './pages/Line';
+import LineCreate from './pages/LineCreate';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import ProductDetails from './pages/ProductDetails';
@@ -104,6 +106,9 @@ function App() {
               <Route path="/blade-detail">
                 <Route path=":unitID" exact={true} element={<BladeDetail />} />
               </Route>
+
+              <Route path="/line-list" exact={true} element={<Line />} />
+              <Route path="/line-create" exact={true} element={<LineCreate />} />
 
               <Route path="/transaction-report" exact={true} element={<TransactionReport />} />
               <Route path="/transaction-detail/:id" exact={true} element={<TransactionDetail />} />

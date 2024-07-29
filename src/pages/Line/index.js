@@ -8,7 +8,9 @@ import { Box, Breadcrumbs, Button, Chip, emphasize, FormControl, InputLabel, Men
 import { Home, ExpandMore } from "@mui/icons-material";
 
 import { FaEye, FaPencilAlt, FaPlus } from "react-icons/fa";
-import { MdOutlinePlayCircle } from "react-icons/md";
+import { MdAttachMoney, MdOutlinePlayCircle } from "react-icons/md";
+import { PiTrendDownBold } from "react-icons/pi";
+import { SlControlEnd } from "react-icons/sl";
 import PopupAdd from "./components/PopupAdd";
 
 // Breadcrum code
@@ -32,7 +34,7 @@ const StyledBreadcrumb = styled(Chip)(({theme}) => {
     };
 })
 
-const Blade = () => {
+const Line = () => {
 
     // Check login
     // const navigate = useNavigate();
@@ -187,103 +189,6 @@ const Blade = () => {
                 </div>
 
                 <div className="table-responsive mt-3">
-                    <table className="table table-bordered v-align">
-                        <thead className="thead-dark">
-                            <tr>
-                                <th>UID</th>
-                                <th style={{width:'300px'}}>PRODUCT</th>
-                                <th>PEOPLE</th>
-                                <th>STARTED PRICE (khởi điểm)</th>
-                                <th>DEPOSIT (đặt cọc)</th>
-                                <th>DEPRECIATION (khấu hao)</th>
-                                <th>ENDED PRICE (kết thúc)</th>
-                                <th>ACTION</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            {bladeData && bladeData.length > 0 ? (
-                                bladeData.map((item) => (
-                                <tr>
-                                    <td>{item.seq}</td>
-                                    <td>{item.bladeFullName}</td>
-                                    <td>{item.periodCnt}</td>
-                                    <td>{item.initPrice} VND</td>
-                                    <td>{item.deposit} VND</td>
-                                    <td>{item.fee} VND</td>
-                                    <td>{item.endPrice} VND</td>
-                                    <td>
-                                        <div className="actions d-flex align-items-center">
-                                            {/* <Link to={`/blade-detail/${item.seq}`}><Button className="secondary" color="secondary"><FaEye/></Button></Link> */}
-
-                                            <Link to={`/blade-detail/${item.unitID}`}><Button className="secondary" color="secondary"><FaEye/></Button></Link>
-                                            <Button className="success" color="success"><FaPencilAlt/></Button>
-
-                                            {item.periodCnt > item.countRegister ? (
-                                                <Button className="success" color="success" onClick={openPopupAdd}><FaPlus /></Button>
-                                            ) : (
-                                                ''
-                                            )}
-
-                                            {/* <Button className="error" color="error"><MdDelete/></Button> */}
-                                        </div>
-                                    </td>
-                                </tr>
-                                ))
-                            ) : (
-                                <tr className="bladeBox">
-                                    <td colSpan="8">Không có sản phẩm</td>
-                                </tr>
-                            )}
-                            <tr>
-                                <td>#1</td>
-                                <td>
-                                    <div className="d-flex align-items-center productBox">
-                                        <div className="imgWrapper">
-                                            <div className="img">
-                                                <img src="/upload/images/product/takku-1.jpg" className="w-100" />
-                                            </div>
-                                        </div>
-                                        <div className="info pl-2">
-                                            <h6>Butterfly Tamca 5000</h6>
-                                            <p>Vợt Butterfly Tamca 5000 được thiết kế với tính năng trợ lực cho người chơi cùng 2 lớp sợi Carbon đan xen 3 lớp gỗ nằm gần lớp gỗ hinoki ở ngoài.</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>10</td>
-                                <td>6.500.000 VND</td>
-                                <td>3.000.000 VND</td>
-                                <td>100.000 VND</td>
-                                <td>3.000.000 VND</td>
-                                <td>
-                                    <div className="actions d-flex align-items-center">
-                                        <Link to={'/blade-detail/${item.seq}'}><Button className="secondary" color="secondary"><FaEye/></Button></Link>
-                                        <Button className="success" color="success"><FaPencilAlt/></Button>
-                                        <Button className="success" color="success" onClick={openPopupAdd}><FaPlus /></Button>
-
-                                        {/* <Button className="error" color="error"><MdDelete/></Button> */}
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    {showModalPopupAdd &&
-                        <PopupAdd
-                            onClose={() => setShowModalPopupAdd(false)}
-                            showModalPopupAdd={showModalPopupAdd}
-                            token={token}
-                            email={email}
-                        />
-                    }
-
-                    <div className="d-flex tableFooter">
-                        <p>Showing <b>12</b> of <b>60</b> results</p>
-                        <Pagination count={10} color="primary" className="pagination" showFirstButton showLastButton />
-                    </div>
-                </div>
-
-                <div className="table-responsive mt-3">
                     <table className="table table-bordered v-align listBladeMember">
                         <thead className="thead-dark">
                             <tr>
@@ -302,9 +207,19 @@ const Blade = () => {
                                         <h6 className="textProduct mt-2">Butterfly Tamca 5000</h6>
                                     </div>
                                 </td>
-                                <td colSpan={10}>
-                                    <p className="mt-1"><MdOutlinePlayCircle/> Khởi đầu: 4000000 VND</p>
+                                <td colSpan={2} style={{ border: 'none' }}>
+                                    <p className="mt-1"><MdOutlinePlayCircle/> Khởi đầu: 4.000.000 VND</p>
                                 </td>
+                                <td colSpan={2} style={{ border: 'none' }}>
+                                    <p className="mt-1"><MdAttachMoney/> Đặt cọc: 4.000.000 VND</p>
+                                </td>
+                                <td colSpan={2} style={{ border: 'none' }}>
+                                    <p className="mt-1"><PiTrendDownBold/> Khấu hao: 4.000.000 VND</p>
+                                </td>
+                                <td colSpan={2} style={{ border: 'none' }}>
+                                    <p className="mt-1"><SlControlEnd/> Kết thúc: 4.000.000 VND</p>
+                                </td>
+                                <td colSpan={2} style={{ border: 'none' }}></td>
                             </tr>
                             <tr>
                                 <td>
@@ -363,11 +278,84 @@ const Blade = () => {
                                 </td>
                                 <td>
                                     <div className="imgProductArea">
-                                        <Button className="success" color="success" onClick={openPopupAdd}>
-                                            <img src="/static/media/icon-plus-circle.21a2e94b79ca1a3b7fd2.png" className="imgProduct"/>
-                                        </Button>
+                                        <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
+                                        <p className="textProduct mt-1">Adam Levine</p>
                                     </div>
                                 </td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td rowSpan={2}>
+                                    <div className="imgProductArea">
+                                        <img src="/upload/images/product/takku-1.jpg" className="imgProduct"/>
+                                        <div className="progress mt-2">
+                                            <div className="progress-bar" style={{width:'70%'}}></div>
+                                        </div>
+                                        <h6 className="textProduct mt-2">Butterfly Tamca 5000</h6>
+                                    </div>
+                                </td>
+                                <td colSpan={2} style={{ border: 'none' }}>
+                                    <p className="mt-1"><MdOutlinePlayCircle/> Khởi đầu: 4.000.000 VND</p>
+                                </td>
+                                <td colSpan={2} style={{ border: 'none' }}>
+                                    <p className="mt-1"><MdAttachMoney/> Đặt cọc: 4.000.000 VND</p>
+                                </td>
+                                <td colSpan={2} style={{ border: 'none' }}>
+                                    <p className="mt-1"><PiTrendDownBold/> Khấu hao: 4.000.000 VND</p>
+                                </td>
+                                <td colSpan={2} style={{ border: 'none' }}>
+                                    <p className="mt-1"><SlControlEnd/> Kết thúc: 4.000.000 VND</p>
+                                </td>
+                                <td colSpan={2} style={{ border: 'none' }}>
+                                    <div className="imgProductArea">
+                                        <div className="logoutBox" onClick={openPopupAdd}>
+                                            <Button variant="contained">Đăng ký</Button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div className="imgProductArea">
+                                        <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
+                                        <p className="textProduct mt-1">Adam Levine</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div className="imgProductArea">
+                                        <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
+                                        <p className="textProduct mt-1">Adam Levine</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div className="imgProductArea">
+                                        <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
+                                        <p className="textProduct mt-1">Adam Levine</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div className="imgProductArea">
+                                        <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
+                                        <p className="textProduct mt-1">Adam Levine</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div className="imgProductArea">
+                                        <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
+                                        <p className="textProduct mt-1">Adam Levine</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div className="imgProductArea">
+                                        <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
+                                        <p className="textProduct mt-1">Adam Levine</p>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                             </tr>
                         </tbody>
                     </table>
@@ -390,4 +378,4 @@ const Blade = () => {
     </>
 }
 
-export default Blade;
+export default Line;
