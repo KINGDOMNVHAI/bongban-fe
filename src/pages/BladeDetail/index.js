@@ -3,14 +3,14 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import Slider from "react-slick";
 import { getApiURL } from "../../common/utils/domainUtil";
-import { Box, Button, Breadcrumbs, Chip, emphasize, styled } from "@mui/material/";
+import { Button, Breadcrumbs, Chip, emphasize, styled } from "@mui/material/";
 import { Home } from "@mui/icons-material";
 import circlePlusIcon from '../../assets/images/icon-plus-circle.png';
+import PopupAdd from "./components/PopupAdd";
 
 import { BsTextareaResize } from "react-icons/bs";
 import { CiSettings } from "react-icons/ci";
 import { GiStarsStack } from "react-icons/gi";
-import { FaEye, FaPencilAlt, FaPlus } from "react-icons/fa";
 import { IoMdCart } from "react-icons/io";
 import { IoColorPaletteOutline, IoPricetagOutline } from "react-icons/io5";
 import { MdBrandingWatermark, MdGridView, MdOutlinePlayCircle } from "react-icons/md";
@@ -41,6 +41,9 @@ const BladeDetail = () => {
     // Check login
     // const navigate = useNavigate();
     // const token = localStorage.getItem("jwtToken");
+    // const email = localStorage.getItem("email");
+    const token = "jwtToken";
+    const email = "nvhai@gmail.com";
     // if (token == null || token == undefined) navigate("/login");
 
     const [showBy, setShowBy] = useState('');
@@ -84,6 +87,12 @@ const BladeDetail = () => {
         };
         fetchData();
     }, []);
+
+    // Popup
+    const [showModalPopupAdd, setShowModalPopupAdd] = useState(false);
+    const openPopupAdd = () => {
+        setShowModalPopupAdd(!showModalPopupAdd);
+    }
 
     const handleRegisterLine = (event) => {
         console.log("Register Line");
@@ -374,7 +383,10 @@ const BladeDetail = () => {
                                 <td rowSpan={2}>
                                     <div className="imgProductArea">
                                         <img src="/upload/images/product/takku-1.jpg" className="imgProduct"/>
-                                        <h6 className="textProduct mt-1">Butterfly Tamca 5000</h6>
+                                        <div className="progress mt-2">
+                                            <div className="progress-bar" style={{width:'70%'}}></div>
+                                        </div>
+                                        <h6 className="textProduct mt-2">Butterfly Tamca 5000</h6>
                                     </div>
                                 </td>
                                 <td colSpan={10}>
@@ -438,12 +450,22 @@ const BladeDetail = () => {
                                 </td>
                                 <td>
                                     <div className="imgProductArea">
-                                        <img src="/static/media/icon-plus-circle.21a2e94b79ca1a3b7fd2.png" className="imgProduct"/>
+                                        <Button className="success" color="success" onClick={openPopupAdd}>
+                                            <img src="/static/media/icon-plus-circle.21a2e94b79ca1a3b7fd2.png" className="imgProduct"/>
+                                        </Button>
                                     </div>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
+
+                    {showModalPopupAdd &&
+                        <PopupAdd
+                            onClose={() => setShowModalPopupAdd(false)}
+                            showModalPopupAdd={showModalPopupAdd}
+                        />
+                    }
+
                 </div>
             </div>
         </section>
