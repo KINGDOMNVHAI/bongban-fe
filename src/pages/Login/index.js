@@ -53,19 +53,22 @@ const Login = () => {
 
             if (res.status != 200) {
                 setError(res.data.message)
-                return navigate('/login');
+                navigate('/login');
+                window.onload();
             }
 
             const token = res.data.token;
             if (token == null || token == undefined) {
                 setError(res.data.message)
-                return navigate('/login');
+                navigate('/login');
+                window.onload();
             }
 
             localStorage.setItem('emailOrUsername', emailOrUsername);
             localStorage.setItem('jwtToken', token);
             setError("");
-            return navigate('/dashboard');
+            navigate('/dashboard');
+            window.onload();
             // Redirect or perform any other actions
         } catch (error) {
             // Handle error

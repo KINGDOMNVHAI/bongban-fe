@@ -10,9 +10,10 @@ import circlePlusIcon from '../../assets/images/icon-plus-circle.png';
 import { BsTextareaResize } from "react-icons/bs";
 import { CiSettings } from "react-icons/ci";
 import { GiStarsStack } from "react-icons/gi";
+import { FaEye, FaPencilAlt, FaPlus } from "react-icons/fa";
 import { IoMdCart } from "react-icons/io";
 import { IoColorPaletteOutline, IoPricetagOutline } from "react-icons/io5";
-import { MdBrandingWatermark, MdGridView } from "react-icons/md";
+import { MdBrandingWatermark, MdGridView, MdOutlinePlayCircle } from "react-icons/md";
 
 // Breadcrum code
 const StyledBreadcrumb = styled(Chip)(({theme}) => {
@@ -38,9 +39,9 @@ const StyledBreadcrumb = styled(Chip)(({theme}) => {
 const BladeDetail = () => {
 
     // Check login
-    const navigate = useNavigate();
-    const token = localStorage.getItem("jwtToken");
-    if (token == null || token == undefined) navigate("/login");
+    // const navigate = useNavigate();
+    // const token = localStorage.getItem("jwtToken");
+    // if (token == null || token == undefined) navigate("/login");
 
     const [showBy, setShowBy] = useState('');
     const [showBysetCatBy, setCatBy] = useState('');
@@ -366,133 +367,83 @@ const BladeDetail = () => {
 
                 <h5 className="mt-4 mb-3">Danh sách khách hàng</h5>
 
-                <div className="row">
-                    <Box
-                        height={200}
-                        width={200}
-                        display="flex"
-                        alignItems="center"
-                        sx={{ border: '2px solid grey' }}
-                        className="btn-round ml-3 mt-3"
-                    >
-                        <div className="bladeBox img">
-                            <img src="/upload/images/avatar-1.jpg" className="w-50" />
-                            <p className="mt-1">Huỳnh Xuân An</p>
-                        </div>
-                    </Box>
-
-                    <Box
-                        height={200}
-                        width={200}
-                        display="flex"
-                        alignItems="center"
-                        sx={{ border: '2px solid grey' }}
-                        className="btn-round ml-3 mt-3"
-                    >
-                        <div className="bladeBox img">
-                            <img src="/upload/images/avatar-1.jpg" className="w-50" />
-                            <p className="mt-1">Adam Levine</p>
-                        </div>
-                    </Box>
-
-                    <Box
-                        height={200}
-                        width={200}
-                        display="flex"
-                        alignItems="center"
-                        sx={{ border: '2px solid grey' }}
-                        className="btn-round ml-3 mt-3"
-                    >
-                        <div className="bladeBox img">
-                            <img src="/upload/images/avatar-1.jpg" className="w-50" />
-                            <p className="mt-1">Huỳnh Xuân An</p>
-                        </div>
-                    </Box>
-
-                    <Box
-                        height={200}
-                        width={200}
-                        display="flex"
-                        alignItems="center"
-                        sx={{ border: '2px solid grey' }}
-                        className="btn-round ml-3 mt-3"
-                    >
-                        <div className="bladeBox img">
-                            <img src="/upload/images/avatar-1.jpg" className="w-50" />
-                            <p className="mt-1">Huỳnh Xuân An</p>
-                        </div>
-                    </Box>
-
-                    <Box
-                        height={200}
-                        width={200}
-                        display="flex"
-                        alignItems="center"
-                        sx={{ border: '2px solid grey' }}
-                        className="btn-round ml-3 mt-3"
-                    >
-                        <div className="bladeBox img">
-                            <img src="/upload/images/avatar-1.jpg" className="w-50" />
-                            <p className="mt-1">Huỳnh Xuân An</p>
-                        </div>
-                    </Box>
-
-                    <Box
-                        height={200}
-                        width={200}
-                        display="flex"
-                        alignItems="center"
-                        sx={{ border: '2px solid grey' }}
-                        className="btn-round ml-3 mt-3"
-                    >
-                        <div className="bladeBox img">
-                            <img src="/upload/images/avatar-1.jpg" className="w-50" />
-                            <p className="mt-1">Huỳnh Xuân An</p>
-                        </div>
-                    </Box>
-
-                    <Box
-                        height={200}
-                        width={200}
-                        display="flex"
-                        alignItems="center"
-                        sx={{ border: '2px solid grey' }}
-                        className="btn-round ml-3 mt-3"
-                    >
-                        <div className="bladeBox img">
-                            <img src="/upload/images/avatar-1.jpg" className="w-50" />
-                            <p className="mt-1">Huỳnh Xuân An</p>
-                        </div>
-                    </Box>
-
-                    <Box
-                        height={200}
-                        width={200}
-                        display="flex"
-                        alignItems="center"
-                        sx={{ border: '2px solid grey' }}
-                        className="btn-round ml-3 mt-3"
-                    >
-                        <div className="bladeBox img">
-                            <img src="/upload/images/avatar-1.jpg" className="w-50" />
-                            <p className="mt-1">Huỳnh Xuân An</p>
-                        </div>
-                    </Box>
-
-                    <Box
-                        height={200}
-                        width={200}
-                        display="flex"
-                        alignItems="center"
-                        sx={{ border: '2px solid grey' }}
-                        className="btn-round ml-3 mt-3"
-                    >
-                        <Button onClick={handleRegisterLine}>
-                            <div className="bladeBox img">
-                                <img src={circlePlusIcon} className="w-50" />
-                            </div>
-                        </Button>
-                    </Box>
+                <div className="table-responsive mt-3">
+                    <table className="table table-bordered v-align listBladeMember">
+                        <tbody>
+                            <tr>
+                                <td rowSpan={2}>
+                                    <div className="imgProductArea">
+                                        <img src="/upload/images/product/takku-1.jpg" className="imgProduct"/>
+                                        <h6 className="textProduct mt-1">Butterfly Tamca 5000</h6>
+                                    </div>
+                                </td>
+                                <td colSpan={10}>
+                                    <p className="mt-1"><MdOutlinePlayCircle/> Khởi đầu: 4000000 VND</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div className="imgProductArea">
+                                        <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
+                                        <p className="textProduct mt-1">Adam Levine</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div className="imgProductArea">
+                                        <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
+                                        <p className="textProduct mt-1">Adam Levine</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div className="imgProductArea">
+                                        <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
+                                        <p className="textProduct mt-1">Adam Levine</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div className="imgProductArea">
+                                        <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
+                                        <p className="textProduct mt-1">Adam Levine</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div className="imgProductArea">
+                                        <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
+                                        <p className="textProduct mt-1">Adam Levine</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div className="imgProductArea">
+                                        <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
+                                        <p className="textProduct mt-1">Adam Levine</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div className="imgProductArea">
+                                        <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
+                                        <p className="textProduct mt-1">Adam Levine</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div className="imgProductArea">
+                                        <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
+                                        <p className="textProduct mt-1">Adam Levine</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div className="imgProductArea">
+                                        <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
+                                        <p className="textProduct mt-1">Adam Levine</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div className="imgProductArea">
+                                        <img src="/static/media/icon-plus-circle.21a2e94b79ca1a3b7fd2.png" className="imgProduct"/>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </section>

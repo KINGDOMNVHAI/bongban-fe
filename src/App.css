@@ -389,3 +389,7 @@ body.dark .form .form-group input, body.dark .form .form-group textarea {backgro
 .process span {display: flex; align-items: center; justify-content: center;
   background: #FFF4A3 !important; color: #000 !important; font-weight: 700;
   border-radius: 5px !important; font-size: 14px !important; padding: 5px 10px !important;}
+
+.listBladeMember td .imgProductArea {text-align: center !important;}
+.listBladeMember td .imgProduct {width: 60%;}
+.listBladeMember td .textProduct {text-align: center;}
