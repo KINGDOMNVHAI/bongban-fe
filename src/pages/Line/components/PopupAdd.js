@@ -19,12 +19,18 @@ const style = {
 
 const PopupAdd = ({ onClose, showModalPopupAdd }) => {
 
-    const apiBladeRegister = 'public/blade/register';
+    const token = "ABCXYZ";
+    const email = "nguyenan@gmail.com";
+    const lineID = "2024_06_00001";
+
+    const apiBladeRegister = 'public/line/register';
     const apiURLBladeRegister = getApiURL(apiBladeRegister);
 
     const [userData, setUserData] = useState({
-        emailOrUsername: localStorage.getItem("email"),
-        token: localStorage.getItem("jwtToken"),
+        email: email,
+        token: token,
+        lineID: lineID,
+        depositStatus: 'NTK'
     });
 
     const handleRegister = async (event) => {
@@ -47,7 +53,7 @@ const PopupAdd = ({ onClose, showModalPopupAdd }) => {
                         Bạn muốn đăng ký?
                     </Typography>
                     <Typography id="modal-modal-description" sx={{ mt: 1 }}>
-                        Nhấn vào <Link to={handleRegister}>đây</Link> để đăng ký
+                        Nhấn vào <Link onClick={handleRegister}>đây</Link> để đăng ký
                     </Typography>
                     <Button className="close-modal" onClick={onClose}>Bỏ qua</Button>
                 </Box>
