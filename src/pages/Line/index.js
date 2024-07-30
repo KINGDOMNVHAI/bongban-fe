@@ -38,17 +38,19 @@ const Line = () => {
 
     // Check login
     // const navigate = useNavigate();
-    const token = localStorage.getItem("jwtToken");
+    // const token = localStorage.getItem("jwtToken");
     // if (token == null || token == undefined) navigate("/login");
-    const email = localStorage.getItem("email");
+    // const email = localStorage.getItem("email");
 
-    const apiBladeList = 'public/blade/list';
+    const apiLineList = 'public/line/list';
     const apiBladeSearch = 'public/blade/search';
-    const apiURLBladeList = getApiURL(apiBladeList);
+    const apiURLineList = getApiURL(apiLineList);
     const apiURLBladeSearch = getApiURL(apiBladeSearch);
 
     const [brandVal, setBrandVal] = useState(null);
     const [brandData, setBrandData] = useState([]);
+    const [lineData, setLineData] = useState(null);
+    // const [lineProData, setLineProData] = useState(null);
     const [searchData, setSearchData] = useState({
         brandCD: '',
     });
@@ -65,8 +67,8 @@ const Line = () => {
         // Call API
         const fetchDataBrand = async () => {
             try {
-                const response = await axios.get(`${apiURLBladeList}`);
-                setBrandData(response.data);
+                const response = await axios.get(`${apiURLineList}`);
+                // setBrandData(response.data);
             } catch (error) {
                 console.error(error);
             }
@@ -80,7 +82,6 @@ const Line = () => {
         try {
             searchData.brandCD = event.target.value;
             const response = await axios.post(`${apiURLBladeSearch}`, searchData);
-            setBladeData(response.data);
             setBrandVal(event.target.value);
         } catch (error) {
             console.error(error);
@@ -89,17 +90,20 @@ const Line = () => {
 
     // Popup
     const [showModalPopupAdd, setShowModalPopupAdd] = useState(false);
+    // const [lineID, setLineID] = useState(null);
     const openPopupAdd = () => {
         setShowModalPopupAdd(!showModalPopupAdd);
+        // setLineID(lineID);
     }
 
     // API list blade
-    const [bladeData, setBladeData] = useState(null);
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`${apiURLBladeList}`);
-                setBladeData(response.data);
+                const response = await axios.get(`${apiURLineList}`);
+                setLineData(response.data);
+                // setLineProData(response.data.listProgress);
+                // console.log(lineProData.length)
                 console.log(response);
             } catch (error) {
                 console.error(error);
@@ -164,28 +168,6 @@ const Line = () => {
                             </FormControl>
                         </Box>
                     </div>
-
-                    <div className="col-md-3">
-                        <h4>CATEGORY BY</h4>
-                        <FormControl size="small" className="w-100">
-                            <Select
-                                value={brandData}
-                                onChange={(e) => setBrandData(e.target.value)}
-                                displayEmpty
-                                inputProps={{'aria-label': 'Without label'}}
-                                labelId="demo-select-small-label"
-                                className="w-100"
-                            >
-                                {brandData && brandData.length > 0 ? (
-                                    brandData.map((item) => (
-                                    <MenuItem value={item.brandCD}>{item.brandName}</MenuItem>
-                                    ))
-                                ) : (
-                                    <MenuItem value={'XXX'}><em>NONE</em></MenuItem>
-                                )}
-                            </Select>
-                        </FormControl>
-                    </div>
                 </div>
 
                 <div className="table-responsive mt-3">
@@ -196,94 +178,71 @@ const Line = () => {
                                 <th colSpan={10}>THÔNG TIN</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td rowSpan={2}>
-                                    <div className="imgProductArea">
-                                        <img src="/upload/images/product/takku-1.jpg" className="imgProduct"/>
-                                        <div className="progress mt-2">
-                                            <div className="progress-bar" style={{width:'70%'}}></div>
+
+
+                        {lineData && lineData.length > 0 ? (
+                            lineData.map((item) => (
+                            <tbody>
+                                <tr>
+                                    <td rowSpan={2}>
+                                        <div className="imgProductArea">
+                                            <img src="/upload/images/product/takku-1.jpg" className="imgProduct"/>
+                                            <div className="progress mt-2">
+                                                <div className="progress-bar" style={{width:'70%'}}></div>
+                                            </div>
+                                            <h6 className="textProduct mt-2">{item.bladeUnitID}</h6>
                                         </div>
-                                        <h6 className="textProduct mt-2">Butterfly Tamca 5000</h6>
+                                    </td>
+                                    <td colSpan={2} style={{ border: 'none' }}>
+                                        <p className="mt-1"><MdOutlinePlayCircle/> Khởi đầu: {item.initPrice} VND</p>
+                                    </td>
+                                    <td colSpan={2} style={{ border: 'none' }}>
+                                        <p className="mt-1"><MdAttachMoney/> Đặt cọc: {item.deposit} VND</p>
+                                    </td>
+                                    <td colSpan={2} style={{ border: 'none' }}>
+                                        <p className="mt-1"><PiTrendDownBold/> Khấu hao: {item.depreciation} VND</p>
+                                    </td>
+                                    <td colSpan={2} style={{ border: 'none' }}>
+                                        <p className="mt-1"><SlControlEnd/> Kết thúc: {item.endPrice} VND</p>
+                                    </td>
+
+                                    {item.countListProgress < 10 ? (
+                                        <td colSpan={2} style={{ border: 'none' }}>
+                                            <div className="imgProductArea">
+                                                <div className="logoutBox" onClick={openPopupAdd}>
+                                                    <Button variant="contained">Đăng ký</Button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    ) : (
+                                        <td colSpan={2} style={{ border: 'none' }}></td>
+                                    )}
+                                </tr>
+                                <tr>
+
+
+                                {item.listProgress.map((i) => (
+                                <td>
+                                    <div className="imgProductArea">
+                                        <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
+                                        <p className="textProduct mt-1">Adam Levine</p>
                                     </div>
                                 </td>
-                                <td colSpan={2} style={{ border: 'none' }}>
-                                    <p className="mt-1"><MdOutlinePlayCircle/> Khởi đầu: 4.000.000 VND</p>
-                                </td>
-                                <td colSpan={2} style={{ border: 'none' }}>
-                                    <p className="mt-1"><MdAttachMoney/> Đặt cọc: 4.000.000 VND</p>
-                                </td>
-                                <td colSpan={2} style={{ border: 'none' }}>
-                                    <p className="mt-1"><PiTrendDownBold/> Khấu hao: 4.000.000 VND</p>
-                                </td>
-                                <td colSpan={2} style={{ border: 'none' }}>
-                                    <p className="mt-1"><SlControlEnd/> Kết thúc: 4.000.000 VND</p>
-                                </td>
-                                <td colSpan={2} style={{ border: 'none' }}></td>
-                            </tr>
+                                ))}
+
+                                {10 - item.countListProgress > 0 && Array.from({ length: 10 - item.countListProgress }, (_, index) => index).map((number) => (
+                                    <td></td>
+                                ))}
+
+                                </tr>
+                            </tbody>
+                            ))
+                        ) : (
                             <tr>
-                                <td>
-                                    <div className="imgProductArea">
-                                        <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
-                                        <p className="textProduct mt-1">Adam Levine</p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div className="imgProductArea">
-                                        <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
-                                        <p className="textProduct mt-1">Adam Levine</p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div className="imgProductArea">
-                                        <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
-                                        <p className="textProduct mt-1">Adam Levine</p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div className="imgProductArea">
-                                        <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
-                                        <p className="textProduct mt-1">Adam Levine</p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div className="imgProductArea">
-                                        <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
-                                        <p className="textProduct mt-1">Adam Levine</p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div className="imgProductArea">
-                                        <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
-                                        <p className="textProduct mt-1">Adam Levine</p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div className="imgProductArea">
-                                        <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
-                                        <p className="textProduct mt-1">Adam Levine</p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div className="imgProductArea">
-                                        <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
-                                        <p className="textProduct mt-1">Adam Levine</p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div className="imgProductArea">
-                                        <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
-                                        <p className="textProduct mt-1">Adam Levine</p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div className="imgProductArea">
-                                        <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
-                                        <p className="textProduct mt-1">Adam Levine</p>
-                                    </div>
-                                </td>
+                                <td colSpan="10">Không có sản phẩm</td>
                             </tr>
-                        </tbody>
+                        )}
+
                         <tbody>
                             <tr>
                                 <td rowSpan={2}>
@@ -352,10 +311,30 @@ const Line = () => {
                                         <p className="textProduct mt-1">Adam Levine</p>
                                     </div>
                                 </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>
+                                    <div className="imgProductArea">
+                                        <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
+                                        <p className="textProduct mt-1">Adam Levine</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div className="imgProductArea">
+                                        <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
+                                        <p className="textProduct mt-1">Adam Levine</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div className="imgProductArea">
+                                        <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
+                                        <p className="textProduct mt-1">Adam Levine</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div className="imgProductArea">
+                                        <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
+                                        <p className="textProduct mt-1">Adam Levine</p>
+                                    </div>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -364,6 +343,9 @@ const Line = () => {
                         <PopupAdd
                             onClose={() => setShowModalPopupAdd(false)}
                             showModalPopupAdd={showModalPopupAdd}
+                            // lineID={lineID}
+                            // token={token}
+                            // email={email}
                         />
                     }
 

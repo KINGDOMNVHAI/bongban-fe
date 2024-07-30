@@ -30,7 +30,7 @@ const PopupAdd = ({ onClose, showModalPopupAdd }) => {
         email: email,
         token: token,
         lineID: lineID,
-        depositStatus: 'NTK'
+        depositStatus: 'Y'
     });
 
     const handleRegister = async (event) => {
