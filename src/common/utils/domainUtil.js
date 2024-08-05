@@ -1,4 +1,4 @@
-// export const apiLocalhost = 'http://localhost:8080/api/v1/';
+export const apiLocalhost = 'http://localhost:8080/api/v1/';
 export const apiDomain = 'localhost:3000/api/v1/';
 export const apiPort = '8080';
 

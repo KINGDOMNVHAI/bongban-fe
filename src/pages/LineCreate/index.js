@@ -57,21 +57,11 @@ const LineCreate = () => {
         formCreateData.thumbnail = '';
     }
 
-    const [imageUrl, setImageUrl] = useState(null);
-    const [fileImg, setFileImg] = useState();
-
-    const handleFileChange = (event) => {
-        const fileImg = event.target.files[0];
-        setFileImg(fileImg);
-        const imageUrl = URL.createObjectURL(fileImg);
-        setImageUrl(imageUrl);
-    };
-
     return (
         <>
             <div className="right-content w-100">
                 <div className="card shadow border-0 w-100 flex-row p-4">
-                    <h5 className="mb-0"><GrBladesHorizontal/> Brand Create</h5>
+                    <h5 className="mb-0"><GrBladesHorizontal/> Line Create</h5>
                     <Breadcrumbs aria-label="breadcrumb" className="ml-auto breadcrumbs_">
                         <StyledBreadcrumb
                             component="a"
@@ -85,7 +75,7 @@ const LineCreate = () => {
                             label="Products"
                         />
                         <StyledBreadcrumb
-                            label="Brand Create"
+                            label="Line Create"
                         />
                     </Breadcrumbs>
                 </div>
@@ -94,19 +84,19 @@ const LineCreate = () => {
                     <div className="row">
                         <div className="col-sm-9">
                             <div className="card p-4">
-                                <h5 className="mb-4"><IoIosInformationCircleOutline/> Brand Information</h5>
+                                <h5 className="mb-4"><IoIosInformationCircleOutline/> Line Information</h5>
 
                                 <div className="row">
                                     <div className="col-md-4">
                                         <div className="form-group">
-                                            <h6>* BRAND NAME</h6>
+                                            <h6>* LINE NAME</h6>
                                             <input type="text" value="" />
                                         </div>
                                     </div>
 
                                     <div className="col-md-4">
                                         <div className="form-group">
-                                            <h6>* BRAND CODE</h6>
+                                            <h6>* LINE CODE</h6>
                                             <input type="text" value="" />
                                         </div>
                                     </div>
@@ -137,20 +127,6 @@ const LineCreate = () => {
                                 </div>
 
                                 <Button type="submit" className="btn-blue btn-big btn-lg"><FaCloudUploadAlt/> &nbsp; PUBLISH AND VIEW</Button>
-                            </div>
-                        </div>
-
-                        <div className="col-sm-3">
-                            <div className="card p-4">
-                                <h5 className="mb-4"><MdOutlineImage/> Image</h5>
-                                <div className="form-group">
-                                    {/* <input type="file" onChange={(e) => setFileImg(e.target.value)}></input>
-                                    <button onClick={getFile()}>Send</button> */}
-
-                                    <input type="file" onChange={handleFileChange} />
-
-                                    {imageUrl && <img src={imageUrl} alt="File Preview" style={{width:'100%', margin: '5px'}} />}<br/>
-                                </div>
                             </div>
                         </div>
                     </div>

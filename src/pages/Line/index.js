@@ -42,13 +42,16 @@ const Line = () => {
     // if (token == null || token == undefined) navigate("/login");
     // const email = localStorage.getItem("email");
 
+    const apiBrandList = 'public/brand/list';
     const apiLineList = 'public/line/list';
     const apiBladeSearch = 'public/blade/search';
+    const apiURLBrandList = getApiURL(apiBrandList);
     const apiURLineList = getApiURL(apiLineList);
     const apiURLBladeSearch = getApiURL(apiBladeSearch);
 
     const [brandVal, setBrandVal] = useState(null);
     const [brandData, setBrandData] = useState([]);
+    const [brandSelectData, setBrandSelectData] = useState([]);
     const [lineData, setLineData] = useState(null);
     // const [lineProData, setLineProData] = useState(null);
     const [searchData, setSearchData] = useState({
@@ -68,7 +71,10 @@ const Line = () => {
         const fetchDataBrand = async () => {
             try {
                 const response = await axios.get(`${apiURLineList}`);
-                // setBrandData(response.data);
+
+                const responseBrand = await axios.get(`${apiURLBrandList}`);
+                setBrandData(responseBrand.data);
+                setBrandSelectData(responseBrand.data);
             } catch (error) {
                 console.error(error);
             }
@@ -115,7 +121,7 @@ const Line = () => {
     return <>
         <section className="right-content w-100">
             <div className="card shadow border-0 w-100 flex-row p-4">
-                <h5 className="mb-0">Blade List</h5>
+                <h5 className="mb-0">Line List</h5>
                 <Breadcrumbs aria-label="breadcrumb" className="ml-auto breadcrumbs_">
                     <StyledBreadcrumb
                         component="a"
@@ -146,7 +152,14 @@ const Line = () => {
 
             <div className="card shadow border-0 p-3 mt-4">
                 <div className="row cardFilters mt-3">
-                    <div className="col-md-3">
+                    <div className="col-md-2">
+                        <div className="logoutBox" onClick={openPopupAdd}>
+                            <Link to={'/line-create'}>
+                                <Button variant="contained">Tạo line</Button>
+                            </Link>
+                        </div>
+                    </div>
+                    <div className="offset-md-8 col-md-2">
                         <Box sx={{ minWidth: 120 }}>
                             <FormControl fullWidth>
                                 <InputLabel id="demo-simple-select-label">BRAND</InputLabel>
@@ -157,8 +170,8 @@ const Line = () => {
                                     label="BRAND"
                                     onChange={handleClickBrand}
                                 >
-                                    {brandData && brandData.length > 0 ? (
-                                        brandData.map((item) => (
+                                    {brandSelectData && brandSelectData.length > 0 ? (
+                                        brandSelectData.map((item) => (
                                         <MenuItem value={item.brandCD}>{item.brandName}</MenuItem>
                                         ))
                                     ) : (
