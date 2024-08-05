@@ -220,14 +220,13 @@ const Line = () => {
                                 </tr>
                                 <tr>
 
-
                                 {item.listProgress.map((i) => (
-                                <td>
-                                    <div className="imgProductArea">
-                                        <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
-                                        <p className="textProduct mt-1">Adam Levine</p>
-                                    </div>
-                                </td>
+                                    <td>
+                                        <div className="imgProductArea">
+                                            <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
+                                            <p className="textProduct mt-1">{i.name}</p>
+                                        </div>
+                                    </td>
                                 ))}
 
                                 {10 - item.countListProgress > 0 && Array.from({ length: 10 - item.countListProgress }, (_, index) => index).map((number) => (
@@ -239,7 +238,7 @@ const Line = () => {
                             ))
                         ) : (
                             <tr>
-                                <td colSpan="10">Không có sản phẩm</td>
+                                <td colSpan={11}>Không có sản phẩm</td>
                             </tr>
                         )}
 
@@ -277,32 +276,32 @@ const Line = () => {
                             <tr>
                                 <td>
                                     <div className="imgProductArea">
-                                        <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
-                                        <p className="textProduct mt-1">Adam Levine</p>
+                                        <Link to={"#"}><img src="/upload/images/avatar-1.jpg" className="imgProduct"/></Link>
+                                        <p className="textProduct mt-1 text-sky">Adam Levine</p>
                                     </div>
                                 </td>
                                 <td>
                                     <div className="imgProductArea">
                                         <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
-                                        <p className="textProduct mt-1">Adam Levine</p>
+                                        <p className="textProduct mt-1 text-red">Adam Levine</p>
                                     </div>
                                 </td>
                                 <td>
                                     <div className="imgProductArea">
                                         <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
-                                        <p className="textProduct mt-1">Adam Levine</p>
+                                        <p className="textProduct mt-1 text-red">Adam Levine</p>
                                     </div>
                                 </td>
                                 <td>
                                     <div className="imgProductArea">
                                         <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
-                                        <p className="textProduct mt-1">Adam Levine</p>
+                                        <p className="textProduct mt-1 text-sky">Adam Levine</p>
                                     </div>
                                 </td>
                                 <td>
                                     <div className="imgProductArea">
                                         <img src="/upload/images/avatar-1.jpg" className="imgProduct"/>
-                                        <p className="textProduct mt-1">Adam Levine</p>
+                                        <p className="textProduct mt-1 text-red">Adam Levine</p>
                                     </div>
                                 </td>
                                 <td>

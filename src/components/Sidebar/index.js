@@ -46,7 +46,7 @@ const Sidebar = () => {
                     <li>
                         <Button className={`w-100 ${activeTab === 1 ? 'active' : ''}`} onClick={() => isOpenSubmenu(1)}>
                             <span className='icon'><TbBrandCarbon /></span>
-                            Brand
+                            Brand 상표
                             <span className='arrow'><FaAngleRight/></span>
                         </Button>
                         <div className={`submenuWrapper ${activeTab === 1 && isToggleSubmenu === true ? 'collapsed' : 'collapse'}`}>

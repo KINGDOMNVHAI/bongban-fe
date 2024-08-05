@@ -94,6 +94,7 @@ body.dark .dropdown_list li.MuiButtonBase-root {background-color: #12254e !impor
 .dropdownInfo p {font-size: 12px; font-weight: 500; margin-top: 0px;}
 
 .text-sky {color: #0858f7 !important}
+.text-red {color: #ff0000 !important}
 
 .main .sidebarWrapper {width: 20%; flex: 0 0 20%; transition: all 0.3s;}
 .main .sidebarWrapper.toggle {width: 0%; flex: 0 0 0%;}
