@@ -192,14 +192,15 @@ const Line = () => {
                             </tr>
                         </thead>
 
-
                         {lineData && lineData.length > 0 ? (
                             lineData.map((item) => (
                             <tbody>
                                 <tr>
                                     <td rowSpan={2}>
                                         <div className="imgProductArea">
+                                            <Link to={`/blade-detail/${item.bladeUnitID}`}>
                                             <img src="/upload/images/product/takku-1.jpg" className="imgProduct"/>
+                                            </Link>
                                             <div className="progress mt-2">
                                                 <div className="progress-bar" style={{width:'70%'}}></div>
                                             </div>
