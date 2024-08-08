@@ -55,6 +55,7 @@ const Line = () => {
     const [lineData, setLineData] = useState(null);
     // const [lineProData, setLineProData] = useState(null);
     const [searchData, setSearchData] = useState({
+        email: 'nguyenan@gmail.com',
         brandCD: '',
     });
 
@@ -106,7 +107,7 @@ const Line = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`${apiURLineList}`);
+                const response = await axios.post(`${apiURLineList}`, searchData);
                 setLineData(response.data);
                 // setLineProData(response.data.listProgress);
                 // console.log(lineProData.length)
@@ -130,7 +131,7 @@ const Line = () => {
                         icon={<Home fontSize="small"/>}
                     />
                     <StyledBreadcrumb
-                        label="Products"
+                        label="Lines"
                         deleteIcon={<ExpandMore/>}
                     />
                 </Breadcrumbs>
@@ -220,11 +221,19 @@ const Line = () => {
                                         <p className="mt-1"><SlControlEnd/> Kết thúc: {item.endPrice} VND</p>
                                     </td>
 
-                                    {item.countListProgress < 10 ? (
+                                    {item.userLineProgress == null ? (
                                         <td colSpan={2} style={{ border: 'none' }}>
                                             <div className="imgProductArea">
                                                 <div className="logoutBox" onClick={openPopupAdd}>
                                                     <Button variant="contained">Đăng ký</Button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    ) : item.userLineProgress.depositStatus == 'N' ? (
+                                        <td colSpan={2} style={{ border: 'none' }}>
+                                            <div className="imgProductArea">
+                                                <div className="logoutBox" onClick={openPopupAdd}>
+                                                    <Button variant="contained">Đặt cọc</Button>
                                                 </div>
                                             </div>
                                         </td>
